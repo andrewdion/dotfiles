@@ -1,0 +1,11 @@
+"amixer set Master 10+"
+    Mod4+Up
+
+"amixer set Master 10-"
+    Mod4+Down
+
+"xbacklight -dec 10"
+    Mod4+Left
+
+"xbacklight -inc 10"
+    Mod4+Right

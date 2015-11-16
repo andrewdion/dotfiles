@@ -1,0 +1,14 @@
+let g:solarized_termtrans=1
+colorscheme solarized
+syntax enable
+set background=dark
+set encoding=utf8
+set wildmenu
+set showcmd
+set number
+"set hlsearch
+set incsearch
+set showmatch
+set expandtab
+set tabstop=4
+set shiftwidth=4
