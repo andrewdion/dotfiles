@@ -13,5 +13,5 @@ setxkbmap -layout dvorak
 
 xbindkeys &
 sh /home/adion/.fehbg &
-i3status | dzen2 -ta r -fg white -bg black -fn -*-terminus-*-*-*-*-10-*-*-*-*-*-*-* &
+i3status | dzen2 -w "600" -x "766" -ta r -fg "#cccccc" -bg "#222222" -fn -*-terminus-*-*-*-*-10-*-*-*-*-*-*-* &
 exec spectrwm
