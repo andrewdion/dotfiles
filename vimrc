@@ -5,7 +5,7 @@ set background=dark
 set encoding=utf8
 set wildmenu
 set showcmd
-set number
+"set number
 "set hlsearch
 set incsearch
 set showmatch
