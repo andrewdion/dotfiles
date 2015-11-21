@@ -21,10 +21,10 @@ URxvt*.font: xft:inconsolata:size=12
 URxvt*.scrollBar: false
 
 ! scrollbar position - left=false (default) or right=true
-URxvt*.scrollBar_right: true
+!URxvt*.scrollBar_right: true
 
 ! scrollbar style - rxvt (default), plain, next, or xterm
-URxvt*.scrollstyle: plain
+!URxvt*.scrollstyle: plain
 
 
 
