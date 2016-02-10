@@ -13,6 +13,5 @@ setxkbmap -layout dvorak
 
 xbindkeys &
 sh /home/adion/.fehbg &
-#conky | dzen2 -w "600" -x "766" -ta r -fg "#cccccc" -bg "#222222" -fn -*-terminus-*-*-*-*-10-*-*-*-*-*-*-* &
-i3status | dzen2 -w "600" -x "766" -ta r -fg "#cccccc" -bg "#222222" -fn -*-terminus-*-*-*-*-10-*-*-*-*-*-*-* &
+/home/adion/.status.sh | lemonbar -p -d -f "FontAwesome:size=10" -f "DejaVu Sans:size=10" -g 1366x21 -B#242424 &
 exec spectrwm
