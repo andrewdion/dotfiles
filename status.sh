@@ -1,8 +1,5 @@
 #!/bin/bash
 
-#  chrome: f268
-#  term: f120
-
 workspaces() {
     current=$(xprop -root _NET_CURRENT_DESKTOP | cut -d' ' -f3)
     echo $(($current + 1))
@@ -27,6 +24,35 @@ volume() {
     off="\uf026"
     low="\uf027"
     high="\uf028"
+}
+
+backlight() {
+    brightness=$(cat /sys/class/backlight/intel_backlight/brightness)
+
+    if [ $brightness -ge 970 ]; then
+        level="100"
+    elif [ $brightness -gt 800 ]; then
+        level="90"
+    elif [ $brightness -gt 700 ]; then
+        level="80"
+    elif [ $brightness -gt 600 ]; then
+        level="70"
+    elif [ $brightness -gt 500 ]; then
+        level="60"
+    elif [ $brightness -gt 420 ]; then
+        level="50"
+    elif [ $brightness -gt 340 ]; then
+        level="40"
+    elif [ $brightness -gt 260 ]; then
+        level="30"
+    elif [ $brightness -gt 120 ]; then
+        level="20"
+    elif [ $brightness -lt 120 ]; then
+        level="10"
+    fi
+
+    #echo "\uf185  ${level}%"
+    echo "\uf26c  ${level}%"
 }
 
 battery() {
@@ -79,5 +105,5 @@ datetime() {
 }
 
 while true; do
-    echo -e "%{l}    $(workspaces)              $(window)%{r}$(network)        $(battery)        $(datetime)"
+    echo -e "%{l}    $(workspaces)              $(window)%{r}$(network)        $(backlight)        $(battery)        $(datetime)"
 done

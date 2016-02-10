@@ -1,6 +1,26 @@
 #!/bin/bash
 
-# need to install packages first
+# PACKAGES TO INSTALL
+# xf86-video-ati
+# xorg-server
+# xorg-xinit
+# xorg-xrdb
+# vim
+# spectrwm
+# urxvt 
+# git
+# chromium
+# wget
+# feh
+# scrot
+# imagemagick
+# epdfview?
+# alsa-lib
+# alsa-utils
+# slim
+# screenfetch
+# fonts (terminus-font, ttf-dejavu, ttf-droid, ttf-inconsolata)
+# xbindkeys
 
 home=/home/adion
 dotfiles=${home}/dotfiles
