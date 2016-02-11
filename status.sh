@@ -19,6 +19,19 @@ window() {
     echo "$icon    $name"
 }
 
+pcname() {
+    icon="\uf26c"
+    name=$(hostname)
+    echo "$icon  $name"
+}
+
+network() {
+    icon="\uf1eb"
+    ssid=$(iw dev wlp1s0 link | head -2 | tail -1 | cut -d' ' -f2)
+    ip=$(for i in $(ip r); do echo $i; done | grep -A 1 src | tail -1)
+    echo "$icon  $ssid"
+}
+
 # not working
 volume() {
     off="\uf026"
@@ -27,8 +40,9 @@ volume() {
 }
 
 backlight() {
-    brightness=$(cat /sys/class/backlight/intel_backlight/brightness)
-
+    brightness=$(cat /sys/class/backlight/radeon_b10/brightness)
+    # radeon has different brightness numbers.
+    # need to redo this.
     if [ $brightness -ge 970 ]; then
         level="100"
     elif [ $brightness -gt 800 ]; then
@@ -51,8 +65,7 @@ backlight() {
         level="10"
     fi
 
-    #echo "\uf185  ${level}%"
-    echo "\uf26c  ${level}%"
+    echo "\uf185  ${level}%"
 }
 
 battery() {
@@ -87,13 +100,6 @@ battery() {
     echo "${icon}%{F-}  ${perc}%"
 }
     
-network() {
-    icon="\uf1eb"
-    ssid=$(iw dev wlp3s0 link | head -2 | tail -1 | cut -d' ' -f2)
-    ip=$(for i in $(ip r); do echo $i; done | grep -A 1 src | tail -1)
-    echo "$icon  $ssid"
-}
-
 datetime() {
     icon_clk="\uf017"
     icon_cal="\uf073"
@@ -105,5 +111,5 @@ datetime() {
 }
 
 while true; do
-    echo -e "%{l}    $(workspaces)              $(window)%{r}$(network)        $(backlight)        $(battery)        $(datetime)"
+    echo -e "%{l}    $(workspaces)        $(window)%{c}$(pcname)%{r}$(network)        $(backlight)        $(battery)        $(datetime)"
 done

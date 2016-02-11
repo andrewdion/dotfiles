@@ -4,7 +4,7 @@ set encoding=utf8
 set wildmenu
 set showcmd
 set number
-set hlsearch
+"set hlsearch
 set incsearch
 set showmatch
 set expandtab

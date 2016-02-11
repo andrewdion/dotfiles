@@ -27,14 +27,15 @@ dotfiles=${home}/dotfiles
 
 cd $home
 
-ln -s ${dotfiles}/asoundrc .asoundrc
-ln -s ${dotfiles}/bash_profile .bash_profile
-ln -s ${dotfiles}/bashrc .bashrc
-ln -s ${dotfiles}/gitconfig .gitconfig
-ln -s ${dotfiles}/spectrwm.conf .spectrwm.conf
-ln -s ${dotfiles}/spectrwm_us.conf .spectrwm_us.conf
-ln -s ${dotfiles}/status.sh .status.sh
-ln -s ${dotfiles}/vimrc .vimrc
-ln -s ${dotfiles}/xbindkeysrc .xbindkeysrc
-ln -s ${dotfiles}/xinitrc .xinitrc
-ln -s ${dotfiles}/Xresources .Xresources
+ln -sf ${dotfiles}/asoundrc .asoundrc
+ln -sf ${dotfiles}/bash_profile .bash_profile
+ln -sf ${dotfiles}/bashrc .bashrc
+ln -sf ${dotfiles}/gitconfig .gitconfig
+ln -sf ${dotfiles}/spectrwm.conf .spectrwm.conf
+ln -sf ${dotfiles}/spectrwm_us.conf .spectrwm_us.conf
+ln -sf ${dotfiles}/status.sh .status.sh
+ln -sf ${dotfiles}/vimrc .vimrc
+ln -sf ${dotfiles}/xbindkeysrc .xbindkeysrc
+ln -sf ${dotfiles}/xinitrc .xinitrc
+ln -sf ${dotfiles}/Xresources .Xresources
+sudo ln -sf ${dotfiles}/slim.conf /etc/slim.conf
