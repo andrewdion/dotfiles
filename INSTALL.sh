@@ -5,7 +5,6 @@
 # xorg-server
 # xorg-xinit
 # xorg-xrdb
-# vim
 # spectrwm
 # urxvt 
 # git
@@ -19,6 +18,9 @@
 # screenfetch
 # fonts (terminus-font, ttf-dejavu, ttf-droid, ttf-inconsolata)
 # xbindkeys
+# lemonbar-xft-git (aur)
+# dmenu2 (aur)
+# i3lock-color (aur)
 
 home=/home/adion
 dotfiles=${home}/dotfiles

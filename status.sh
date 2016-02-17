@@ -20,16 +20,21 @@ window() {
 }
 
 pcname() {
-    icon="\uf26c"
+    icon="\uf109"
     name=$(hostname)
     echo "$icon  $name"
 }
 
 network() {
     icon="\uf1eb"
-    ssid=$(iw dev wlp1s0 link | head -2 | tail -1 | cut -d' ' -f2)
+    if [ "$(hostname)" == "arch1" ]; then
+        nic="wlp3s0"
+    elif [ "$(hostname)" == "arch2" ]; then
+        nic="wlp1s0"
+    fi
+    ssid=$(iw dev $nic link | head -2 | tail -1 | cut -d' ' -f2)
     ip=$(for i in $(ip r); do echo $i; done | grep -A 1 src | tail -1)
-    echo "$icon  $ssid"
+    echo "$icon  $ssid [$ip]"
 }
 
 # not working
@@ -40,9 +45,15 @@ volume() {
 }
 
 backlight() {
-    brightness=$(cat /sys/class/backlight/radeon_b10/brightness)
-    # radeon has different brightness numbers.
-    # need to redo this.
+    if [ "$(hostname)" == "arch1" ]; then
+        screen="intel_backlight"
+    elif [ "$(hostname)" == "arch2" ]; then
+        screen="radeon_b10"
+    fi
+    brightness=$(cat /sys/class/backlight/${screen}/brightness)
+    # intel max = 976
+    # radeon max = 255
+    # need to redo this with proper percentages
     if [ $brightness -ge 970 ]; then
         level="100"
     elif [ $brightness -gt 800 ]; then
@@ -112,4 +123,5 @@ datetime() {
 
 while true; do
     echo -e "%{l}    $(workspaces)        $(window)%{c}$(pcname)%{r}$(network)        $(backlight)        $(battery)        $(datetime)"
+    sleep 1
 done
