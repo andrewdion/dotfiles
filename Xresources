@@ -1,198 +1,59 @@
+! font settings
+Xft.dpi:       96
+Xft.antialias: true
+Xft.rgba:      rgb
+Xft.hinting:   true
+Xft.hintstyle: hintslight
+
+URxvt*.font: xft:Inconsolata:size=12
+
 ! scrollback buffer lines - 65535 is max on most machines (64 is default)
-URxvt*.saveLines: 12000
-
-! font color (default is black)
-URxvt*.foreground: Gray
-
-! background color (prior to tinting) (default is white)
-URxvt*.background: Black
-
-! true transparency (requires compositing)
-!URxvt*.depth: 32
-!URxvt*.background: [95]#000000
+URxvt*.saveLines: 2000
 
 ! native transparency
-URxvt*.transparent: true
-URxvt*.shading: 6
-
-URxvt*.font: xft:Inconsolata:size=12:antialias=true
+!URxvt*.transparent: true
+!URxvt*.shading: 10
 
 ! scrollbar - true (default) or false
 URxvt*.scrollBar: false
 
-! scrollbar position - left=false (default) or right=true
-!URxvt*.scrollBar_right: true
+! colors
+*.foreground: #cccccc
+*.background: #222222
+*.cursorColor: white 
 
-! scrollbar style - rxvt (default), plain, next, or xterm
-!URxvt*.scrollstyle: plain
+! NORMAL:
+*.color0: #cccccc
+*.color1: #cccccc
+*.color2: #cccccc
+*.color3: #cccccc
+*.color4: #cccccc
+*.color5: #cccccc
+*.color6: #cccccc
+*.color7: #cccccc
+*.color8: #cccccc
+*.color9: #cccccc
 
+! executable files (sea green)
+*.color10: #00cc44
+!*.color10: #66ff66
 
-! Base16 Monokai
+! script line numbers, if/else/while (gray)
+*.color11: #cccccc
 
-#define base00 #272822
-#define base01 #383830
-#define base02 #49483e
-#define base03 #75715e
-#define base04 #a59f85
-#define base05 #f8f8f2
-#define base06 #f5f4f1
-#define base07 #f9f8f5
-#define base08 #f92672
-#define base09 #fd971f
-#define base0A #f4bf75
-#define base0B #a6e22e
-#define base0C #a1efe4
-#define base0D #66d9ef
-#define base0E #ae81ff
-#define base0F #cc6633
+! directories (sky blue)
+*.color12: #0099ff
 
-*.foreground:   base05
-*.background:   base00
-*.cursorColor:  base05
+! script strings (orange)
+*.color13: #cc6600
 
-*.color0:       base00
-*.color1:       base08
-*.color2:       base0B
-*.color3:       base0A
-*.color4:       base0D
-*.color5:       base0E
-*.color6:       base0C
-*.color7:       base05
+! symlinks, script comments & functions (yellow)
+*.color14: #e6e600
 
-*.color8:       base03
-*.color9:       base09
-*.color10:      base01
-*.color11:      base02
-*.color12:      base04
-*.color13:      base06
-*.color14:      base0F
-*.color15:      base07
+! bash prompt
+*.color15: white
 
-
-
-! Base16 Atelier Forest
-
-!#define base00 #1b1918
-!#define base01 #2c2421
-!#define base02 #68615e
-!#define base03 #766e6b
-!#define base04 #9c9491
-!#define base05 #a8a19f
-!#define base06 #e6e2e0
-!#define base07 #f1efee
-!#define base08 #f22c40
-!#define base09 #df5320
-!#define base0A #d5911a
-!#define base0B #5ab738
-!#define base0C #00ad9c
-!#define base0D #407ee7
-!#define base0E #6666ea
-!#define base0F #c33ff3
-!
-!*.foreground:   base05
-!*.background:   base00
-!*.cursorColor:  base05
-!
-!*.color0:       base00
-!*.color1:       base08
-!*.color2:       base0B
-!*.color3:       base0A
-!*.color4:       base0D
-!*.color5:       base0E
-!*.color6:       base0C
-!*.color7:       base05
-!
-!*.color8:       base03
-!*.color9:       base09
-!*.color10:      base01
-!*.color11:      base02
-!*.color12:      base04
-!*.color13:      base06
-!*.color14:      base0F
-!*.color15:      base07
-
-
-
-! Base16 Atelier Seaside
-
-!#define base00 #131513
-!#define base01 #242924
-!#define base02 #5e6e5e
-!#define base03 #687d68
-!#define base04 #809980
-!#define base05 #8ca68c
-!#define base06 #cfe8cf
-!#define base07 #f0fff0
-!#define base08 #e6193c
-!#define base09 #87711d
-!#define base0A #c3c322
-!#define base0B #29a329
-!#define base0C #1999b3
-!#define base0D #3d62f5
-!#define base0E #ad2bee
-!#define base0F #e619c3
-!
-!*.foreground:   base05
-!*.background:   base00
-!*.cursorColor:  base05
-!
-!*.color0:       base00
-!*.color1:       base08
-!*.color2:       base0B
-!*.color3:       base0A
-!*.color4:       base0D
-!*.color5:       base0E
-!*.color6:       base0C
-!*.color7:       base05
-!
-!*.color8:       base03
-!*.color9:       base09
-!*.color10:      base01
-!*.color11:      base02
-!*.color12:      base04
-!*.color13:      base06
-!*.color14:      base0F
-!*.color15:      base07
-
-
-
-! Base16 3024
-
-!#define base00 #090300
-!#define base01 #3a3432
-!#define base02 #4a4543
-!#define base03 #5c5855
-!#define base04 #807d7c
-!#define base05 #a5a2a2
-!#define base06 #d6d5d4
-!#define base07 #f7f7f7
-!#define base08 #db2d20
-!#define base09 #e8bbd0
-!#define base0A #fded02
-!#define base0B #01a252
-!#define base0C #b5e4f4
-!#define base0D #01a0e4
-!#define base0E #a16a94
-!#define base0F #cdab53
-!
-!*.foreground:   base05
-!*.background:   base00
-!*.cursorColor:  base05
-!
-!*.color0:       base00
-!*.color1:       base08
-!*.color2:       base0B
-!*.color3:       base0A
-!*.color4:       base0D
-!*.color5:       base0E
-!*.color6:       base0C
-!*.color7:       base05
-!
-!*.color8:       base03
-!*.color9:       base09
-!*.color10:      base01
-!*.color11:      base02
-!*.color12:      base04
-!*.color13:      base06
-!*.color14:      base0F
-!*.color15:      base07
+! man page
+!URxvt.colorIT: #87af5f
+!URxvt.colorBD: #d7d7d7
+!URxvt.colorUL: #87a7d7 # underlined words
