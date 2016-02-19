@@ -11,15 +11,15 @@ URxvt*.font: xft:Inconsolata:size=12
 URxvt*.saveLines: 2000
 
 ! native transparency
-!URxvt*.transparent: true
-!URxvt*.shading: 10
+URxvt*.transparent: true
+URxvt*.shading: 10
 
 ! scrollbar - true (default) or false
 URxvt*.scrollBar: false
 
 ! colors
 *.foreground: #cccccc
-*.background: #222222
+*.background: black
 *.cursorColor: white 
 
 ! NORMAL:
