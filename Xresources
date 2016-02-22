@@ -11,47 +11,47 @@ URxvt*.font: xft:Inconsolata:size=12
 URxvt*.saveLines: 2000
 
 ! native transparency
-URxvt*.transparent: true
-URxvt*.shading: 10
+!URxvt*.transparent: true
+!URxvt*.shading: 10
 
 ! scrollbar - true (default) or false
 URxvt*.scrollBar: false
 
 ! colors
-*.foreground: #cccccc
-*.background: black
-*.cursorColor: white 
+URxvt*.foreground: #cccccc
+URxvt*.background: #242424
+URxvt*.cursorColor: white
 
 ! NORMAL:
-*.color0: #cccccc
-*.color1: #cccccc
-*.color2: #cccccc
-*.color3: #cccccc
-*.color4: #cccccc
-*.color5: #cccccc
-*.color6: #cccccc
-*.color7: #cccccc
-*.color8: #cccccc
-*.color9: #cccccc
+!URxvt*.color0: #cccccc
+!URxvt*.color1: #cccccc
+!URxvt*.color2: #cccccc
+!URxvt*.color3: #cccccc
+!URxvt*.color4: #cccccc
+!URxvt*.color5: #cccccc
+!URxvt*.color6: #cccccc
+!URxvt*.color7: #cccccc
+!URxvt*.color8: #cccccc
+!URxvt*.color9: #cccccc
 
 ! executable files (sea green)
-*.color10: #00cc44
-!*.color10: #66ff66
+URxvt*.color10: #00cc44
+!URxvt*.color10: #66ff66
 
 ! script line numbers, if/else/while (gray)
-*.color11: #cccccc
+URxvt*.color11: #cccccc
 
 ! directories (sky blue)
-*.color12: #0099ff
+URxvt*.color12: #0099ff
 
 ! script strings (orange)
-*.color13: #cc6600
+URxvt*.color13: #cc6600
 
 ! symlinks, script comments & functions (yellow)
-*.color14: #e6e600
+URxvt*.color14: #e6e600
 
 ! bash prompt
-*.color15: white
+URxvt*.color15: white
 
 ! man page
 !URxvt.colorIT: #87af5f
