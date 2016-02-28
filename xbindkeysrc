@@ -9,3 +9,6 @@
 
 "xbacklight -inc 10"
     Mod4+Right
+
+"/home/adion/bin/toggle_trackpad"
+    Mod4+Alt_R

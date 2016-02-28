@@ -8,16 +8,19 @@ alias la='ls -la'
 
 alias pq='pacman -Qs'
 alias ps='pacman -Ss'
+alias pU='sudo pacman -Syu'
 alias pS='sudo pacman -S'
 alias pR='sudo pacman -Rns'
 
 alias gs='git status'
 alias gb='git branch'
+alias gc='git checkout'
 alias gd='git diff'
 alias ga='git add'
-alias gc='git commit'
-alias gp='git push'
-alias gu='git pull'
+alias gr='git reset HEAD'
+alias gp='git pull'
+alias gC='git commit'
+alias gP='git push'
 
 export PS1='\[\e]2;\u@\H \w\a\e[37;1m\]\u@\H \w\n \[\e[0m\]$ '
 export LANG=en_US.UTF-8
