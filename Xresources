@@ -20,9 +20,9 @@ URxvt*.scrollBar: false
 ! colors
 *.foreground: #cccccc
 *.background: #222222
-*.cursorColor: white 
+*.cursorColor: #ffffff
 
-! NORMAL:
+! don't know what these are...
 *.color0: #cccccc
 *.color1: #cccccc
 *.color2: #cccccc
@@ -34,24 +34,35 @@ URxvt*.scrollBar: false
 *.color8: #cccccc
 *.color9: #cccccc
 
-! executable files (sea green)
+! inside scripts: ?
+! outside scripts: executable files
+! (sea green)
 *.color10: #00cc44
-!*.color10: #66ff66
 
-! script line numbers, if/else/while (gray)
+! outside scripts: ?
+! inside scripts: line numbers, if/else/while
+! (gray)
 *.color11: #cccccc
 
-! directories (sky blue)
+! outside scripts: directories
+! inside scripts: ?
+! (sky blue)
 *.color12: #0099ff
 
-! script strings (orange)
+! outside scripts: ? 
+! inside scripts: strings, comments
+! (orange)
 *.color13: #cc6600
 
-! symlinks, script comments & functions (yellow)
+! outside scripts: symlinks
+! inside scrpts: script comments & functions
+! (yellow)
 *.color14: #e6e600
 
-! bash prompt
-*.color15: white
+! outside scripts: bash prompt
+! inside scripts: ?
+! (white)
+*.color15: #ffffff
 
 ! man page
 !URxvt.colorIT: #87af5f

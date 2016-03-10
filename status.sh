@@ -47,10 +47,10 @@ datetime() {
     date="$(date "+%a %D")"
     loc_time="$(date "+%l:%M %p")"
 
-    echo "%{F#ffffff}$icon_cal%{F-}   $date      %{F#ffffff}$icon_clk%{F-} $loc_time   "
+    echo "%{F#ffffff}$icon_cal%{F-}   $date        %{F#ffffff}$icon_clk%{F-}   $loc_time   "
 }
 
 while true; do
-    echo -e "%{l}    $(workspaces)        $(window)%{c}$(pcname)%{r}$(network)        $(datetime)"
+    echo -e "%{l}      $(workspaces)          $(window)%{c}$(pcname)%{r}$(network)        $(datetime)"
     sleep 1
 done
