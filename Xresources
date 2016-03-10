@@ -22,17 +22,17 @@ URxvt*.scrollBar: false
 *.background: #222222
 *.cursorColor: #ffffff
 
-! don't know what these are...
-*.color0: #cccccc
-*.color1: #cccccc
-*.color2: #cccccc
-*.color3: #cccccc
-*.color4: #cccccc
-*.color5: #cccccc
-*.color6: #cccccc
-*.color7: #cccccc
-*.color8: #cccccc
-*.color9: #cccccc
+! dont know what these are...
+!*.color0: #cccccc
+!*.color1: #cccccc
+!*.color2: #cccccc
+!*.color3: #cccccc
+!*.color4: #cccccc
+!*.color5: #cccccc
+!*.color6: #cccccc
+!*.color7: #cccccc
+!*.color8: #cccccc
+!*.color9: #cccccc
 
 ! inside scripts: ?
 ! outside scripts: executable files
