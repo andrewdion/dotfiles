@@ -22,7 +22,9 @@ alias gp='git pull'
 alias gC='git commit'
 alias gP='git push'
 
-export PS1='\[\e]2;\u@\H \w\a\e[37;1m\]\u@\H \w\n \[\e[0m\]$ '
+source ~/dotfiles/git-prompt.sh
+
+export PS1='\[\e]2;\u@\H \w\a\e[37;1m\]\u@\H \w\e[0m\]$(__git_ps1)\n$ '
 export LANG=en_US.UTF-8
 export TERM=rxvt-unicode
 export VISUAL=vim
