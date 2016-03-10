@@ -4,7 +4,7 @@ icon=/home/adion/dotfiles/lock-icon.png
 tmpbg=/tmp/screenshot.png
 
 scrot $tmpbg
-convert $tmpbg -scale 10% -scale 1000% -fill white -colorize 25% $tmpbg
+convert $tmpbg -scale 10% -scale 1000% -fill black -colorize 80% $tmpbg
 #convert $tmpbg -scale 10% -scale 1000% $tmpbg
 convert $tmpbg $icon -gravity center -composite -matte $tmpbg
 i3lock -i $tmpbg \
