@@ -37,3 +37,4 @@ ln -sf ${dotfiles}/vimrc .vimrc
 ln -sf ${dotfiles}/xbindkeysrc .xbindkeysrc
 ln -sf ${dotfiles}/xinitrc .xinitrc
 ln -sf ${dotfiles}/Xresources .Xresources
+sudo ln -sf ${dotfiles}/slim.conf /etc/slim.conf
