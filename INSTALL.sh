@@ -18,6 +18,9 @@
 # screenfetch
 # fonts (terminus-font, ttf-dejavu, ttf-droid, ttf-inconsolata)
 # xbindkeys
+# apache
+# python
+# mod_wsgi
 # lemonbar-xft-git (aur)
 # dmenu2 (aur)
 # i3lock-color (aur)
@@ -37,3 +40,4 @@ ln -sf ${dotfiles}/vimrc .vimrc
 ln -sf ${dotfiles}/xbindkeysrc .xbindkeysrc
 ln -sf ${dotfiles}/xinitrc .xinitrc
 ln -sf ${dotfiles}/Xresources .Xresources
+sudo ln -sf ${dotfiles}/httpd.conf /etc/httpd/conf/httpd.conf
