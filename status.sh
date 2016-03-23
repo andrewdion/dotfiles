@@ -11,7 +11,7 @@ window() {
     icon=""
     if [ "$class" == "urxvt" ]; then
         icon="\uf120"
-    elif [ "$class" == "chromium" ]; then
+    elif [ "$class" == "google-chrome" ]; then
         icon="\uf268"
     fi
     name=$(xprop -id $id WM_NAME | grep -o "\".*\"" | tr -d '"')
