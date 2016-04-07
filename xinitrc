@@ -14,4 +14,4 @@ setxkbmap -layout dvorak
 xbindkeys &
 /home/adion/.fehbg &
 /home/adion/dotfiles/status.sh | lemonbar -p -d -f "FontAwesome:size=10" -f "DejaVu Sans:size=10" -g 1920x21 -F#aaaaaa -B#222222 &
-exec spectrwm
+exec openbox-session
