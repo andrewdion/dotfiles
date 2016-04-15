@@ -29,6 +29,7 @@ export LANG=en_US.UTF-8
 export TERM=rxvt-unicode
 export VISUAL=vim
 export EDITOR="$VISUAL"
+export BROWSER="google-chrome-stable"
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin"
 
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx
