@@ -1,7 +1,19 @@
 [user]
 	name = Andrew Dion
 	email = andrew.r.dion@gmail.com
+
 [push]
 	default = simple
+
 [color]
 	ui = true
+    diff = auto
+
+[alias]
+    st = status
+    br = branch
+    co = checkout
+    di = diff
+    rh = reset HEAD
+    ci = commit
+    log = log --color

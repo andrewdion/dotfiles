@@ -6,21 +6,11 @@ alias ls='ls --color=auto'
 alias l='ls -l'
 alias la='ls -la'
 
-alias pq='pacman -Qs'
-alias ps='pacman -Ss'
-alias pU='sudo pacman -Syu'
-alias pS='sudo pacman -S'
-alias pR='sudo pacman -Rns'
-
-alias gs='git status'
-alias gb='git branch'
-alias gc='git checkout'
-alias gd='git diff'
-alias ga='git add'
-alias gr='git reset HEAD'
-alias gp='git pull'
-alias gC='git commit'
-alias gP='git push'
+alias pacq='pacman -Qs'
+alias pacs='pacman -Ss'
+alias pacU='sudo pacman -Syu'
+alias pacS='sudo pacman -S'
+alias pacR='sudo pacman -Rns'
 
 source ~/dotfiles/git-prompt.sh
 
