@@ -12,6 +12,10 @@ alias pacU='sudo pacman -Syu'
 alias pacS='sudo pacman -S'
 alias pacR='sudo pacman -Rns'
 
+cd () {
+    builtin cd "$@" && ls -l
+}
+
 source ~/dotfiles/git-prompt.sh
 
 export PS1='\[\e]2;\u@\H \w\a\e[37;1m\]\u@\H \w\e[0m\]$(__git_ps1)\n$ '
