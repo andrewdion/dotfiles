@@ -1,15 +1,13 @@
 #!/bin/bash
 
 # PACKAGES TO INSTALL
-# xf86-video-ati
+# xf86-video-intel
 # xorg-server
 # xorg-xinit
 # xorg-xrdb
 # spectrwm
 # urxvt 
 # vim
-# git
-# chromium
 # wget
 # feh
 # scrot
@@ -17,20 +15,26 @@
 # alsa-lib
 # alsa-utils
 # screenfetch
-# fonts:
-#  terminus-font
-#  ttf-dejavu
-#  ttf-droid
-#  ttf-inconsolata
+# terminus-font
+# ttf-dejavu
+# ttf-droid
+# ttf-inconsolata
 # xbindkeys
 # apache
 # python
 # dmenu2 (aur)
+#  wget https://aur.archlinux.org/cgit/aur.git/snapshot/dmenu2.tar.gz
 # lemonbar-xft-git (aur)
+#  wget https://aur.archlinux.org/cgit/aur.git/snapshot/lemonbar-xft-git.tar.gz
+#  (pod2man requires adding /usr/bin/core_perl to PATH)
 # i3lock-color-git (aur)
+#  wget https://aur.archlinux.org/cgit/aur.git/snapshot/i3lock-color-git.tar.gz
 # google-chrome (aur)
+#  wget https://aur.archlinux.org/cgit/aur.git/snapshot/google-chrome.tar.gz
 # ttf-font-awesome (aur)
+#  wget https://aur.archlinux.org/cgit/aur.git/snapshot/ttf-font-awesome.tar.gz
 # sublime-text (aur)
+#  wget https://aur.archlinux.org/cgit/aur.git/snapshot/sublime-text.tar.gz
 
 home=/home/adion
 dotfiles=${home}/dotfiles
