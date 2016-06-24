@@ -1,42 +1,26 @@
 #!/bin/bash
 
-# PACKAGES TO INSTALL
-# xf86-video-intel
-# xorg-server
-# xorg-xinit
-# xorg-xrdb
-# spectrwm
-# urxvt 
-# vim
-# wget
-# feh
-# scrot
-# imagemagick
-# alsa-lib
-# alsa-utils
-# screenfetch
-# terminus-font
-# ttf-dejavu
-# ttf-droid
-# ttf-inconsolata
-# xbindkeys
-# apache
-# python
-# dmenu2 (aur)
-#  wget https://aur.archlinux.org/cgit/aur.git/snapshot/dmenu2.tar.gz
-# lemonbar-xft-git (aur)
-#  wget https://aur.archlinux.org/cgit/aur.git/snapshot/lemonbar-xft-git.tar.gz
-#  (pod2man requires adding /usr/bin/core_perl to PATH)
-# i3lock-color-git (aur)
-#  wget https://aur.archlinux.org/cgit/aur.git/snapshot/i3lock-color-git.tar.gz
-# google-chrome (aur)
-#  wget https://aur.archlinux.org/cgit/aur.git/snapshot/google-chrome.tar.gz
-# ttf-font-awesome (aur)
-#  wget https://aur.archlinux.org/cgit/aur.git/snapshot/ttf-font-awesome.tar.gz
-# sublime-text (aur)
-#  wget https://aur.archlinux.org/cgit/aur.git/snapshot/sublime-text.tar.gz
+sudo pacman -S xf86-video-intel xorg-server xorg-xinit xorg-xrdb spectrwm rxvt-unicode wget feh scrot imagemagick alsa-lib alsa-utils screenfetch terminus-font ttf-dejavu ttf-droid ttf-inconsolata xbindkeys apache python
 
 home=/home/adion
+aur=${home}/aur
+mkdir -p $aur
+cd aur
+
+wget https://aur.archlinux.org/cgit/aur.git/snapshot/dmenu2.tar.gz \
+    https://aur.archlinux.org/cgit/aur.git/snapshot/lemonbar-xft-git.tar.gz \
+    https://aur.archlinux.org/cgit/aur.git/snapshot/i3lock-color-git.tar.gz \
+    https://aur.archlinux.org/cgit/aur.git/snapshot/google-chrome.tar.gz \
+    https://aur.archlinux.org/cgit/aur.git/snapshot/ttf-font-awesome.tar.gz \
+    https://aur.archlinux.org/cgit/aur.git/snapshot/sublime-text.tar.gz
+
+for pkg in dmenu2 lemonbar-xft-git i3lock-color-git google-chrome ttf-font-awesome sublime-text; do
+    tar xzf $pkg
+    cd $pkg
+    makepkg -sri
+    cd ..
+done
+
 dotfiles=${home}/dotfiles
 
 cd $home

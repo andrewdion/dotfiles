@@ -1,9 +1,10 @@
 ! font settings
-Xft.dpi:       180
+Xft.dpi:       168
 Xft.antialias: true
 Xft.rgba:      rgb
 Xft.hinting:   true
 Xft.hintstyle: hintslight
+Xcursor.size:  20
 
 URxvt*.font: xft:Inconsolata:size=12
 
