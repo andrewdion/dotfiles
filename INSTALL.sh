@@ -1,11 +1,30 @@
 #!/bin/bash
 
-sudo pacman -S xf86-video-intel xorg-server xorg-xinit xorg-xrdb spectrwm rxvt-unicode wget feh scrot imagemagick alsa-lib alsa-utils screenfetch terminus-font ttf-dejavu ttf-droid ttf-inconsolata xbindkeys apache python
+sudo pacman -S  xf86-video-intel \
+                xf86-input-synaptics \
+                xorg-server xorg-xinit \
+                xorg-xrdb \
+                spectrwm \
+                rxvt-unicode \
+                wget \
+                feh \
+                scrot \
+                imagemagick \
+                alsa-lib \
+                alsa-utils \
+                screenfetch \
+                terminus-font \
+                ttf-dejavu \
+                ttf-droid \
+                ttf-inconsolata \
+                xbindkeys \
+                apache \
+                python
 
 home=/home/adion
 aur=${home}/aur
 mkdir -p $aur
-cd aur
+cd $aur
 
 wget https://aur.archlinux.org/cgit/aur.git/snapshot/dmenu2.tar.gz \
     https://aur.archlinux.org/cgit/aur.git/snapshot/lemonbar-xft-git.tar.gz \
@@ -15,7 +34,7 @@ wget https://aur.archlinux.org/cgit/aur.git/snapshot/dmenu2.tar.gz \
     https://aur.archlinux.org/cgit/aur.git/snapshot/sublime-text.tar.gz
 
 for pkg in dmenu2 lemonbar-xft-git i3lock-color-git google-chrome ttf-font-awesome sublime-text; do
-    tar xzf $pkg
+    tar xzf ${pkg}.tar.gz
     cd $pkg
     makepkg -sri
     cd ..
