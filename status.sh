@@ -6,6 +6,7 @@ workspaces() {
 }
 
 window() {
+#TODO: find class of google chrome
     id=$(xprop -root _NET_ACTIVE_WINDOW | grep -o "0x.*")
     class=$(xprop -id $id WM_CLASS | cut -d' ' -f3 | tr -d ',' | tr -d '"')
     icon=""
@@ -27,11 +28,7 @@ pcname() {
 
 network() {
     icon="\uf1eb"
-    if [ "$(hostname)" == "arch1" ]; then
-        nic="wlp3s0"
-    elif [ "$(hostname)" == "arch2" ]; then
-        nic="wlp1s0"
-    fi
+    nic="wlp1s0"
     ssid=$(iw dev $nic link | head -2 | tail -1 | cut -d' ' -f2)
     ip=$(for i in $(ip r); do echo $i; done | grep -A 1 src | tail -1)
     echo "$icon  $ssid [$ip]"
@@ -45,16 +42,11 @@ volume() {
 }
 
 backlight() {
-    if [ "$(hostname)" == "arch1" ]; then
-        screen="intel_backlight"
-    elif [ "$(hostname)" == "arch2" ]; then
-        screen="radeon_b10"
-    fi
+    screen="intel_backlight"
     brightness=$(cat /sys/class/backlight/${screen}/brightness)
-    # intel max = 976
-    # radeon max = 255
+    # intel max = 936
     # need to redo this with proper percentages
-    if [ $brightness -ge 970 ]; then
+    if [ $brightness -ge 900 ]; then
         level="100"
     elif [ $brightness -gt 800 ]; then
         level="90"
@@ -80,8 +72,8 @@ backlight() {
 }
 
 battery() {
-    status="$(cat /sys/class/power_supply/BAT1/status)"
-    perc=$(cat /sys/class/power_supply/BAT1/capacity)
+    status="$(cat /sys/class/power_supply/BAT0/status)"
+    perc=$(cat /sys/class/power_supply/BAT0/capacity)
 
     # set colors first
     icon=""
