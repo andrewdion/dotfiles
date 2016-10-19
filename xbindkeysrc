@@ -1,14 +1,41 @@
-"amixer set Master 10+"
-    Mod4+Up
+"dmenu_run -i -fn 'DejaVu Sans-10:bold' -l 1 -x 1080 -y 740 -w 400"
+    Super_L
 
-"amixer set Master 10-"
-    Mod4+Down
+"xvkbd -xsendevent -text '\A\[Left]'"
+    F1
 
-"xbacklight -dec 10"
-    Mod4+Left
+"xvkbd -xsendevent -text '\A\[Right]'"
+    F2
 
-"xbacklight -inc 10"
-    Mod4+Right
+"xvkbd -xsendevent -text '\Cr'"
+    F3
 
-"/home/adion/bin/toggle_trackpad"
-    Mod4+Alt_R
+"brightness --decrease"
+    F6
+
+"keyboard_led --decrease"
+    Alt + F6
+
+"brightness --increase"
+    F7
+
+"keyboard_led --increase"
+    Alt + F7
+
+"amixer -M set PCM toggle"
+    F8
+
+"amixer -M set PCM 10%-"
+    F9
+
+"amixer -M set PCM 10%+"
+    F10
+
+"xvkbd -xsendevent -text '\[Delete]'"
+    Alt + BackSpace
+
+"xvkbd -xsendevent -text '\[Home]'"
+    Alt + Left
+
+"xvkbd -xsendevent -text '\[End]'"
+    Alt + Right
