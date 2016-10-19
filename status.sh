@@ -1,20 +1,52 @@
 #!/bin/bash
 
+pad_with_gray() {
+    which_type=$1
+    num=$2
+    gray="%{F#242424}"
+    digits=${#num}
+    case $which_type in
+        vol)
+            case $digits in
+                1) vol="${gray}00%{F-}${num}";;
+                2) vol="${gray}0%{F-}${num}";;
+                3) vol=$num;;
+            esac
+            ;;
+        level)
+             case $digits in
+                1) level="${gray}00%{F-}${num}";;
+                2) level="${gray}0%{F-}${num}";;
+                3) level=$num;;
+            esac
+            ;;
+        perc)
+            case $digits in
+                1) perc="${gray}00%{F-}${num}";;
+                2) perc="${gray}0%{F-}${num}";;
+                3) perc=$num;;
+            esac
+            ;;
+    esac
+}
+
 workspaces() {
     current=$(xprop -root _NET_CURRENT_DESKTOP | cut -d' ' -f3)
     echo $(($current + 1))
 }
 
 window() {
-#TODO: find class of google chrome
     id=$(xprop -root _NET_ACTIVE_WINDOW | grep -o "0x.*")
     class=$(xprop -id $id WM_CLASS | cut -d' ' -f3 | tr -d ',' | tr -d '"')
     icon=""
-    if [ "$class" == "urxvt" ]; then
+    case $class in
+    urxvt)
         icon="\uf120"
-    elif [ "$class" == "chromium" ]; then
+        ;;
+    google-chrome)
         icon="\uf268"
-    fi
+        ;;
+    esac
     name=$(xprop -id $id WM_NAME | grep -o "\".*\"" | tr -d '"')
 
     echo "$icon    $name"
@@ -29,46 +61,50 @@ pcname() {
 network() {
     icon="\uf1eb"
     nic="wlp1s0"
-    ssid=$(iw dev $nic link | head -2 | tail -1 | cut -d' ' -f2)
-    ip=$(for i in $(ip r); do echo $i; done | grep -A 1 src | tail -1)
-    echo "$icon  $ssid [$ip]"
+    ssid=$(iw dev $nic link | head -2 | tail -1 | cut -d: -f2 | sed 's/^[ \t]*//')
+    echo "$icon  $ssid"
 }
 
-# not working
 volume() {
-    off="\uf026"
-    low="\uf027"
-    high="\uf028"
+    icon="\uf028"
+    muted=$(amixer -M get PCM | tail -1 | cut -d' ' -f9)
+    vol=$(amixer -M get PCM | tail -1 | grep -o "[0-9]*%" | tr -d '%')
+    pad_with_gray vol $vol
+    if [ $muted == "[off]" ]; then
+        icon="%{F#ff0000}${icon}%{F-}"
+    fi
+
+    echo "$icon ${vol}%"
 }
 
 backlight() {
     screen="intel_backlight"
     brightness=$(cat /sys/class/backlight/${screen}/brightness)
-    # intel max = 936
-    # need to redo this with proper percentages
-    if [ $brightness -ge 900 ]; then
+    # intel max = 937
+    if [ $brightness -eq 937 ]; then
         level="100"
-    elif [ $brightness -gt 800 ]; then
+    elif [ $brightness -gt 843 ]; then
         level="90"
-    elif [ $brightness -gt 700 ]; then
+    elif [ $brightness -gt 750 ]; then
         level="80"
-    elif [ $brightness -gt 600 ]; then
+    elif [ $brightness -gt 656 ]; then
         level="70"
-    elif [ $brightness -gt 500 ]; then
+    elif [ $brightness -gt 562 ]; then
         level="60"
-    elif [ $brightness -gt 420 ]; then
+    elif [ $brightness -gt 468 ]; then
         level="50"
-    elif [ $brightness -gt 340 ]; then
+    elif [ $brightness -gt 374 ]; then
         level="40"
-    elif [ $brightness -gt 260 ]; then
+    elif [ $brightness -gt 280 ]; then
         level="30"
-    elif [ $brightness -gt 120 ]; then
+    elif [ $brightness -gt 186 ]; then
         level="20"
-    elif [ $brightness -lt 120 ]; then
+    elif [ $brightness -lt 94 ]; then
         level="10"
     fi
+    pad_with_gray level $level
 
-    echo "\uf185  ${level}%"
+    echo "\uf185 ${level}%"
 }
 
 battery() {
@@ -100,20 +136,19 @@ battery() {
         icon="${icon}\uf240" # full
     fi
 
-    echo "${icon}%{F-}  ${perc}%"
+    pad_with_gray perc $perc
+
+    echo "${icon}%{F-} ${perc}%"
 }
     
 datetime() {
     icon_clk="\uf017"
-    icon_cal="\uf073"
-
-    date="$(date "+%a %D")"
     loc_time="$(date "+%l:%M %p")"
 
-    echo "$icon_cal   $date      $icon_clk $loc_time   "
+    echo "$icon_clk $loc_time   "
 }
 
 while true; do
-    echo -e "%{l}    $(workspaces)        $(window)%{c}$(pcname)%{r}$(network)        $(backlight)        $(battery)        $(datetime)"
+    echo -e "%{l}    $(workspaces)        $(window)%{c}$(pcname)%{r}$(network)        $(backlight)        $(volume)        $(battery)        $(datetime)"
     sleep 1
 done
