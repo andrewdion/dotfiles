@@ -55,3 +55,4 @@ ln -sf ${dotfiles}/vimrc .vimrc
 ln -sf ${dotfiles}/xbindkeysrc .xbindkeysrc
 ln -sf ${dotfiles}/xinitrc .xinitrc
 ln -sf ${dotfiles}/Xresources .Xresources
+ln -sf ${dotfiles}/70-synaptics.conf /etc/X11/xorg.conf.d/70-synaptics.conf
