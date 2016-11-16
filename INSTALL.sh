@@ -2,8 +2,11 @@
 
 sudo pacman -S  xf86-video-intel \
                 xf86-input-synaptics \
-                xorg-server xorg-xinit \
+                xorg-server \
+                xorg-xinit \
                 xorg-xrdb \
+                xvkbd \
+                libxkbcommon-x11 \
                 spectrwm \
                 rxvt-unicode \
                 wget \
@@ -26,22 +29,23 @@ aur=${home}/aur
 mkdir -p $aur
 cd $aur
 
-wget https://aur.archlinux.org/cgit/aur.git/snapshot/dmenu2.tar.gz \
-    https://aur.archlinux.org/cgit/aur.git/snapshot/lemonbar-xft-git.tar.gz \
-    https://aur.archlinux.org/cgit/aur.git/snapshot/i3lock-color-git.tar.gz \
-    https://aur.archlinux.org/cgit/aur.git/snapshot/google-chrome.tar.gz \
-    https://aur.archlinux.org/cgit/aur.git/snapshot/ttf-font-awesome.tar.gz \
-    https://aur.archlinux.org/cgit/aur.git/snapshot/sublime-text.tar.gz
+aur_www="https://aur.archlinux.org/cgit/aur.git/snapshot/"
 
-for pkg in dmenu2 lemonbar-xft-git i3lock-color-git google-chrome ttf-font-awesome sublime-text; do
-    tar xzf ${pkg}.tar.gz
+for pkg in linux-samus4 \
+           dmenu2 \
+           lemonbar-xft-git \
+           i3lock-color-git \
+           google-chrome \
+           ttf-font-awesome \
+           sublime-text; do
+    wget ${aur_www}/${pkg}.tar.gz
+    tar xf ${pkg}.tar.gz
     cd $pkg
     makepkg -sri
     cd ..
 done
 
 dotfiles=${home}/dotfiles
-
 cd $home
 
 ln -sf ${dotfiles}/asoundrc .asoundrc
@@ -55,4 +59,6 @@ ln -sf ${dotfiles}/vimrc .vimrc
 ln -sf ${dotfiles}/xbindkeysrc .xbindkeysrc
 ln -sf ${dotfiles}/xinitrc .xinitrc
 ln -sf ${dotfiles}/Xresources .Xresources
-ln -sf ${dotfiles}/70-synaptics.conf /etc/X11/xorg.conf.d/70-synaptics.conf
+sudo ln -sf ${dotfiles}/logind.conf /etc/systemd/logind.conf
+sudo ln -sf ${dotfiles}/grub /etc/default/grub
+#sudo ln -sf ${dotfiles}/70-synaptics.conf /etc/X11/xorg.conf.d/70-synaptics.conf
