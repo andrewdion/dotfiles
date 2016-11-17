@@ -21,8 +21,8 @@ sudo pacman -S  xf86-video-intel \
                 ttf-droid \
                 ttf-inconsolata \
                 xbindkeys \
-                apache \
-                python
+                python \
+                unzip
 
 home=/home/adion
 aur=${home}/aur
