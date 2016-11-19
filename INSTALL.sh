@@ -8,6 +8,7 @@ sudo pacman -S  xf86-video-intel \
                 xvkbd \
                 libxkbcommon-x11 \
                 spectrwm \
+                openbox \
                 rxvt-unicode \
                 wget \
                 feh \
@@ -25,6 +26,11 @@ sudo pacman -S  xf86-video-intel \
                 unzip
 
 home=/home/adion
+
+# for openbox config
+openbox=${home}/.config/openbox
+mkdir -p $openbox
+
 aur=${home}/aur
 mkdir -p $aur
 cd $aur
@@ -55,6 +61,7 @@ ln -sf ${dotfiles}/fehbg .fehbg
 ln -sf ${dotfiles}/gitconfig .gitconfig
 ln -sf ${dotfiles}/spectrwm.conf .spectrwm.conf
 ln -sf ${dotfiles}/spectrwm_us.conf .spectrwm_us.conf
+ln -sf ${dotfiles}/rc.xml ${openbox}/rc.xml
 ln -sf ${dotfiles}/vimrc .vimrc
 ln -sf ${dotfiles}/xbindkeysrc .xbindkeysrc
 ln -sf ${dotfiles}/xinitrc .xinitrc
