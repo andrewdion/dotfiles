@@ -5,6 +5,7 @@ sudo pacman -S  xf86-video-intel \
                 xorg-server \
                 xorg-xinit \
                 xorg-xrdb \
+                xorg-xev \
                 xvkbd \
                 libxkbcommon-x11 \
                 spectrwm \

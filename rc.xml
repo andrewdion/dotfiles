@@ -192,42 +192,31 @@
 <keyboard>
 
   <!-- Keybindings for desktop switching -->
-  <keybind key="W-Left">
-    <action name="GoToDesktop"><to>left</to><wrap>no</wrap></action>
-  </keybind>
-  <keybind key="W-Right">
-    <action name="GoToDesktop"><to>right</to><wrap>no</wrap></action>
-  </keybind>
-  <keybind key="W-S-Left">
-    <action name="SendToDesktop"><to>left</to><wrap>no</wrap></action>
-  </keybind>
-  <keybind key="W-S-Right">
-    <action name="SendToDesktop"><to>right</to><wrap>no</wrap></action>
-  </keybind>
-  <keybind key="W-1">
+  <keybind key="A-1">
     <action name="GoToDesktop"><to>1</to></action>
   </keybind>
-  <keybind key="W-2">
+  <keybind key="A-2">
     <action name="GoToDesktop"><to>2</to></action>
   </keybind>
-  <keybind key="W-3">
+  <keybind key="A-3">
     <action name="GoToDesktop"><to>3</to></action>
   </keybind>
-  <keybind key="W-4">
+  <keybind key="A-4">
     <action name="GoToDesktop"><to>4</to></action>
   </keybind>
 
   <!-- Keybindings for windows -->
-  <keybind key="W-c">
+  <keybind key="A-c">
     <action name="Close"/>
   </keybind>
 
-  <keybind key="W-S-q">
+  <!-- quit openbox -->
+  <keybind key="A-S-q">
     <action name="Exit"/>
   </keybind>
 
   <!-- Keybindings for window switching -->
-  <keybind key="W-j">
+  <keybind key="A-j">
     <action name="NextWindow">
       <dialog>icons</dialog>
       <raise>yes</raise>
@@ -237,7 +226,7 @@
     </action>
   </keybind>
 
-  <keybind key="W-k">
+  <keybind key="A-k">
     <action name="PreviousWindow">
       <dialog>icons</dialog>
       <raise>yes</raise>
@@ -260,31 +249,31 @@
   </keybind>
 -->
 
-  <keybind key="W-m">
+  <keybind key="A-m">
     <action name="ToggleMaximize"/>
   </keybind>
 
   <!-- Keybindings for running applications -->
 
-  <keybind key="W-t">
+  <keybind key="A-t">
     <action name="Execute">
       <command>urxvt</command>
     </action>
   </keybind>
 
-  <keybind key="W-Escape">
+  <keybind key="XF86PowerOff">
     <action name="Execute">
       <command>sh /home/adion/dotfiles/screenlock.sh</command>
     </action>
   </keybind>
 
-  <keybind key="W-space">
+  <keybind key="Super_L">
     <action name="Execute">
-      <command>dmenu_run -i -fn "DejaVu Sans-12:bold" -l 6 -x 860 -y 440 -w 160</command>
+      <command>dmenu_run -i -fn "DejaVu Sans-10:bold" -l 1 -x 1080 -y 740 -w 400</command>
     </action>
   </keybind>
 
-  <keybind key="W-q">
+  <keybind key="A-q">
     <action name="Reconfigure"/>
   </keybind>
     
@@ -304,7 +293,7 @@
        switching due to hitting the edge of the screen -->
 
   <context name="Frame">
-    <mousebind button="W-Left" action="Drag">
+    <mousebind button="A-Left" action="Drag">
       <action name="Focus"/>
       <action name="Raise"/>
       <action name="Unshade"/>
