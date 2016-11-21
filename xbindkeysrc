@@ -1,6 +1,3 @@
-"dmenu_run -i -fn 'DejaVu Sans-10:bold' -l 1 -x 1080 -y 740 -w 400"
-    Super_L
-
 "xvkbd -xsendevent -text '\A\[Left]'"
     F1
 
