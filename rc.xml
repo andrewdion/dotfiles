@@ -362,8 +362,8 @@
 
 <application name="urxvt">
   <size>
-    <width>800</width>
-    <height>48%</height>
+    <width>1400</width>
+    <height>800</height>
   </size>
 </application>
 
