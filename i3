@@ -101,9 +101,9 @@ bindsym Mod1+Shift+4 move container to workspace 4
 #bindsym Mod1+Shift+0 move container to workspace 10
 
 # reload the configuration file
-bindsym Mod1+q reload
+#bindsym Mod1+q reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-#bindsym Mod1+q restart
+bindsym Mod1+q restart
 # exit i3 (logs you out of your X session)
 #bindsym Mod1+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym Mod1+Shift+q exec i3-msg exit
@@ -156,3 +156,10 @@ hide_edge_borders smart
 # enable urxvt borders
 # doesn't seem to work
 #for_window [class="urxvt"] border pixel 1
+
+# i3-gaps stuff
+for_window [class="^.*"] border pixel 0
+smart_gaps on
+smart_borders on
+gaps inner 10
+gaps outer 0
