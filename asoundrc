@@ -1,9 +1,9 @@
 pcm.!default {
     type hw
-    card E1
+    card DAC
 }
 
 ctl.!default {
     type hw
-    card E1
+    card DAC
 }

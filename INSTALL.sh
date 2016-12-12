@@ -14,6 +14,7 @@ sudo pacman -S  xf86-video-intel \
                 feh \
                 scrot \
                 imagemagick \
+                sshfs \
                 alsa-lib \
                 alsa-utils \
                 screenfetch \
@@ -62,6 +63,8 @@ ln -sf ${dotfiles}/Xresources .Xresources
 sudo ln -sf ${dotfiles}/logind.conf /etc/systemd/logind.conf
 sudo ln -sf ${dotfiles}/grub /etc/default/grub
 #sudo ln -sf ${dotfiles}/70-synaptics.conf /etc/X11/xorg.conf.d/70-synaptics.conf
+sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
+sudo ln -sf ${dotfiles}/override.conf /etc/systemd/getty@tty1.service.d/override.conf
 
 # i3
 i3=${home}/.config/i3
