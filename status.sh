@@ -62,7 +62,8 @@ network() {
     icon="\uf1eb"
     nic="wlp1s0"
     ssid=$(iw dev $nic link | head -2 | tail -1 | cut -d: -f2 | sed 's/^[ \t]*//')
-    echo "$icon  $ssid"
+    ip=$(ip addr show wlp1s0 | head -3 | tail -1 | cut -d' ' -f6 | cut -d/ -f1)
+    echo "$icon  $ssid  %{F#666666}$ip%{F-}"
 }
 
 volume() {
