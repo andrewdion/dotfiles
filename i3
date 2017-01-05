@@ -155,13 +155,50 @@ hide_edge_borders smart
 # disable mouse focus
 focus_follows_mouse no
 
-# colors
-# class             border  background  text    indicator   child_border
-client.focused      #E74C3C #2E86C1     #28B463 #F4D03F     #ffffff
+##########
+# COLORS #
+##########
+
+# fields:
+#   border (just two thin lines around titlebar)
+#   background
+#   text
+#   indicator (for indicating where a new window will be opened)
+#   child_border (color around child window)
+
+set $dkgray   222222
+set $ltgray   cccccc
+set $black      000000
+set $white      ffffff
+set $red        ff0000
+set $blue       3498db
+
+# A client which currently has the focus.
+client.focused #$black #$black #$black #$blue #$ltgray
+
+# A client which is the focused one of its container, but it does not have \
+# the focus at the moment.
+client.focused_inactive #$black #$black #$black #$blue #$dkgray
+
+# A client which is not the focused one of its container.
+client.unfocused #$black #$black #$black #$blue #$dkgray
+
+# A client which has its urgency hint activated.
+#client.urgent #$black #$black #$black #$blue #$white
+
+# Background and text color are used to draw placeholder window contents \
+# (when restoring layouts). Border and indicator are ignored.
+#client.placeholder #$black #$black #$black #$blue #$white
+
+# Background color which will be used to paint the background of the client \
+# window on top of which the client will be rendered. Only clients which do \
+# not cover the whole area of this window expose the color. note that this \
+# color class only takes a single color.
+#client.background #$black
 
 # i3-gaps stuff
-#for_window [class="^.*"] border pixel 1
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 2
+for_window [class=".*-chrome"] border pixel 0
 smart_gaps on
 smart_borders on
 gaps inner 10
