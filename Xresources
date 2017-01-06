@@ -12,14 +12,16 @@ URxvt*.saveLines: 2000
 
 ! native transparency
 !URxvt*.transparent: true
-!URxvt*.shading: 10
+!URxvt*.shading: 6
 
 ! scrollbar - true (default) or false
 URxvt*.scrollBar: false
 
 ! colors
 *.foreground: #cccccc
-*.background: #222222
+!*.background: #222222
+*.background: #111111
+!*.background: #000000
 *.cursorColor: #ffffff
 
 ! dont know what these are...

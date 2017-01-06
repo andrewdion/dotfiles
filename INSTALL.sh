@@ -4,6 +4,7 @@ sudo pacman -S  xf86-video-ati \
                 xorg-server \
                 xorg-xinit \
                 xorg-xrdb \
+                xorg-xrandr \
                 rxvt-unicode \
                 wget \
                 feh \

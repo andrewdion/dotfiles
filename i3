@@ -146,8 +146,8 @@ bindsym $mod+Return mode "resize"
 
 # disable title bar
 #new_window none
-new_window pixel 1
-new_float none
+#new_window pixel 1
+#new_float none
 
 # disable edge borders
 hide_edge_borders smart
@@ -166,8 +166,9 @@ focus_follows_mouse no
 #   indicator (for indicating where a new window will be opened)
 #   child_border (color around child window)
 
-set $dkgray   222222
-set $ltgray   cccccc
+#set $dkgray     222222
+set $dkgray     111111
+set $ltgray     cccccc
 set $black      000000
 set $white      ffffff
 set $red        ff0000
@@ -197,9 +198,12 @@ client.unfocused #$black #$black #$black #$blue #$dkgray
 #client.background #$black
 
 # i3-gaps stuff
-for_window [class="^.*"] border pixel 2
-for_window [class=".*-chrome"] border pixel 0
+for_window [class="^.*"] border pixel 0
+for_window [class="URxvt"] border pixel 2
 smart_gaps on
 smart_borders on
-gaps inner 10
+gaps inner 20
 gaps outer 0
+
+# monitors
+exec xrandr --output DVI-0 --auto --output DVI-1 --auto

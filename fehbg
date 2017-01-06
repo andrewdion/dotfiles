@@ -1,2 +1,2 @@
 #!/bin/sh
-feh  --bg-scale '/home/adion/dotfiles/wall_chromeos.jpg' 
+feh --no-xinerama --bg-scale '/home/adion/dotfiles/wall_dual_earth.png' 
