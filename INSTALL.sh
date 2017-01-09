@@ -20,7 +20,9 @@ sudo pacman -S  xf86-video-ati \
                 ttf-droid \
                 ttf-inconsolata \
                 python \
-                unzip
+                unzip \
+                bluez \
+                bluez-utils
 
 home=/home/adion
 
@@ -52,6 +54,7 @@ ln -sf ${dotfiles}/gitconfig .gitconfig
 ln -sf ${dotfiles}/vimrc .vimrc
 ln -sf ${dotfiles}/xinitrc .xinitrc
 ln -sf ${dotfiles}/Xresources .Xresources
+ln -sf ${dotfiles}/bluetooth /etc/bluetooth/main.conf
 
 # i3
 i3=${home}/.config/i3
