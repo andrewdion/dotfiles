@@ -1,0 +1,8 @@
+"xvkbd -xsendevent -text '\[Delete]'"
+    Super_L + BackSpace
+
+"xvkbd -xsendevent -text '\[Home]'"
+    Super_L + Left
+
+"xvkbd -xsendevent -text '\[End]'"
+    Super_L + Right

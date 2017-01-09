@@ -5,6 +5,7 @@ sudo pacman -S  xf86-video-ati \
                 xorg-xinit \
                 xorg-xrdb \
                 xorg-xrandr \
+                xorg-xev \
                 rxvt-unicode \
                 wget \
                 feh \
