@@ -53,6 +53,7 @@ ln -sf ${dotfiles}/bashrc .bashrc
 ln -sf ${dotfiles}/fehbg .fehbg
 ln -sf ${dotfiles}/gitconfig .gitconfig
 ln -sf ${dotfiles}/vimrc .vimrc
+ln -sf ${dotfiles}/xbindkeysrc .xbindkeysrc
 ln -sf ${dotfiles}/xinitrc .xinitrc
 ln -sf ${dotfiles}/Xresources .Xresources
 ln -sf ${dotfiles}/bluetooth /etc/bluetooth/main.conf
