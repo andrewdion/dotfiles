@@ -8,4 +8,4 @@
 #img=$(ls /home/adion/dotfiles/wall_dual_*.png | sort -R | head -1)
 img=/home/adion/dotfiles/wall_dual_earth.png
 
-i3lock -u -i $img
+i3lock -i $img

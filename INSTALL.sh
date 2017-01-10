@@ -5,7 +5,7 @@ sudo pacman -S  xf86-video-ati \
                 xorg-xinit \
                 xorg-xrdb \
                 xorg-xrandr \
-                xorg-xev \
+                xorg-xbindkeys \
                 rxvt-unicode \
                 wget \
                 feh \
@@ -56,7 +56,10 @@ ln -sf ${dotfiles}/vimrc .vimrc
 ln -sf ${dotfiles}/xbindkeysrc .xbindkeysrc
 ln -sf ${dotfiles}/xinitrc .xinitrc
 ln -sf ${dotfiles}/Xresources .Xresources
-ln -sf ${dotfiles}/bluetooth /etc/bluetooth/main.conf
+sudo ln -sf ${dotfiles}/bluetooth.conf /etc/bluetooth/main.conf
+sudo ln -sf ${dotfiles}/udev-bluetooth-poweron /etc/udev/rules.d/10-bluetooth.rules
+sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
+sudo ln -sf ${dotfiles}/autologin.conf /etc/systemd/system/getty@tty1.service.d/override.conf
 
 # i3
 i3=${home}/.config/i3

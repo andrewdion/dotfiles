@@ -27,6 +27,7 @@ bindsym $mod+space exec dmenu_run -i -fn  "DejaVu Sans-10:bold" -l 1 -x 800 -y 4
 
 # lock screen
 bindsym XF86Sleep exec /home/adion/dotfiles/screenlock.sh
+bindsym $mod+Escape exec /home/adion/dotfiles/screenlock.sh
 
 # change focus
 bindsym $mod+$left focus left

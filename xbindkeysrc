@@ -1,8 +1,8 @@
 "xvkbd -xsendevent -text '\[Delete]'"
-    Super_L + BackSpace
+    Mod4 + BackSpace
 
 "xvkbd -xsendevent -text '\[Home]'"
-    Super_L + Left
+    Control + Left
 
 "xvkbd -xsendevent -text '\[End]'"
-    Super_L + Right
+    Control + Right

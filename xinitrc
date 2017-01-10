@@ -11,6 +11,7 @@ setxkbmap -layout dvorak
 
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
+xbindkeys &
 /home/adion/.fehbg &
 exec i3
 #exec openbox-session
