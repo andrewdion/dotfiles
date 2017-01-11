@@ -57,9 +57,7 @@ ln -sf ${dotfiles}/xbindkeysrc .xbindkeysrc
 ln -sf ${dotfiles}/xinitrc .xinitrc
 ln -sf ${dotfiles}/Xresources .Xresources
 sudo ln -sf ${dotfiles}/bluetooth.conf /etc/bluetooth/main.conf
-sudo ln -sf ${dotfiles}/udev-bluetooth-poweron /etc/udev/rules.d/10-bluetooth.rules
-sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
-sudo ln -sf ${dotfiles}/autologin.conf /etc/systemd/system/getty@tty1.service.d/override.conf
+sudo ln -sf ${dotfiles}/autologin.service /etc/systemd/system/getty.target.wants/getty@tty1.service
 
 # i3
 i3=${home}/.config/i3

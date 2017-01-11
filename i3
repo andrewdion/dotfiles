@@ -208,3 +208,6 @@ gaps outer 0
 
 # monitors
 exec xrandr --output DVI-0 --auto --output DVI-1 --auto
+
+# start i3lock on startup
+exec --no-startup-id /home/adion/dotfiles/screenlock.sh
