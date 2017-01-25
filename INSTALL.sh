@@ -6,6 +6,7 @@ sudo pacman -S xf86-video-ati \
                 xorg-xrdb \
                 xorg-xrandr \
                 xbindkeys \
+                xvkbd \
                 rxvt-unicode \
                 wget \
                 feh \
@@ -57,18 +58,23 @@ ln -sf ${dotfiles}/vimrc .vimrc
 ln -sf ${dotfiles}/xbindkeysrc .xbindkeysrc
 ln -sf ${dotfiles}/xinitrc .xinitrc
 ln -sf ${dotfiles}/Xresources .Xresources
-sudo ln -sf ${dotfiles}/bluetooth.conf /etc/bluetooth/main.conf
+
+# don't need this if using udev rule and systemd service
+#sudo ln -sf ${dotfiles}/bluetooth.conf /etc/bluetooth/main.conf
+
 sudo systemctl start bluetooth
 sudo systemctl enable bluetooth
+
+# auto power controller on
+sudo ln -sf ${dotfiles}/bluetooth-udev.rules /etc/udev/rules.d/10-local.rules
+# systemd doesn't seem to like linked service files, so copy to custom service dir
+sudo cp ${dotfiles}/bluetooth-auto-power@.service /etc/systemd/system/
+sudo systemctl enable ${dotfiles}/bluetooth-auto-power@
+
+# doesn't currently work
 #sudo ln -sf ${dotfiles}/autologin.service /etc/systemd/system/getty.target.wants/getty@tty1.service
 
 # i3
 i3=${home}/.config/i3
 mkdir -p $i3
 ln -sf ${dotfiles}/i3 ${i3}/config
-
-# openbox
-#sudo pacman -S openbox
-#openbox=${home}/.config/openbox
-#mkdir -p $openbox
-#ln -sf ${dotfiles}/rc.xml ${openbox}/rc.xml

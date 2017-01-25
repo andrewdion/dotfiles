@@ -1,6 +1,6 @@
 [user]
-    name = Andrew Dion
-    email = andrew_dion@hms.harvard.edu
+	name = Andrew Dion
+	email = andrew_dion@hms.harvard.edu
 
 [push]
     default = simple
