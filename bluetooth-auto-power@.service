@@ -1,0 +1,10 @@
+[Unit]
+Description=Bluetooth auto power on
+After=bluetooth.service sys-subsystem-bluetooth-devices-%i.device suspend.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/hciconfig %i up
+
+[Install]
+WantedBy=suspend.target
