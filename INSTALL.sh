@@ -1,18 +1,18 @@
 #!/bin/bash
 
-sudo pacman -S  xf86-video-ati \
+sudo pacman -S xf86-video-ati \
                 xorg-server \
                 xorg-xinit \
                 xorg-xrdb \
                 xorg-xrandr \
-                xorg-xbindkeys \
+                xbindkeys \
                 rxvt-unicode \
                 wget \
                 feh \
+                i3lock \
                 scrot \
                 imagemagick \
                 firefox \
-                i3lock \
                 alsa-lib \
                 alsa-utils \
                 screenfetch \
@@ -22,6 +22,7 @@ sudo pacman -S  xf86-video-ati \
                 ttf-inconsolata \
                 python \
                 unzip \
+                openssh \
                 bluez \
                 bluez-utils
 
@@ -57,7 +58,9 @@ ln -sf ${dotfiles}/xbindkeysrc .xbindkeysrc
 ln -sf ${dotfiles}/xinitrc .xinitrc
 ln -sf ${dotfiles}/Xresources .Xresources
 sudo ln -sf ${dotfiles}/bluetooth.conf /etc/bluetooth/main.conf
-sudo ln -sf ${dotfiles}/autologin.service /etc/systemd/system/getty.target.wants/getty@tty1.service
+sudo systemctl start bluetooth
+sudo systemctl enable bluetooth
+#sudo ln -sf ${dotfiles}/autologin.service /etc/systemd/system/getty.target.wants/getty@tty1.service
 
 # i3
 i3=${home}/.config/i3
