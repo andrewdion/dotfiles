@@ -24,6 +24,6 @@ export TERM=rxvt-unicode
 export VISUAL=vim
 export EDITOR="$VISUAL"
 export BROWSER="google-chrome-stable"
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/home/adion/bin:"
 
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx

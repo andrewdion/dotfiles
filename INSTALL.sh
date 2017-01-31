@@ -8,6 +8,7 @@ sudo pacman -S xf86-video-ati \
                 xbindkeys \
                 xvkbd \
                 rxvt-unicode \
+                tmux \
                 wget \
                 feh \
                 i3lock \
@@ -59,20 +60,14 @@ ln -sf ${dotfiles}/xbindkeysrc .xbindkeysrc
 ln -sf ${dotfiles}/xinitrc .xinitrc
 ln -sf ${dotfiles}/Xresources .Xresources
 
-# don't need this if using udev rule and systemd service
-#sudo ln -sf ${dotfiles}/bluetooth.conf /etc/bluetooth/main.conf
-
 sudo systemctl start bluetooth
 sudo systemctl enable bluetooth
 
-# auto power controller on
-sudo ln -sf ${dotfiles}/bluetooth-udev.rules /etc/udev/rules.d/10-local.rules
-# systemd doesn't seem to like linked service files, so copy to custom service dir
-sudo cp ${dotfiles}/bluetooth-auto-power@.service /etc/systemd/system/
-sudo systemctl enable ${dotfiles}/bluetooth-auto-power@
+# auto login
+sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
+sudo ln -sf ${doftiles}/autologin /etc/systemd/system/getty@tty1.service.d/override.conf
 
-# doesn't currently work
-#sudo ln -sf ${dotfiles}/autologin.service /etc/systemd/system/getty.target.wants/getty@tty1.service
+sudo ln -sf ${dotfiles}/mouse-sensitivity /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
 
 # i3
 i3=${home}/.config/i3

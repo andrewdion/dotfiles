@@ -1,0 +1,8 @@
+Section "InputClass"
+	Identifier "Dell wireless mouse"
+	MatchIsPointer "yes"
+# set to 1 1 0 to disable acceleration
+	Option "AccelerationNumerator" "0.4"
+	Option "AccelerationDenominator" "0"
+	Option "AccelerationThreshold" "0"
+EndSection
