@@ -65,7 +65,8 @@ sudo systemctl enable bluetooth
 
 # auto login
 sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
-sudo ln -sf ${doftiles}/autologin /etc/systemd/system/getty@tty1.service.d/override.conf
+# for some reason this doesn't like symlinks
+sudo cp ${doftiles}/autologin /etc/systemd/system/getty@tty1.service.d/override.conf
 
 sudo ln -sf ${dotfiles}/mouse-sensitivity /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
 
