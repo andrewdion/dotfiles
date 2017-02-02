@@ -1,5 +1,5 @@
 "xvkbd -xsendevent -text '\[Delete]'"
-    Mod4 + BackSpace
+    Control + BackSpace
 
 "xvkbd -xsendevent -text '\[Home]'"
     Control + Left
