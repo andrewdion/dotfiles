@@ -62,9 +62,10 @@ ln -sf ${dotfiles}/xinitrc .xinitrc
 ln -sf ${dotfiles}/Xresources .Xresources
 sudo ln -sf ${dotfiles}/logind.conf /etc/systemd/logind.conf
 sudo ln -sf ${dotfiles}/grub /etc/default/grub
-#sudo ln -sf ${dotfiles}/70-synaptics.conf /etc/X11/xorg.conf.d/70-synaptics.conf
+
+# auto login
 sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
-sudo ln -sf ${dotfiles}/override.conf /etc/systemd/getty@tty1.service.d/override.conf
+sudo cp ${dotfiles}/override.conf /etc/systemd/getty@tty1.service.d/
 
 # i3
 i3=${home}/.config/i3
@@ -75,9 +76,3 @@ ln -sf ${dotfiles}/i3 ${i3}/config
 #sudo pacman -S spectrwm
 #ln -sf ${dotfiles}/spectrwm.conf .spectrwm.conf
 #ln -sf ${dotfiles}/spectrwm_us.conf .spectrwm_us.conf
-
-# openbox
-#sudo pacman -S openbox
-#openbox=${home}/.config/openbox
-#mkdir -p $openbox
-#ln -sf ${dotfiles}/rc.xml ${openbox}/rc.xml
