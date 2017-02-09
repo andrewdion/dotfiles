@@ -29,10 +29,10 @@
     F10
 
 "xvkbd -xsendevent -text '\[Delete]'"
-    Alt + BackSpace
+    Control + BackSpace
 
 "xvkbd -xsendevent -text '\[Home]'"
-    Alt + Left
+    Control + Left
 
 "xvkbd -xsendevent -text '\[End]'"
-    Alt + Right
+    Control + Right

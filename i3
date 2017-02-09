@@ -205,4 +205,4 @@ gaps inner 10
 gaps outer 0
 
 # start i3lock on startup
-exec --no-startup-id /home/adion/dotfiles/screenlock.sh
+#exec --no-startup-id /home/adion/dotfiles/screenlock.sh
