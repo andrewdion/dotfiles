@@ -23,6 +23,8 @@ sudo pacman -S xf86-video-ati \
                 ttf-droid \
                 ttf-inconsolata \
                 python \
+                python2 \
+                pip \
                 unzip \
                 openssh \
                 bluez \
@@ -74,3 +76,9 @@ sudo ln -sf ${dotfiles}/mouse-sensitivity /etc/X11/xorg.conf.d/50-mouse-accelera
 i3=${home}/.config/i3
 mkdir -p $i3
 ln -sf ${dotfiles}/i3 ${i3}/config
+
+# make python2 the default
+sudo ln -s /usr/bin/python2 /usr/bin/python
+
+# pip packages to install
+sudo pip install -upgrade ansible awscli boto virtualenv
