@@ -23,7 +23,8 @@ bindsym $mod+t exec i3-sensible-terminal
 bindsym $mod+c kill
 
 # dmenu
-bindsym $mod+space exec dmenu_run -i -fn  "DejaVu Sans-10:bold" -l 1 -x 800 -y 420 -w 260
+#bindsym $mod+space exec dmenu_run -i -fn  "DejaVu Sans-10:bold" -l 1 -x 800 -y 420 -w 260
+bindsym XF86Search exec dmenu_run -i -fn  "DejaVu Sans-10:bold" -l 1 -x 800 -y 420 -w 260
 
 # lock screen
 bindsym XF86Sleep exec /home/adion/dotfiles/screenlock.sh
