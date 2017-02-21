@@ -26,4 +26,8 @@ export EDITOR="$VISUAL"
 export BROWSER="google-chrome-stable"
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/home/adion/bin:"
 
+export ANSIBLE_VAULT_PASSWORD_FILE=/home/adion/stash/iteam/secrets/vault.txt
+
+eval $(ssh-agent) 1> /dev/null
+
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx
