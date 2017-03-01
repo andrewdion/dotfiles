@@ -8,6 +8,7 @@ sudo pacman -S xf86-video-ati \
                 xbindkeys \
                 xvkbd \
                 rxvt-unicode \
+                autocutsel \
                 tmux \
                 wget \
                 feh \

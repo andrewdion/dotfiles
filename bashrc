@@ -12,7 +12,7 @@ alias pacU='sudo pacman -Syu'
 alias pacS='sudo pacman -S'
 alias pacR='sudo pacman -Rns'
 
-cd () {
+cd() {
     builtin cd "$@" && ls -l
 }
 
@@ -27,6 +27,50 @@ export BROWSER="google-chrome-stable"
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/home/adion/bin:"
 
 export ANSIBLE_VAULT_PASSWORD_FILE=/home/adion/stash/iteam/secrets/vault.txt
+
+aws_access() {
+    usage="usage: aws_access ACCOUNT\n\nACCOUNT can be one of the following: catalyst portal smartirb shrine eagle-i-aws eagle-i-cloud fphs\n"
+    if [ "$#" -ne 1 ]; then
+        echo -e $usage
+        return 1
+    fi
+    case $1 in
+        catalyst )
+            id=
+            key=
+            ;;
+        portal )
+            id=
+            key=
+            ;;
+        smartirb )
+            id=
+            key=
+            ;;
+        shrine )
+            id=
+            key=
+            ;;
+        eagle-i-aws )
+            id=
+            key=
+            ;;
+        eagle-i-cloud )
+            id=
+            key=
+            ;;
+        fphs )
+            id=
+            key=
+            ;;
+        * )
+            echo -e "Unknown account.\n\n$usage"
+            return 1
+            ;;
+    esac
+    export AWS_ACCESS_KEY_ID=$id
+    export AWS_SECRET_ACCESS_KEY=$key
+}
 
 eval $(ssh-agent) 1> /dev/null
 

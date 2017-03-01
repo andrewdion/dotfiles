@@ -13,5 +13,6 @@ setxkbmap -layout dvorak
 
 xbindkeys &
 /home/adion/.fehbg &
+autocutsel -fork &
+autocutsel -selection PRIMARY -fork &
 exec i3
-#exec openbox-session
