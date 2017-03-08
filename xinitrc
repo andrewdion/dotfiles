@@ -11,12 +11,10 @@ setxkbmap -layout dvorak
 
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
-dir=/home/adion/wallpapers
-file=$(ls $dir | sort -R | head -1)
-cp $dir/$file $dir/.active
+/home/adion/dotfiles/feh-switch.sh
+/home/adion/.fehbg
 
 xbindkeys &
-/home/adion/.fehbg &
 autocutsel -fork &
 autocutsel -selection PRIMARY -fork &
 exec i3

@@ -28,20 +28,15 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/home/adion/bin:"
 
 export ANSIBLE_VAULT_PASSWORD_FILE=/home/adion/stash/iteam/secrets/vault.txt
 
-aws_access() {
-    usage="usage: aws_access ACCOUNT\n\nACCOUNT can be one of the following: catalyst portal smartirb shrine eiaws eicloud fphs\n"
+aws-profile() {
+    usage="usage: aws-profile ACCOUNT\n\nwhere ACCOUNT can be one of the following:\ncatalyst portal smartirb shrine eiaws eicloud fphs"
     if [ "$#" -ne 1 ]; then
-        echo -e $usage
+        echo -e "$usage\n"
+        echo "AWS_DEFAULT_PROFILE=$AWS_DEFAULT_PROFILE"
         return 1
     fi
-
-    cmd="cat /home/adion/.aws/aws_keys.csv | fgrep $1"
-
-    id=$(eval $cmd | cut -d, -f2)
-    key=$(eval $cmd | cut -d, -f3)
-
-    export AWS_ACCESS_KEY_ID=$id
-    export AWS_SECRET_ACCESS_KEY=$key
+    export AWS_DEFAULT_PROFILE=$1
+    echo "AWS_DEFAULT_PROFILE=$1"
 }
 
 eval $(ssh-agent) 1> /dev/null
