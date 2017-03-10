@@ -23,6 +23,7 @@ export LANG=en_US.UTF-8
 export TERM=rxvt-unicode
 export VISUAL=vim
 export EDITOR="$VISUAL"
+export PAGER="less -X"
 export BROWSER="google-chrome-stable"
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/home/adion/bin:"
 
@@ -39,6 +40,15 @@ aws-profile() {
     echo "AWS_DEFAULT_PROFILE=$1"
 }
 
+alias s3catalyst='s3cmd -c /home/adion/.s3cfg-catalyst'
+alias s3eiaws='s3cmd -c /home/adion/.s3cfg-eiaws'
+alias s3eicloud='s3cmd -c /home/adion/.s3cfg-eicloud'
+alias s3fphs='s3cmd -c /home/adion/.s3cfg-fphs'
+alias s3portal='s3cmd -c /home/adion/.s3cfg-portal'
+alias s3shrine='s3cmd -c /home/adion/.s3cfg-shrine'
+alias s3smartirb='s3cmd -c /home/adion/.s3cfg-smartirb'
+
 eval $(ssh-agent) 1> /dev/null
+
 
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx
