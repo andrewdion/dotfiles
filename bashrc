@@ -16,7 +16,8 @@ cd() {
     builtin cd "$@" && ls -l
 }
 
-source ~/dotfiles/git-prompt.sh
+source /home/adion/dotfiles/git-prompt.sh
+source /home/adion/dotfiles/git-completion.sh
 
 export PS1='\[\e]2;\u@\H \w\a\e[37;1m\]\u@\H \w\e[0m\]$(__git_ps1)\n$ '
 export LANG=en_US.UTF-8

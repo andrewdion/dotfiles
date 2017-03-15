@@ -6,6 +6,9 @@
 #i3lock -u -i $tmpbg
 
 #img=$(ls /home/adion/dotfiles/wall_dual_*.png | sort -R | head -1)
-img=/home/adion/wallpapers/.active
 
+# switch wallpaper on every lock
+/home/adion/feh-switch.sh
+
+img=/home/adion/wallpapers/.active
 i3lock -i $img
