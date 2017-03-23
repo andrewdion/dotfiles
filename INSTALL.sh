@@ -15,7 +15,7 @@ sudo pacman -S xf86-video-ati \
                 i3lock \
                 scrot \
                 imagemagick \
-                firefox \
+                chromium \
                 alsa-lib \
                 alsa-utils \
                 screenfetch \
@@ -23,13 +23,11 @@ sudo pacman -S xf86-video-ati \
                 ttf-dejavu \
                 ttf-droid \
                 ttf-inconsolata \
-                python \
-                python2 \
-                pip \
                 unzip \
                 openssh \
                 bluez \
                 bluez-utils
+#                firefox \
 
 home=/home/adion
 
@@ -41,8 +39,7 @@ aur_www="https://aur.archlinux.org/cgit/aur.git/snapshot/"
 
 for pkg in dmenu2 \
            i3-gaps-git \
-           hipchat \
-           google-chrome; do
+           hipchat; do
     wget ${aur_www}/${pkg}.tar.gz
     tar xf ${pkg}.tar.gz
     cd $pkg
