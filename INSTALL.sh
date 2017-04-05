@@ -19,14 +19,20 @@ sudo pacman -S xf86-video-ati \
                 alsa-lib \
                 alsa-utils \
                 screenfetch \
-                terminus-font \
-                ttf-dejavu \
-                ttf-droid \
                 ttf-inconsolata \
                 unzip \
                 openssh \
                 bluez \
-                bluez-utils
+                bluez-utils \
+                python \
+                python2 \
+                python2-virtualenv \
+                vagrant \
+                virtualbox \
+                rsync
+#                terminus-font \
+#                ttf-dejavu \ 
+#                ttf-droid \
 #                firefox \
 
 home=/home/adion
@@ -55,6 +61,7 @@ ln -sf ${dotfiles}/bash_profile .bash_profile
 ln -sf ${dotfiles}/bashrc .bashrc
 ln -sf ${dotfiles}/fehbg .fehbg
 ln -sf ${dotfiles}/gitconfig .gitconfig
+ln -sf ${dotfiles}/tmux.conf .tmux.conf
 ln -sf ${dotfiles}/vimrc .vimrc
 ln -sf ${dotfiles}/xbindkeysrc .xbindkeysrc
 ln -sf ${dotfiles}/xinitrc .xinitrc

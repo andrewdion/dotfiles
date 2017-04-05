@@ -28,7 +28,6 @@ bindsym XF86Search exec dmenu_run -i -fn  "DejaVu Sans-10:bold" -l 1 -x 800 -y 4
 
 # lock screen
 bindsym XF86Sleep exec /home/adion/dotfiles/screenlock.sh
-bindsym $mod+Escape exec /home/adion/dotfiles/screenlock.sh
 
 # change focus
 bindsym $mod+$left focus left
@@ -55,12 +54,15 @@ bindsym $mod+Up focus parent
 bindsym $mod+Left focus child
 
 # enter fullscreen mode for the focused container
-bindsym $mod+m fullscreen toggle
+bindsym $mod+Return fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+s layout stacking
-#bindsym $mod+w layout tabbed
-#bindsym $mod+e layout toggle split
+#bindsym $mod+v layout tabbed
+#bindsym $mod+z layout toggle split
+
+# toggle between all layouts
+#bindsym $mod+z layout toggle all
 
 # toggle tiling / floating
 bindsym $mod+Shift+m floating toggle
@@ -124,10 +126,10 @@ mode "resize" {
         bindsym Right       resize grow width 5 px or 5 ppt
 
         # back to normal: Enter or Escape
-        bindsym Return mode "default"
+        bindsym space mode "default"
 }
 
-bindsym $mod+Return mode "resize"
+bindsym $mod+space mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

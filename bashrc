@@ -17,7 +17,7 @@ cd() {
 }
 
 source /home/adion/dotfiles/git-prompt.sh
-source /home/adion/dotfiles/git-completion.sh
+#source /home/adion/dotfiles/git-completion.sh
 
 export PS1='\[\e]2;\u@\H \w\a\e[37;1m\]\u@\H \w\e[0m\]$(__git_ps1)\n$ '
 export LANG=en_US.UTF-8
@@ -25,11 +25,11 @@ export TERM=rxvt-unicode
 export VISUAL=vim
 export EDITOR="$VISUAL"
 export PAGER="less -X"
-export BROWSER="google-chrome-stable"
+#export BROWSER="google-chrome-stable"
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/home/adion/bin:"
 
-export ANSIBLE_VAULT_PASSWORD_FILE=/home/adion/stash/iteam/secrets/vault.txt
-
+# {
+# move these aliases to awscli virtual environment?
 aws-profile() {
     usage="usage: aws-profile ACCOUNT\n\nwhere ACCOUNT can be one of the following:\ncatalyst portal smartirb shrine eiaws eicloud fphs"
     if [ "$#" -ne 1 ]; then
@@ -40,7 +40,6 @@ aws-profile() {
     export AWS_DEFAULT_PROFILE=$1
     echo "AWS_DEFAULT_PROFILE=$1"
 }
-
 alias s3catalyst='s3cmd -c /home/adion/.s3cfg-catalyst'
 alias s3eiaws='s3cmd -c /home/adion/.s3cfg-eiaws'
 alias s3eicloud='s3cmd -c /home/adion/.s3cfg-eicloud'
@@ -48,8 +47,8 @@ alias s3fphs='s3cmd -c /home/adion/.s3cfg-fphs'
 alias s3portal='s3cmd -c /home/adion/.s3cfg-portal'
 alias s3shrine='s3cmd -c /home/adion/.s3cfg-shrine'
 alias s3smartirb='s3cmd -c /home/adion/.s3cfg-smartirb'
+# }
 
 eval $(ssh-agent) 1> /dev/null
-
 
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx
