@@ -1,6 +1,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+alias tmux='tmux -2'
 alias less='less -S -#5 -X'
 alias ls='ls --color=auto'
 alias l='ls -l'
@@ -26,7 +27,7 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 export PAGER="less -X"
 #export BROWSER="google-chrome-stable"
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/home/adion/bin:"
+export PATH="/home/adion/bin:/usr/local/sbin:/usr/local/bin:/usr/bin"
 
 # {
 # move these aliases to awscli virtual environment?

@@ -206,7 +206,7 @@ for_window [class="^.*"] border pixel 0
 for_window [class="URxvt"] border pixel 2
 smart_gaps on
 smart_borders on
-gaps inner 20
+gaps inner 16
 gaps outer 0
 
 # monitors
