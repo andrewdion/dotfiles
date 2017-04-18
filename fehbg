@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-xinerama --bg-scale '/home/adion/wallpapers/.active'
+feh --no-xinerama --bg-scale '/home/adion/wallpapers/.active' 
