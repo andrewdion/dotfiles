@@ -29,7 +29,9 @@ sudo pacman -S xf86-video-ati \
                 python2-virtualenv \
                 vagrant \
                 virtualbox \
-                rsync
+                rsync \
+                nmap \
+                cups
 #                terminus-font \
 #                ttf-dejavu \ 
 #                ttf-droid \
@@ -44,8 +46,8 @@ cd $aur
 aur_www="https://aur.archlinux.org/cgit/aur.git/snapshot/"
 
 for pkg in dmenu2 \
-           i3-gaps-git \
-           hipchat; do
+           i3-gaps-git; do
+#           hipchat; do
     wget ${aur_www}/${pkg}.tar.gz
     tar xf ${pkg}.tar.gz
     cd $pkg

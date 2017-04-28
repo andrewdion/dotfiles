@@ -12,7 +12,7 @@ setxkbmap -layout dvorak
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
-/home/adion/dotfiles/feh-switch.sh
+#/home/adion/dotfiles/feh-switch.sh
 
 xbindkeys &
 autocutsel -fork &

@@ -204,13 +204,16 @@ client.unfocused #$black #$black #$black #$blue #$dkgray
 # i3-gaps stuff
 for_window [class="^.*"] border pixel 0
 for_window [class="URxvt"] border pixel 2
+# only use gaps if >1 container in workspace:
 smart_gaps on
 smart_borders on
-gaps inner 16
-gaps outer 0
+gaps inner 8
+
+#workspace 1 gaps inner 0
+#workspace 2 gaps inner 4
 
 # monitors
-exec xrandr --output DVI-0 --auto --output DVI-1 --auto
+exec xrandr --output DVI-0 --auto --rotate left --output DVI-1 --auto
 
 # start i3lock on startup
 exec --no-startup-id /home/adion/dotfiles/screenlock.sh
