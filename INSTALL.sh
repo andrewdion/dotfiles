@@ -31,6 +31,7 @@ sudo pacman -S xf86-video-ati \
                 virtualbox \
                 rsync \
                 nmap \
+                net-tools \
                 cups
 #                terminus-font \
 #                ttf-dejavu \ 

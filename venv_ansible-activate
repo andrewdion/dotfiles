@@ -40,6 +40,8 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
+### !!! CUSTOM STUFF !!! ###
+# {
 # check if exploded secrets dir exists
 secrets=$(ls /tmp | fgrep secrets | head -1)
 if [ -z "$secrets" ]; then
@@ -49,6 +51,9 @@ else
     vault_pass="/tmp/$secrets/secrets/vault.txt"
     export ANSIBLE_VAULT_PASSWORD_FILE=$vault_pass
 fi
+export ANSIBLE_RETRY_FILES_ENABLED=False
+export ANSIBLE_ROLES_PATH=../..
+# }
 
 VIRTUAL_ENV="/home/adion/stash/iteam/sysconfig/ansible/.env"
 export VIRTUAL_ENV

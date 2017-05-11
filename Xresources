@@ -17,54 +17,85 @@ URxvt*.saveLines: 2000
 ! scrollbar - true (default) or false
 URxvt*.scrollBar: false
 
-! colors
 *.foreground: #cccccc
-!*.background: #222222
 *.background: #111111
-!*.background: #000000
 *.cursorColor: #ffffff
 
-! dont know what these are...
-!*.color0: #cccccc
-!*.color1: #cccccc
-!*.color2: #cccccc
-!*.color3: #cccccc
-!*.color4: #cccccc
-!*.color5: #cccccc
-!*.color6: #cccccc
-!*.color7: #cccccc
-!*.color8: #cccccc
-!*.color9: #cccccc
+!!!!!!!!!!!!
+!! COLORS !!
+!!!!!!!!!!!!
+#define LTGRAY      #cccccc
+#define DKGRAY      #444444
+#define TERMBG      #111111
+#define HOTPINK     #ec25ab
+#define FUSCIA      #c661c6
+#define RED         #ff0000
+#define BLOOD       #b30000
+#define PUMPKIN     #fc9406
+#define LEMON       #e6e600
+#define LIME        #00ff00
+#define SEAFOAM     #00cc44
+#define TURQUOISE   #0decd8
+#define SAGE        #128b52
+#define SKY         #0099ff
+#define SLATE       #1462c5
+#define PURPLE      #5223c5
+#define LILAC       #c661c6
+#define BROWN       #7b511b
+#define PUKE        #959a11
+#define BLACK       #000000
+#define WHITE       #ffffff
 
-! inside scripts: ?
-! outside scripts: executable files
-! (sea green)
-*.color10: #00cc44
-
+*.color0: BLACK
 ! outside scripts: ?
-! inside scripts: line numbers, if/else/while
-! (gray)
-*.color11: #cccccc
+! inside scripts: ?
+*.color1: RED
+! outside scripts: ansible error, git -
+! inside scripts: ?
+*.color2: LIME
+! outside scripts: ansible success, git +
+! inside scripts: ?
+*.color3: LEMON
+! outside scripts: ansible changed
+! inside scripts: ?
+*.color4: DKGRAY
+! outside scripts: ansible vvv
+! inside scripts: ?
+*.color5: TERMBG
+! outside scripts: tmux inactive pane border
+! inside scripts: ?
+*.color6: DKGRAY
+! outside scripts: ansible skip
+! inside scripts: ?
+*.color7: LTGRAY
+! outside scripts: ?
+! inside scripts: ?
 
+! bold:
+*.color8: DKGRAY
+! outside scripts: ansible task path
+! inside scripts: ?
+*.color9: BLOOD
+! outside scripts: ansible unreachable
+! inside scripts: ?
+*.color10: SEAFOAM
+! outside scripts: executables
+! inside scripts: ?
+*.color11: LTGRAY
+! outside scripts: text
+! inside scripts: text
+*.color12: SKY
 ! outside scripts: directories
 ! inside scripts: ?
-! (sky blue)
-*.color12: #0099ff
-
+*.color13: LILAC
 ! outside scripts: ? 
-! inside scripts: strings, comments
-! (orange)
-*.color13: #cc6600
-
+! inside scripts: strings
+*.color14: LEMON
 ! outside scripts: symlinks
 ! inside scrpts: script comments & functions
-! (yellow)
-*.color14: #e6e600
-
+*.color15: #ffffff
 ! outside scripts: bash prompt
 ! inside scripts: ?
-! (white)
-*.color15: #ffffff
 
 ! man page
 !URxvt.colorIT: #87af5f

@@ -167,7 +167,7 @@ focus_follows_mouse no
 #   border (just two thin lines around titlebar)
 #   background
 #   text
-#   indicator (for indicating where a new window will be opened)
+#   indicator
 #   child_border (color around child window)
 
 #set $dkgray     222222
@@ -179,14 +179,18 @@ set $red        ff0000
 set $blue       3498db
 
 # A client which currently has the focus.
+#client.focused #$black #$black #$black #$ltgray #$ltgray
 client.focused #$black #$black #$black #$blue #$ltgray
 
 # A client which is the focused one of its container, but it does not have \
 # the focus at the moment.
-client.focused_inactive #$black #$black #$black #$blue #$dkgray
+client.focused_inactive #$black #$black #$black #$dkgray #$dkgray
+#client.focused_inactive #$black #$black #$black #$ltgray #$dkgray
+#client.focused_inactive #$black #$black #$black #$blue #$dkgray
 
 # A client which is not the focused one of its container.
-client.unfocused #$black #$black #$black #$blue #$dkgray
+client.unfocused #$black #$black #$black #$ltgray #$dkgray
+#client.unfocused #$black #$black #$black #$blue #$dkgray
 
 # A client which has its urgency hint activated.
 #client.urgent #$black #$black #$black #$blue #$white
@@ -207,7 +211,8 @@ for_window [class="URxvt"] border pixel 2
 # only use gaps if >1 container in workspace:
 smart_gaps on
 smart_borders on
-gaps inner 8
+#gaps inner 8
+gaps inner 2
 
 #workspace 1 gaps inner 0
 #workspace 2 gaps inner 4

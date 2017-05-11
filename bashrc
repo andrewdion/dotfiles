@@ -29,6 +29,9 @@ export PAGER="less -X"
 #export BROWSER="google-chrome-stable"
 export PATH="/home/adion/bin:/usr/local/sbin:/usr/local/bin:/usr/bin"
 
+# for gpg
+export GPG_TTY=$(tty)
+
 # {
 # move these aliases to awscli virtual environment?
 aws-profile() {
