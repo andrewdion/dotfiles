@@ -14,7 +14,9 @@ setxkbmap -layout dvorak
 
 #/home/adion/dotfiles/feh-switch.sh
 
+#autocutsel -fork &
+#autocutsel -selection PRIMARY -fork &
 xbindkeys &
-autocutsel -fork &
-autocutsel -selection PRIMARY -fork &
-exec i3
+exec xrandr --output DVI-0 --auto --rotate left --output DVI-1 --auto &
+exec spectrwm
+#exec i3

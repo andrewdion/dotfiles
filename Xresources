@@ -87,8 +87,8 @@ URxvt*.scrollBar: false
 *.color12: SKY
 ! outside scripts: directories
 ! inside scripts: ?
-*.color13: LILAC
-! outside scripts: ? 
+*.color13: PUMPKIN
+! outside scripts: ansible warning
 ! inside scripts: strings
 *.color14: LEMON
 ! outside scripts: symlinks

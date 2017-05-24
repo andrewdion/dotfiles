@@ -172,6 +172,7 @@ focus_follows_mouse no
 
 #set $dkgray     222222
 set $dkgray     111111
+set $mdgray     333333
 set $ltgray     cccccc
 set $black      000000
 set $white      ffffff
@@ -180,7 +181,8 @@ set $blue       3498db
 
 # A client which currently has the focus.
 #client.focused #$black #$black #$black #$ltgray #$ltgray
-client.focused #$black #$black #$black #$blue #$ltgray
+client.focused #$black #$black #$black #$mdgray #$mdgray
+#client.focused #$black #$black #$black #$blue #$mdgray
 
 # A client which is the focused one of its container, but it does not have \
 # the focus at the moment.
