@@ -10,6 +10,10 @@ URxvt*.font: xft:Inconsolata:size=12
 ! scrollback buffer lines - 65535 is max on most machines (64 is default)
 URxvt*.saveLines: 2000
 
+! allow C-S-h/l tmux keybindings
+URxvt*.iso14755: false
+URxvt*.iso14775_52: false
+
 ! native transparency
 !URxvt*.transparent: true
 !URxvt*.shading: 6
