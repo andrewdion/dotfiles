@@ -17,6 +17,7 @@ setxkbmap -option caps:escape
 autocutsel -fork &
 autocutsel -selection PRIMARY -fork &
 xbindkeys &
-exec xrandr --output DVI-0 --auto --rotate left --output DVI-1 --auto &
+exec xrandr --output DVI-0 --auto --output DVI-1 --auto &
 exec spectrwm
+#exec xrandr --output DVI-0 --auto --rotate left --output DVI-1 --auto &
 #exec i3
