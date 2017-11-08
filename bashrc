@@ -6,6 +6,7 @@ alias less='less -S -#5 -X'
 alias ls='ls --color=auto'
 alias l='ls -l'
 alias la='ls -la'
+alias activate='. .env/bin/activate'
 
 alias pacq='pacman -Qs'
 alias pacs='pacman -Ss'
@@ -27,6 +28,7 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 export PAGER="less -X"
 #export BROWSER="google-chrome-stable"
+#export PATH="/home/adion/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/adion/java/jre1.8.0_144/bin:"
 export PATH="/home/adion/bin:/usr/local/sbin:/usr/local/bin:/usr/bin"
 export HISTTIMEFORMAT="[%y-%m-%d %T] "
 
