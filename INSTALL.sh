@@ -46,8 +46,8 @@ cd $aur
 
 aur_www="https://aur.archlinux.org/cgit/aur.git/snapshot/"
 
-for pkg in dmenu2 \
-           i3-gaps-git; do
+for pkg in dmenu2; do
+#           i3-gaps-git; do
 #           hipchat; do
     wget ${aur_www}/${pkg}.tar.gz
     tar xf ${pkg}.tar.gz
@@ -80,13 +80,21 @@ sudo cp ${doftiles}/autologin /etc/systemd/system/getty@tty1.service.d/override.
 
 sudo ln -sf ${dotfiles}/mouse-sensitivity /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
 
-# i3
-i3=${home}/.config/i3
-mkdir -p $i3
-ln -sf ${dotfiles}/i3 ${i3}/config
+sudo ln -sf ${dotfiles}/logind.conf /etc/systemd/logind.conf
+
+# not using i3 anymore
+#i3=${home}/.config/i3
+#mkdir -p $i3
+#ln -sf ${dotfiles}/i3 ${i3}/config
 
 # make python2 the default
-sudo ln -s /usr/bin/python2 /usr/bin/python
+#sudo ln -s /usr/bin/python2 /usr/bin/python
+# 2017-11-13
+# global python should be the latest.
+# local virtualenv pythons can be whatever version.
 
 # pip packages to install
-sudo pip install -upgrade ansible awscli boto virtualenv
+#sudo pip install -upgrade ansible awscli boto virtualenv
+# 2017-11-13:
+# no need for a global pip.
+# each virtualenv can have its own set of packages.
