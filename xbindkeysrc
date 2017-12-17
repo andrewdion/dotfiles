@@ -6,6 +6,3 @@
 
 "xvkbd -xsendevent -text '\[End]'"
     Control + Right
-
-"setxkbmap -layout dvorak"
-    m:0x0 + c:248
