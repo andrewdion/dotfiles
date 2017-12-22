@@ -33,7 +33,8 @@ export PATH="/home/adion/bin:/usr/local/sbin:/usr/local/bin:/usr/bin"
 export HISTTIMEFORMAT="[%y-%m-%d %T] "
 
 # for gpg
-export GPG_TTY=$(tty)
+# actually this seems to break gpg
+#export GPG_TTY=$(tty)
 
 # {
 # move these aliases to awscli virtual environment?
