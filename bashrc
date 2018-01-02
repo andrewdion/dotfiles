@@ -32,8 +32,8 @@ export PAGER="less -X"
 export PATH="/home/adion/bin:/usr/local/sbin:/usr/local/bin:/usr/bin"
 export HISTTIMEFORMAT="[%y-%m-%d %T] "
 
-# for gpg
-export GPG_TTY=$(tty)
+# decrypting secrets only seems to work when this variable is unset
+#export GPG_TTY=$(tty)
 
 # {
 # move these aliases to awscli virtual environment?
