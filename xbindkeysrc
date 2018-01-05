@@ -7,5 +7,5 @@
 "xvkbd -xsendevent -text '\[End]'"
     Control + Right
 
-"setxkbmap -layout dvorak"
+"setxkbmap -layout dvorak -option caps:escape"
     m:0x0 + c:248
