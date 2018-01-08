@@ -19,7 +19,6 @@ cd() {
 }
 
 source /home/adion/dotfiles/git-prompt.sh
-#source /home/adion/dotfiles/git-completion.sh
 
 export PS1='\[\e]2;\u@\H \w\a\e[37;1m\]\u@\H \w\e[0m\]$(__git_ps1)\n$ '
 export LANG=en_US.UTF-8
@@ -36,7 +35,7 @@ export HISTTIMEFORMAT="[%y-%m-%d %T] "
 #export GPG_TTY=$(tty)
 
 # {
-# move these aliases to awscli virtual environment?
+# ideally move these aliases to awscli virtual environment
 aws-profile() {
     usage="usage: aws-profile ACCOUNT\n\nwhere ACCOUNT can be one of the following:\ncatalyst portal smartirb shrine eiaws eicloud fphs"
     if [ "$#" -ne 1 ]; then
