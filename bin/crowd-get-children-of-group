@@ -1,0 +1,17 @@
+#!/bin/bash
+
+group=$1
+#group=portal-sirbjoin-deployers_r-x.dev
+
+#cmd1="curl -su crowd:AFO1Menz -H 'Content-Type: application/json' -H 'Accept: application/json' http://localhost:8095/crowd/rest/usermanagement/latest/user/group/"
+#cmd2=" | jq -r '.users[][\"name\"]'"
+
+#cmd="${cmd1}direct?username=${user}${cmd2}"
+echo
+echo DIRECT CHILD GROUPS:
+curl -su crowd:AFO1Menz -H 'Content-Type: application/json' -H 'Accept: application/json' http://localhost:8095/crowd/rest/usermanagement/latest/group/child-group/direct?groupname=${group} | jq -r '.groups[]["name"]'
+
+echo
+echo NESTED CHILD GROUPS:
+curl -su crowd:AFO1Menz -H 'Content-Type: application/json' -H 'Accept: application/json' http://localhost:8095/crowd/rest/usermanagement/latest/group/child-groups/nested?groupname=${group} | jq -r '.groups[]["name"]'
+echo

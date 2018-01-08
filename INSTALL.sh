@@ -42,8 +42,8 @@ cd $aur
 
 aur_www="https://aur.archlinux.org/cgit/aur.git/snapshot/"
 
-for pkg in dmenu2 \
-           google-chrome; do
+for pkg in google-chrome; do
+#           dmenu2 \
 #           hipchat; do
     wget ${aur_www}/${pkg}.tar.gz
     tar xf ${pkg}.tar.gz
@@ -84,7 +84,7 @@ sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
 # for some reason this doesn't like symlinks
 sudo cp ${dotfiles}/autologin /etc/systemd/system/getty@tty1.service.d/override.conf
 
-#sudo ln -sf ${dotfiles}/mouse-sensitivity /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
+sudo ln -sf ${dotfiles}/mouse-sensitivity /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
 
 # ?
 sudo ln -sf ${dotfiles}/logind.conf /etc/systemd/logind.conf

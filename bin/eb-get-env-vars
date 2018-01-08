@@ -1,0 +1,13 @@
+#!/bin/bash
+
+env=$1
+app=$(echo $env | cut -d- -f1)
+
+aws elasticbeanstalk describe-configuration-settings \
+    --application-name $app \
+    --environment-name $env \
+    --output text \
+    | fgrep EnvironmentVariables \
+    | cut -f5 \
+    | tr ',' '\n' \
+    | sort
