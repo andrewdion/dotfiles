@@ -1,1 +1,1 @@
-nohup sudo openconnect --juniper -a ad350 -b https://secure.med.harvard.edu > /dev/null 2>&1 &
+sudo openconnect --juniper -a ad350 -b https://secure.med.harvard.edu
