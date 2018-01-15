@@ -46,13 +46,13 @@ aws-profile() {
     export AWS_DEFAULT_PROFILE=$1
     echo "AWS_DEFAULT_PROFILE=$1"
 }
-alias s3catalyst='s3cmd -c /home/adion/.s3cfg-catalyst'
-alias s3eiaws='s3cmd -c /home/adion/.s3cfg-eiaws'
-alias s3eicloud='s3cmd -c /home/adion/.s3cfg-eicloud'
-alias s3fphs='s3cmd -c /home/adion/.s3cfg-fphs'
-alias s3portal='s3cmd -c /home/adion/.s3cfg-portal'
-alias s3shrine='s3cmd -c /home/adion/.s3cfg-shrine'
-alias s3smartirb='s3cmd -c /home/adion/.s3cfg-smartirb'
+alias s3catalyst='s3cmd -c /home/adion/.aws/s3cfg-catalyst'
+alias s3eiaws='s3cmd -c /home/adion/.aws/s3cfg-eiaws'
+alias s3eicloud='s3cmd -c /home/adion/.aws/s3cfg-eicloud'
+alias s3fphs='s3cmd -c /home/adion/.aws/s3cfg-fphs'
+alias s3portal='s3cmd -c /home/adion/.aws/s3cfg-portal'
+alias s3shrine='s3cmd -c /home/adion/.aws/s3cfg-shrine'
+alias s3smartirb='s3cmd -c /home/adion/.aws/s3cfg-smartirb'
 # }
 
 eval $(ssh-agent) 1> /dev/null
