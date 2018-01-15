@@ -21,9 +21,6 @@ usage()
   then
     echo "usage: $(basename $0) [<scp_args>] { <eb_env>:file file | file <eb_env>:file }" >&2
   fi
-  echo >&2
-  echo "       set INSTANCENUM to access a specific instance" >&2
-  echo "       (defaults to 1, or the first instance)" >&2
   if [ -r "$ENVLIST" ]
   then
     echo >&2
@@ -110,31 +107,11 @@ then
   cleanup 1
 fi
 
-INSTANCECOUNT=$( aws \
-                  --output json \
-                  ec2 describe-instances \
-                  --filters Name=instance-state-name,Values=running Name=tag:elasticbeanstalk:environment-name,Values=$ENVIRONMENT \
-                  | jq '.Reservations | length' )
-RC=$?
-if [ $RC -ne 0 ]
-then
-  echo "error getting instance count for eb environment $ENVIRONMENT" >&2
-  cleanup $RC
-fi
-echo "$INSTANCECOUNT running instances for eb environment $ENVIRONMENT"
-INSTANCENUM=${INSTANCENUM:-1}
-if [ $INSTANCENUM -gt $INSTANCECOUNT ]
-then
-  echo "instance number $INSTANCENUM is greater than instance count $INSTANCECOUNT" >&2
-  cleanup $RC
-fi
-echo "connecting to instance number $INSTANCENUM of eb environment $ENVIRONMENT"
-
 PRIVIP=$( aws \
             --output json \
             ec2 describe-instances \
             --filters Name=instance-state-name,Values=running Name=tag:elasticbeanstalk:environment-name,Values=$ENVIRONMENT \
-            | jq --raw-output ".Reservations[$((INSTANCENUM-1))].Instances[0].PrivateIpAddress" )
+            | jq --raw-output '.Reservations[0].Instances[0].PrivateIpAddress' )
 RC=$?
 if [ $RC -ne 0 -o "$PRIVIP" = "null" ]
 then

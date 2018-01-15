@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+    cat /etc/hosts
+    exit 0
+fi
+
+ip=$1
+
+cp /etc/hosts /etc/hosts.bak
+
+awk -F " " -v ip=$ip '$3 == "matterhorn" {$0 = "10.119.216."ip"  matterhorn       matterhorn"} {print}' /etc/hosts.bak > /etc/hosts
+
+cat /etc/hosts
