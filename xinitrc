@@ -14,8 +14,8 @@ fi
 
 setxkbmap -layout dvorak
 
+#xbindkeys &
 setxkbmap -option caps:escape &
-xbindkeys &
 autocutsel -fork &
 autocutsel -selection PRIMARY -fork &
 exec spectrwm
