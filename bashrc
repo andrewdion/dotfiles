@@ -2,7 +2,7 @@
 [[ $- != *i* ]] && return
 
 alias tmux='tmux -2'
-alias less='less -S -#5 -X'
+alias less='less -S -#5 -X -i'
 alias ls='ls --color=auto'
 alias l='ls -l'
 alias la='ls -la'

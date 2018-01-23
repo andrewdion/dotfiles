@@ -42,9 +42,10 @@ cd $aur
 
 aur_www="https://aur.archlinux.org/cgit/aur.git/snapshot/"
 
-for pkg in google-chrome; do
-#           dmenu2 \
-#           hipchat; do
+for pkg in google-chrome \
+           xvkbd; do
+#           dmenu2
+#           hipchat
     wget ${aur_www}/${pkg}.tar.gz
     tar xf ${pkg}.tar.gz
     cd $pkg
@@ -86,8 +87,18 @@ sudo cp ${dotfiles}/autologin /etc/systemd/system/getty@tty1.service.d/override.
 
 sudo ln -sf ${dotfiles}/mouse-sensitivity /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
 
-# ?
-sudo ln -sf ${dotfiles}/logind.conf /etc/systemd/logind.conf
+# lid switch actions, probably not needed for desktop
+#sudo ln -sf ${dotfiles}/logind.conf /etc/systemd/logind.conf
 
 # disable pc speaker
 sudo ln -sf ${dotfiles}/nobeep.conf /etc/modprobe.d/nobeep.conf
+
+# fonts
+# https://www.reddit.com/r/archlinux/comments/5r5ep8/make_your_arch_fonts_beautiful_easily
+# $ fc-list : file | sort
+sudo ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d
+sudo ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d
+sudo ln -s /etc/fonts/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d
+# vim /etc/profile.d/freetype2.sh
+# uncomment 'export FREETYPE_PROPERTIES' line
+# there is more, but this seems to be sufficient
