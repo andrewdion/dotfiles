@@ -15,8 +15,6 @@ sudo pacman -S xf86-video-ati \
                scrot \
                imagemagick \
                screenfetch \
-               ttf-inconsolata \
-               ttf-droid \
                zip \
                unzip \
                openssh \
@@ -28,11 +26,19 @@ sudo pacman -S xf86-video-ati \
                virtualbox \
                rsync \
                nmap \
-               net-tools
+               net-tools \
+               ttf-inconsolata \
+               ttf-croscore
 #               xvkbd \
 #               feh \
 #               alsa-lib \
 #               alsa-utils \
+
+# other fun fonts:
+# ttf-dejavu
+# ttf-liberation
+# ttf-droid
+# noto-fonts
 
 home=/home/adion
 
@@ -69,7 +75,8 @@ ln -sf ${dotfiles}/xinitrc .xinitrc
 #ln -sf ${dotfiles}/asoundrc .asoundrc
 #ln -sf ${dotfiles}/fehbg .fehbg
 
-sudo ln -sf ${dotfiles}/bluetooth.conf /etc/bluetooth/main.conf
+# doesn't like symlink here
+sudo cp ${dotfiles}/bluetooth /etc/bluetooth/main.conf
 sudo systemctl start bluetooth
 sudo systemctl enable bluetooth
 
@@ -82,7 +89,7 @@ sudo systemctl enable dhcpcd@eno1
 
 # auto login
 sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
-# for some reason this doesn't like symlinks
+# no symlinks here either
 sudo cp ${dotfiles}/autologin /etc/systemd/system/getty@tty1.service.d/override.conf
 
 sudo ln -sf ${dotfiles}/mouse-sensitivity /etc/X11/xorg.conf.d/50-mouse-acceleration.conf

@@ -58,10 +58,10 @@ else
     echo "ERROR: vault password file does not exist"
 fi
 export ANSIBLE_RETRY_FILES_ENABLED=False
-export ANSIBLE_ROLES_PATH=/home/adion/stash/iteam
+export ANSIBLE_ROLES_PATH=/home/adion/bitbucket/iteam
 # }
 
-VIRTUAL_ENV="/home/adion/stash/iteam/sysconfig/ansible/.env"
+VIRTUAL_ENV="/home/adion/bitbucket/iteam/sysconfig/ansible/.env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
