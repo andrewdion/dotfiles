@@ -103,4 +103,5 @@ sudo ln -s /etc/fonts/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d
 # uncomment 'export FREETYPE_PROPERTIES' line
 # there is more, but this seems to be sufficient
 
-git config user.email andrew.r.dion@gmail.com
+git config user.name "Andrew Dion"
+git config user.email "andrew.r.dion@gmail.com"
