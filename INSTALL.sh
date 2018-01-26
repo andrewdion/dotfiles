@@ -6,7 +6,6 @@ sudo pacman -S xf86-video-ati \
                xorg-xrdb \
                xorg-xrandr \
                xbindkeys \
-               xvkbd \
                spectrwm \
                rxvt-unicode \
                autocutsel \
@@ -30,6 +29,7 @@ sudo pacman -S xf86-video-ati \
                rsync \
                nmap \
                net-tools
+#               xvkbd \
 #               feh \
 #               alsa-lib \
 #               alsa-utils \
@@ -87,8 +87,8 @@ sudo cp ${dotfiles}/autologin /etc/systemd/system/getty@tty1.service.d/override.
 
 sudo ln -sf ${dotfiles}/mouse-sensitivity /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
 
-# lid switch actions, probably not needed for desktop
-#sudo ln -sf ${dotfiles}/logind.conf /etc/systemd/logind.conf
+# lid switch & power key actions
+sudo ln -sf ${dotfiles}/logind.conf /etc/systemd/logind.conf
 
 # disable pc speaker
 sudo ln -sf ${dotfiles}/nobeep.conf /etc/modprobe.d/nobeep.conf
@@ -102,3 +102,5 @@ sudo ln -s /etc/fonts/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d
 # vim /etc/profile.d/freetype2.sh
 # uncomment 'export FREETYPE_PROPERTIES' line
 # there is more, but this seems to be sufficient
+
+git config user.email andrew.r.dion@gmail.com
