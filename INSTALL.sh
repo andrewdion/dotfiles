@@ -27,9 +27,9 @@ sudo pacman -S xf86-video-ati \
                net-tools \
                openconnect \
                htop
-# deprecated    xvkbd \
-# uses xvkbd    xbindkeys \
-# dont need     xorg-xrandr \
+# deprecated:   xvkbd \
+# uses xvkbd:   xbindkeys \
+# dont need:    xorg-xrandr \
 #               feh \
 #               bluez \
 #               bluez-utils \
@@ -74,7 +74,7 @@ ln -sf $dotfiles/asoundrc .asoundrc
 ln -sf $dotfiles/bash_profile .bash_profile
 ln -sf $dotfiles/bashrc .bashrc
 ln -sf $dotfiles/gitconfig .gitconfig
-ln -sf $dotfiles/spectrwm.conf .spectrwm.conf
+ln -sf $dotfiles/spectrwm_full .spectrwm.conf
 ln -sf $dotfiles/spectrwm_us.conf .spectrwm_us.conf
 ln -sf $dotfiles/tmux.conf .tmux.conf
 ln -sf $dotfiles/vimrc .vimrc
