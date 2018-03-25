@@ -26,7 +26,9 @@ sudo pacman -S xf86-video-ati \
                nmap \
                net-tools \
                openconnect \
-               htop
+               htop \
+               bluez \
+               bluez-utils
 # deprecated:   xvkbd \
 # uses xvkbd:   xbindkeys \
 # dont need:    xorg-xrandr \
@@ -80,8 +82,13 @@ ln -sf $dotfiles/tmux.conf .tmux.conf
 ln -sf $dotfiles/vimrc .vimrc
 ln -sf $dotfiles/Xresources .Xresources
 ln -sf $dotfiles/xinitrc .xinitrc
-#ln -sf $dotfiles/xbindkeysrc .xbindkeysrc
+ln -sf $dotfiles/xbindkeysrc .xbindkeysrc
 #ln -sf $dotfiles/fehbg .fehbg
+
+# doesn't like symlink here
+sudo cp $dotfiles/bluetooth /etc/bluetooth/main.conf
+sudo systemctl start bluetooth
+sudo systemctl enable bluetooth
 
 # auto login
 sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
