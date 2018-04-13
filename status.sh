@@ -62,7 +62,9 @@ network() {
     icon="\uf1eb"
     nic="wlp1s0"
     ssid=$(iw dev $nic link | head -2 | tail -1 | cut -d: -f2 | sed 's/^[ \t]*//')
-    ip=$(ip addr show wlp1s0 | head -3 | tail -1 | cut -d' ' -f6 | cut -d/ -f1)
+    vpn=$(ip addr | egrep '^[0-9]: tun0')
+    if [ "$vpn" ]; then nic="tun0"; fi
+    ip=$(ip addr show $nic | fgrep 'inet ' | cut -d' ' -f6 | cut -d/ -f1)
     echo "$icon  $ssid  %{F#666666}$ip%{F-}"
 }
 

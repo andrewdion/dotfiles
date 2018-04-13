@@ -1,11 +1,10 @@
 ! font settings
-!Xft.dpi:       168
-Xft.dpi:       186
+Xft.dpi:       160
 Xft.antialias: true
 Xft.rgba:      rgb
 Xft.hinting:   true
 Xft.hintstyle: hintslight
-Xcursor.size:  40
+Xcursor.size:  36
 
 URxvt*.font: xft:Inconsolata:size=12
 
@@ -19,41 +18,85 @@ URxvt*.shading: 10
 ! scrollbar - true (default) or false
 URxvt*.scrollBar: false
 
-! colors
-URxvt*.foreground: #cccccc
-URxvt*.background: #111111
-URxvt*.cursorColor: white
+*.foreground: #cccccc
+*.background: #111111
+*.cursorColor: #ffffff
 
-! NORMAL:
-!URxvt*.color0: #cccccc
-!URxvt*.color1: #cccccc
-!URxvt*.color2: #cccccc
-!URxvt*.color3: #cccccc
-!URxvt*.color4: #cccccc
-!URxvt*.color5: #cccccc
-!URxvt*.color6: #cccccc
-!URxvt*.color7: #cccccc
-!URxvt*.color8: #cccccc
-!URxvt*.color9: #cccccc
+!!!!!!!!!!!!
+!! COLORS !!
+!!!!!!!!!!!!
+#define LTGRAY      #cccccc
+#define DKGRAY      #444444
+#define TERMBG      #111111
+#define HOTPINK     #ec25ab
+#define FUSCIA      #c661c6
+#define RED         #ff0000
+#define BLOOD       #b30000
+#define PUMPKIN     #fc9406
+#define LEMON       #e6e600
+#define LIME        #00ff00
+#define SEAFOAM     #00cc44
+#define TURQUOISE   #0decd8
+#define SAGE        #128b52
+#define SKY         #0099ff
+#define SLATE       #1462c5
+#define PURPLE      #5223c5
+#define LILAC       #c661c6
+#define BROWN       #7b511b
+#define PUKE        #959a11
+#define BLACK       #000000
+#define WHITE       #ffffff
 
-! executable files (sea green)
-URxvt*.color10: #00cc44
-!URxvt*.color10: #66ff66
+*.color0: BLACK
+! outside scripts: ?
+! inside scripts: ?
+*.color1: RED
+! outside scripts: ansible error, git -
+! inside scripts: ?
+*.color2: LIME
+! outside scripts: ansible success, git +
+! inside scripts: ?
+*.color3: LEMON
+! outside scripts: ansible changed
+! inside scripts: ?
+*.color4: DKGRAY
+! outside scripts: ansible vvv
+! inside scripts: ?
+*.color5: TERMBG
+! outside scripts: tmux inactive pane border
+! inside scripts: ?
+*.color6: DKGRAY
+! outside scripts: ansible skip
+! inside scripts: ?
+*.color7: LTGRAY
+! outside scripts: ?
+! inside scripts: ?
 
-! script line numbers, if/else/while (gray)
-URxvt*.color11: #cccccc
-
-! directories (sky blue)
-URxvt*.color12: #0099ff
-
-! script strings (orange)
-URxvt*.color13: #cc6600
-
-! symlinks, script comments & functions (yellow)
-URxvt*.color14: #e6e600
-
-! bash prompt
-URxvt*.color15: white
+! bold:
+*.color8: DKGRAY
+! outside scripts: ansible task path
+! inside scripts: ?
+*.color9: BLOOD
+! outside scripts: ansible unreachable
+! inside scripts: ?
+*.color10: SEAFOAM
+! outside scripts: executables
+! inside scripts: ?
+*.color11: LTGRAY
+! outside scripts: text
+! inside scripts: text
+*.color12: SKY
+! outside scripts: directories
+! inside scripts: ?
+*.color13: PUMPKIN
+! outside scripts: ansible warning
+! inside scripts: strings
+*.color14: LEMON
+! outside scripts: symlinks
+! inside scrpts: script comments & functions
+*.color15: #ffffff
+! outside scripts: bash prompt
+! inside scripts: ?
 
 ! man page
 !URxvt.colorIT: #87af5f

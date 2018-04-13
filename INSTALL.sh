@@ -5,25 +5,28 @@ sudo pacman -S  xf86-video-intel \
                 xorg-server \
                 xorg-xinit \
                 xorg-xrdb \
-                xorg-xev \
-                xvkbd \
                 xbindkeys \
-                libxkbcommon-x11 \
+                iw \
+                openssh \
+                spectrwm \
                 rxvt-unicode \
-                wget \
                 feh \
+                i3lock \
                 scrot \
                 imagemagick \
-                sshfs \
                 alsa-lib \
                 alsa-utils \
                 screenfetch \
-                terminus-font \
-                ttf-dejavu \
-                ttf-droid \
                 ttf-inconsolata \
+                ttf-dejavu \
                 python \
-                unzip
+                zip \
+                unzip \
+                openconnect
+
+#                terminus-font \
+#                sshfs \
+#                libxkbcommon-x11 \
 
 home=/home/adion
 
@@ -34,19 +37,20 @@ cd $aur
 aur_www="https://aur.archlinux.org/cgit/aur.git/snapshot/"
 
 for pkg in linux-samus4 \
-           dmenu2 \
-           i3-gaps-git \
-           i3lock-color-git \
            lemonbar-xft-git \
-           google-chrome \
            ttf-font-awesome \
-           sublime-text; do
+           google-chrome \
+           xvkbd; do
     wget ${aur_www}/${pkg}.tar.gz
     tar xf ${pkg}.tar.gz
     cd $pkg
     makepkg -sri
     cd ..
 done
+#           i3lock-color-git \
+#           dmenu2 \
+#           i3-gaps-git \
+#           sublime-text \
 
 dotfiles=${home}/dotfiles
 cd $home
@@ -56,23 +60,25 @@ ln -sf ${dotfiles}/bash_profile .bash_profile
 ln -sf ${dotfiles}/bashrc .bashrc
 ln -sf ${dotfiles}/fehbg .fehbg
 ln -sf ${dotfiles}/gitconfig .gitconfig
+ln -sf ${dotfiles}/spectrwm.conf .spectrwm.conf
+ln -sf ${dotfiles}/spectrwm_us.conf .spectrwm_us.conf
 ln -sf ${dotfiles}/vimrc .vimrc
 ln -sf ${dotfiles}/xbindkeysrc .xbindkeysrc
 ln -sf ${dotfiles}/xinitrc .xinitrc
 ln -sf ${dotfiles}/Xresources .Xresources
+#ln -sf ${dotfiles}/tmux.conf .tmux.conf
+
+# lid switch actions
 sudo ln -sf ${dotfiles}/logind.conf /etc/systemd/logind.conf
+
+# grub
 sudo ln -sf ${dotfiles}/grub /etc/default/grub
 
 # auto login
 sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
-sudo cp ${dotfiles}/override.conf /etc/systemd/getty@tty1.service.d/
+sudo cp ${dotfiles}/override.conf /etc/systemd/system/getty@tty1.service.d/
 
 # i3
-i3=${home}/.config/i3
-mkdir -p $i3
-ln -sf ${dotfiles}/i3 ${i3}/config
-
-# spectrwm
-#sudo pacman -S spectrwm
-#ln -sf ${dotfiles}/spectrwm.conf .spectrwm.conf
-#ln -sf ${dotfiles}/spectrwm_us.conf .spectrwm_us.conf
+#i3=${home}/.config/i3
+#mkdir -p $i3
+#ln -sf ${dotfiles}/i3 ${i3}/config

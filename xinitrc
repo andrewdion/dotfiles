@@ -7,13 +7,11 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
-setxkbmap -layout dvorak
-
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+
+setxkbmap -layout dvorak -option caps:escape
 
 xbindkeys &
 sh /home/adion/.fehbg &
-/home/adion/dotfiles/status.sh | lemonbar -p -f "FontAwesome:size=11" -f "DejaVu Sans:size=9" -g 2560x40 -B#242424 &
-exec i3
-#exec spectrwm
-#exec openbox-session
+/home/adion/dotfiles/status.sh | lemonbar -p -d -f "FontAwesome:size=12" -f "DejaVu Sans:size=10" -g 2560x38 -B#242424 &
+exec spectrwm
