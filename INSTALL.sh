@@ -69,10 +69,13 @@ ln -sf ${dotfiles}/Xresources .Xresources
 #ln -sf ${dotfiles}/tmux.conf .tmux.conf
 
 # lid switch actions
-sudo ln -sf ${dotfiles}/logind.conf /etc/systemd/logind.conf
+sudo ln -sf ${dotfiles}/logind.conf /etc/systemd/
+
+# touchpad
+sudo ln -sf ${dotfiles}/70-synaptics.conf /etc/X11/xorg.conf.d/
 
 # grub
-sudo ln -sf ${dotfiles}/grub /etc/default/grub
+sudo ln -sf ${dotfiles}/grub /etc/default/
 
 # auto login
 sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
