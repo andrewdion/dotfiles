@@ -22,17 +22,17 @@ sudo pacman -S xf86-video-ati \
                bluez-utils \
                python2-virtualenv \
                python2-setuptools \
+               terraform \
                vagrant \
                virtualbox \
                rsync \
                nmap \
                net-tools \
+               feh \
+               alsa-lib \
+               alsa-utils \
                ttf-inconsolata \
                ttf-croscore
-#               xvkbd \
-#               feh \
-#               alsa-lib \
-#               alsa-utils \
 
 # other fun fonts:
 # ttf-dejavu
@@ -49,7 +49,8 @@ cd $aur
 aur_www="https://aur.archlinux.org/cgit/aur.git/snapshot/"
 
 for pkg in google-chrome \
-           xvkbd; do
+           xvkbd \
+           apg; do
 #           dmenu2
 #           hipchat
     wget ${aur_www}/${pkg}.tar.gz
