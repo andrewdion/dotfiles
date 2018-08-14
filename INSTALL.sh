@@ -22,7 +22,6 @@ sudo pacman -S xf86-video-ati \
                bluez-utils \
                python2-virtualenv \
                python2-setuptools \
-               terraform \
                vagrant \
                virtualbox \
                rsync \
@@ -51,8 +50,6 @@ aur_www="https://aur.archlinux.org/cgit/aur.git/snapshot/"
 for pkg in google-chrome \
            xvkbd \
            apg; do
-#           dmenu2
-#           hipchat
     wget ${aur_www}/${pkg}.tar.gz
     tar xf ${pkg}.tar.gz
     cd $pkg
@@ -96,6 +93,7 @@ sudo cp ${dotfiles}/autologin /etc/systemd/system/getty@tty1.service.d/override.
 sudo ln -sf ${dotfiles}/mouse-sensitivity /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
 
 # lid switch & power key actions
+# probably not needed on desktop?
 sudo ln -sf ${dotfiles}/logind.conf /etc/systemd/logind.conf
 
 # disable pc speaker
