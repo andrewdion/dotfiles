@@ -3,10 +3,12 @@
 
 alias tmux='tmux -2'
 alias less='less -S -#5 -X -i'
+alias cl='clear'
 alias ls='ls --color=auto'
 alias l='ls -l'
 alias la='ls -la'
 alias activate='. .env/bin/activate'
+alias tf='terraform'
 
 alias pacq='pacman -Qs'
 alias pacs='pacman -Ss'
@@ -40,11 +42,32 @@ aws-profile() {
     usage="usage: aws-profile ACCOUNT\n\nwhere ACCOUNT can be one of the following:\ncatalyst portal smartirb shrine eiaws eicloud fphs"
     if [ "$#" -ne 1 ]; then
         echo -e "$usage\n"
-        echo "AWS_DEFAULT_PROFILE=$AWS_DEFAULT_PROFILE"
+        #echo "AWS_DEFAULT_PROFILE=$AWS_DEFAULT_PROFILE"
+        echo "AWS_PROFILE=$AWS_PROFILE"
         return 1
     fi
-    export AWS_DEFAULT_PROFILE=$1
-    echo "AWS_DEFAULT_PROFILE=$1"
+
+    case $1 in
+      catalyst )
+        export AWS_PROFILE=harvard-catalyst;;
+      smartirb )
+        export AWS_PROFILE=harvard-catalyst-smartirb;;
+      portal )
+        export AWS_PROFILE=harvard-catalyst-portal;;
+      eiaws )
+        export AWS_PROFILE=eagle-i-aws;;
+      eicloud )
+        export AWS_PROFILE=eagle-i-cloud;;
+      fphs )
+        export AWS_PROFILE=fphs;;
+      shrine )
+        export AWS_PROFILE=harvard-catalyst-shrine;;
+    esac
+      
+    echo "AWS_PROFILE=$AWS_PROFILE"
+
+    export AWS_DEFAULT_REGION=us-east-1
+    export AWS_DEFAULT_OUTPUT=json
 }
 alias s3catalyst='s3cmd -c /home/adion/.aws/s3cfg-catalyst'
 alias s3eiaws='s3cmd -c /home/adion/.aws/s3cfg-eiaws'
