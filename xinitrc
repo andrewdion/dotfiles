@@ -12,7 +12,7 @@ fi
 
 #/home/adion/dotfiles/feh-switch.sh
 
-#setxkbmap -layout dvorak
+setxkbmap -layout dvorak
 xbindkeys
 
 autocutsel -fork &
