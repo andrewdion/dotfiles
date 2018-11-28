@@ -20,21 +20,18 @@ sudo pacman -S xf86-video-ati \
                ttf-droid \
                zip \
                unzip \
-               python2-virtualenv \
-               python2-setuptools \
                rsync \
                nmap \
                net-tools \
                openconnect \
-               htop \
                bluez \
                bluez-utils
 # deprecated:   xvkbd \
 # uses xvkbd:   xbindkeys \
 # dont need:    xorg-xrandr \
+#               python2-virtualenv \
+#               python2-setuptools \
 #               feh \
-#               bluez \
-#               bluez-utils \
 #               cups
 #               vagrant \
 #               virtualbox \
@@ -98,4 +95,4 @@ sudo cp $dotfiles/autologin /etc/systemd/system/getty@tty1.service.d/override.co
 #sudo ln -sf $dotfiles/mouse-sensitivity /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
 
 # ?
-sudo ln -sf $dotfiles/logind.conf /etc/systemd/logind.conf
+#sudo ln -sf $dotfiles/logind.conf /etc/systemd/logind.conf
