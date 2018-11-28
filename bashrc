@@ -8,7 +8,6 @@ alias ls='ls --color=auto'
 alias l='ls -l'
 alias la='ls -la'
 alias activate='. .env/bin/activate'
-alias tf='terraform'
 
 alias pacq='pacman -Qs'
 alias pacs='pacman -Ss'
@@ -62,6 +61,8 @@ aws-profile() {
         export AWS_PROFILE=fphs;;
       shrine )
         export AWS_PROFILE=harvard-catalyst-shrine;;
+      shrinedev )
+        export AWS_PROFILE=harvard-catalyst-shrine-dev;;
     esac
       
     echo "AWS_PROFILE=$AWS_PROFILE"

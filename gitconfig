@@ -14,6 +14,10 @@
     br = branch
     co = checkout
     di = diff
-    rh = reset HEAD
     ci = commit
     log = log --color
+    unstage = reset HEAD --
+    cleanup = !git-cleanup
+    # this is close to working...
+    #cleanup = "!f() { git branch --merged | egrep -v '^(\*|  master|  development)' | xargs -r git branch -d; }; f"
+    #cleanup = "!f() { git branch --merged | egrep -v '^(\*|  master|  development)' | xargs -r git branch -d && git remote prune origin; }; f"

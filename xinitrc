@@ -11,7 +11,7 @@ fi
 
 #/home/adion/dotfiles/feh-switch.sh
 
-#setxkbmap -layout dvorak -option caps:escape
+setxkbmap -layout dvorak -option caps:escape
 xbindkeys
 
 autocutsel -fork &
