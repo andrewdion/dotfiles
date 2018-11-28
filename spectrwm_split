@@ -59,8 +59,8 @@ urgent_enabled		= 1
 # Split a non-RandR dual head setup into one region per monitor
 # (non-standard driver-based multihead is not seen by spectrwm)
 #region      = screen[1]:2560x1080+0+0
-region      = screen[1]:1706x1080+0+0
-region      = screen[1]:854x1080+1706+0
+region      = screen[1]:1706x1440+0+0
+region      = screen[1]:854x1440+1706+0
 
 # Launch applications in a workspace of choice
 # autorun		= ws[1]:xterm

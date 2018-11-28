@@ -4,6 +4,7 @@ sudo pacman -S xf86-video-ati \
                xorg-server \
                xorg-xinit \
                xorg-xrdb \
+               xbindkeys \
                openssh \
                spectrwm \
                rxvt-unicode \
@@ -20,21 +21,16 @@ sudo pacman -S xf86-video-ati \
                ttf-droid \
                zip \
                unzip \
-               python2-virtualenv \
-               python2-setuptools \
                rsync \
                nmap \
                net-tools \
                openconnect \
-               htop \
                bluez \
                bluez-utils
-# deprecated:   xvkbd \
-# uses xvkbd:   xbindkeys \
-# dont need:    xorg-xrandr \
+#               xorg-xrandr \
+#               python2-virtualenv \
+#               python2-setuptools \
 #               feh \
-#               bluez \
-#               bluez-utils \
 #               cups
 #               vagrant \
 #               virtualbox \
@@ -55,7 +51,8 @@ cd $aur
 
 aur_www="https://aur.archlinux.org/cgit/aur.git/snapshot/"
 
-for pkg in google-chrome; do
+for pkg in google-chrome \
+           xvkbd; do
 #          i3-gaps-git \
     wget ${aur_www}/${pkg}.tar.gz
     tar xf ${pkg}.tar.gz
@@ -97,5 +94,5 @@ sudo cp $dotfiles/autologin /etc/systemd/system/getty@tty1.service.d/override.co
 
 #sudo ln -sf $dotfiles/mouse-sensitivity /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
 
-# ?
-sudo ln -sf $dotfiles/logind.conf /etc/systemd/logind.conf
+# lid switch actions
+#sudo ln -sf $dotfiles/logind.conf /etc/systemd/logind.conf
