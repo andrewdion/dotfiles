@@ -29,7 +29,8 @@ export EDITOR="$VISUAL"
 export PAGER="less -X"
 #export BROWSER="google-chrome-stable"
 #export PATH="/home/adion/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/adion/java/jre1.8.0_144/bin:"
-export PATH="/home/adion/bin:/usr/local/sbin:/usr/local/bin:/usr/bin"
+#export PATH="/home/adion/bin:/usr/local/sbin:/usr/local/bin:/usr/bin"
+export PATH="/home/adion/.rbenv/bin:/home/adion/bin:/usr/local/sbin:/usr/local/bin:/usr/bin"
 export HISTTIMEFORMAT="[%y-%m-%d %T] "
 
 # decrypting secrets only seems to work when this variable is unset
