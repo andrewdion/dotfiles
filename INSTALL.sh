@@ -70,7 +70,7 @@ ln -sf ${dotfiles}/vimrc .vimrc
 ln -sf ${dotfiles}/Xresources .Xresources
 ln -sf ${dotfiles}/xbindkeysrc .xbindkeysrc
 ln -sf ${dotfiles}/xinitrc .xinitrc
-#ln -sf ${dotfiles}/asoundrc .asoundrc
+ln -sf ${dotfiles}/asoundrc.E1 .asoundrc
 #ln -sf ${dotfiles}/fehbg .fehbg
 
 # doesn't like symlink here
