@@ -17,8 +17,6 @@ sudo pacman -S xf86-video-ati \
                alsa-lib \
                alsa-utils \
                screenfetch \
-               ttf-inconsolata \
-               ttf-droid \
                zip \
                unzip \
                rsync \
@@ -26,7 +24,9 @@ sudo pacman -S xf86-video-ati \
                net-tools \
                openconnect \
                bluez \
-               bluez-utils
+               bluez-utils \
+               ttf-inconsolata \
+               ttf-chroscore
 #               xorg-xrandr \
 #               python2-virtualenv \
 #               python2-setuptools \
@@ -53,13 +53,13 @@ aur_www="https://aur.archlinux.org/cgit/aur.git/snapshot/"
 
 for pkg in google-chrome \
            xvkbd; do
-#          i3-gaps-git \
     wget ${aur_www}/${pkg}.tar.gz
     tar xf ${pkg}.tar.gz
     cd $pkg
     makepkg -sri
     cd ..
 done
+#          i3-gaps-git \
 
 dotfiles=$home/dotfiles
 cd $dotfiles
@@ -96,3 +96,16 @@ sudo cp $dotfiles/autologin /etc/systemd/system/getty@tty1.service.d/override.co
 
 # lid switch actions
 #sudo ln -sf $dotfiles/logind.conf /etc/systemd/logind.conf
+
+# fonts
+# https://www.reddit.com/r/archlinux/comments/5r5ep8/make_your_arch_fonts_beautiful_easily
+# $ fc-list : file | sort
+sudo ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d
+sudo ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d
+sudo ln -s /etc/fonts/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d
+# vim /etc/profile.d/freetype2.sh
+# uncomment 'export FREETYPE_PROPERTIES' line
+# there is more, but this seems to be sufficient
+
+git config user.name "Andrew Dion"
+git config user.email "andrew.r.dion@gmail.com"
