@@ -9,7 +9,7 @@ fi
 
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
-setxkbmap -layout dvorak -option caps:escape
+setxkbmap -layout dvorak -option super:escape
 
 xbindkeys &
 sh /home/adion/.fehbg &

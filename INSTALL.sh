@@ -18,13 +18,14 @@ sudo pacman -S  xf86-video-intel \
                 alsa-utils \
                 screenfetch \
                 ttf-inconsolata \
-                ttf-dejavu \
+                ttf-chroscore \
                 python \
                 zip \
                 unzip \
                 openconnect
 
 #                terminus-font \
+#                ttf-dejavu \
 #                sshfs \
 #                libxkbcommon-x11 \
 
@@ -38,7 +39,7 @@ aur_www="https://aur.archlinux.org/cgit/aur.git/snapshot/"
 
 for pkg in linux-samus4 \
            lemonbar-xft-git \
-           ttf-font-awesome \
+           ttf-font-awesome-4 \
            google-chrome \
            xvkbd; do
     wget ${aur_www}/${pkg}.tar.gz

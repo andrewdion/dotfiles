@@ -1,9 +1,0 @@
-pcm.!default {
-    type hw
-    card ODACrevB
-}
-
-ctl.!default {
-    type hw
-    card ODACrevB
-}
