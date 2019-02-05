@@ -7,16 +7,16 @@
 "xvkbd -xsendevent -text '\Cr'"
     F3
 
-"brightness --decrease"
+"backlight-brightness --decrease"
     F6
 
-"keyboard_led --decrease"
+"keyboard-brightness --decrease"
     Alt + F6
 
-"brightness --increase"
+"backlight-brightness --increase"
     F7
 
-"keyboard_led --increase"
+"keyboard-brightness --increase"
     Alt + F7
 
 "amixer -M set PCM toggle"
