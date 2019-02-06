@@ -40,17 +40,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-### !!! CUSTOM STUFF !!! ###
-# {
-# the old way:
-## check if exploded secrets dir exists
-#secrets=$(ls /tmp | fgrep secrets | head -1)
-#if [ -z "$secrets" ]; then
-#    echo "ERROR: exploded secrets dir does not exist"
-#else
-#    vault_pass="/tmp/$secrets/secrets/vault.txt"
-#    export ANSIBLE_VAULT_PASSWORD_FILE=$vault_pass
-#fi
+# CUSTOM STUFF {
 vault_file=/home/adion/.secrets/vault.txt
 if [ -e $vault_file ]; then
     export ANSIBLE_VAULT_PASSWORD_FILE=$vault_file
@@ -61,7 +51,7 @@ export ANSIBLE_RETRY_FILES_ENABLED=False
 export ANSIBLE_ROLES_PATH=/home/adion/bitbucket/iteam
 # }
 
-VIRTUAL_ENV="/home/adion/bitbucket/iteam/sysconfig/ansible/.env"
+VIRTUAL_ENV="/home/adion/bitbucket/iteam/sysconfig/ansible/.venv_ans23py27"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
