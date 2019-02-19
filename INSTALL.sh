@@ -94,8 +94,8 @@ sudo cp $dotfiles/autologin /etc/systemd/system/getty@tty1.service.d/override.co
 
 #sudo ln -sf $dotfiles/mouse-sensitivity /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
 
-# lid switch actions
-#sudo ln -sf $dotfiles/logind.conf /etc/systemd/logind.conf
+# lid switch & power key actions
+sudo ln -sf $dotfiles/logind.conf /etc/systemd/logind.conf
 
 # fonts
 # https://www.reddit.com/r/archlinux/comments/5r5ep8/make_your_arch_fonts_beautiful_easily
