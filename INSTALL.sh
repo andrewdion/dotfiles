@@ -10,6 +10,7 @@ sudo pacman -S  xf86-video-intel \
                 openssh \
                 spectrwm \
                 rxvt-unicode \
+                tmux \
                 feh \
                 i3lock \
                 scrot \
@@ -63,11 +64,11 @@ ln -sf ${dotfiles}/fehbg .fehbg
 ln -sf ${dotfiles}/gitconfig .gitconfig
 ln -sf ${dotfiles}/spectrwm.conf .spectrwm.conf
 ln -sf ${dotfiles}/spectrwm_us.conf .spectrwm_us.conf
+ln -sf ${dotfiles}/tmux.conf .tmux.conf
 ln -sf ${dotfiles}/vimrc .vimrc
 ln -sf ${dotfiles}/xbindkeysrc .xbindkeysrc
 ln -sf ${dotfiles}/xinitrc .xinitrc
 ln -sf ${dotfiles}/Xresources .Xresources
-#ln -sf ${dotfiles}/tmux.conf .tmux.conf
 
 # lid switch actions
 sudo ln -sf ${dotfiles}/logind.conf /etc/systemd/
