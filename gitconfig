@@ -17,7 +17,7 @@
     ci = commit
     log = log --color
     unstage = reset HEAD --
-    cleanup = !git-cleanup
+    cleanup = !git-cleanup $1
     # this is close to working...
     #cleanup = "!f() { git branch --merged | egrep -v '^(\*|  master|  development)' | xargs -r git branch -d; }; f"
     #cleanup = "!f() { git branch --merged | egrep -v '^(\*|  master|  development)' | xargs -r git branch -d && git remote prune origin; }; f"
