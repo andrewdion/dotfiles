@@ -90,10 +90,11 @@ sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
 # no symlinks here either
 sudo cp ${dotfiles}/autologin /etc/systemd/system/getty@tty1.service.d/override.conf
 
+sudo ln -sf ${dotfiles}/sudoers /etc/sudoers.d/adion
+
 sudo ln -sf ${dotfiles}/mouse-sensitivity /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
 
 # lid switch & power key actions
-# probably not needed on desktop?
 sudo ln -sf ${dotfiles}/logind.conf /etc/systemd/logind.conf
 
 # disable pc speaker

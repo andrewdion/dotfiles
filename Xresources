@@ -5,7 +5,7 @@ Xft.rgba:      rgb
 Xft.hinting:   true
 Xft.hintstyle: hintslight
 
-URxvt*.font: xft:Inconsolata:size=12
+URxvt*.font: xft:Inconsolata:size=11
 
 ! scrollback buffer lines - 65535 is max on most machines (64 is default)
 URxvt*.saveLines: 2000
@@ -51,55 +51,55 @@ URxvt*.scrollBar: false
 #define WHITE       #ffffff
 
 *.color0: BLACK
-! outside scripts: ?
-! inside scripts: ?
+! outside vim: ?
+! inside vim: ?
 *.color1: RED
-! outside scripts: ansible error, git -
-! inside scripts: ?
+! outside vim: ansible error, git -
+! inside vim: ?
 *.color2: LIME
-! outside scripts: ansible success, git +
-! inside scripts: ?
+! outside vim: ansible success, git +
+! inside vim: ?
 *.color3: LEMON
-! outside scripts: ansible changed
-! inside scripts: ?
+! outside vim: ansible changed
+! inside vim: ?
 *.color4: DKGRAY
-! outside scripts: ansible vvv
-! inside scripts: ?
+! outside vim: ansible vvv
+! inside vim: ?
 *.color5: TERMBG
-! outside scripts: tmux inactive pane border
-! inside scripts: ?
+! outside vim: ?
+! inside vim: ?
 *.color6: DKGRAY
-! outside scripts: ansible skip
-! inside scripts: ?
+! outside vim: ansible skip
+! inside vim: ?
 *.color7: LTGRAY
-! outside scripts: ?
-! inside scripts: ?
+! outside vim: ?
+! inside vim: ?
 
 ! bold:
 *.color8: DKGRAY
-! outside scripts: ansible task path
-! inside scripts: ?
+! outside vim: ansible task path
+! inside vim: ?
 *.color9: BLOOD
-! outside scripts: ansible unreachable
-! inside scripts: ?
+! outside vim: ansible unreachable
+! inside vim: ?
 *.color10: SEAFOAM
-! outside scripts: executables
-! inside scripts: ?
+! outside vim: executables
+! inside vim: ?
 *.color11: LTGRAY
-! outside scripts: text
-! inside scripts: text
+! outside vim: text
+! inside vim: text
 *.color12: SKY
-! outside scripts: directories
-! inside scripts: ?
+! outside vim: directories
+! inside vim: ?
 *.color13: PUMPKIN
-! outside scripts: ansible warning
-! inside scripts: strings
+! outside vim: ansible warning
+! inside vim: strings
 *.color14: LEMON
-! outside scripts: symlinks
+! outside vim: symlinks
 ! inside scrpts: script comments & functions
 *.color15: #ffffff
-! outside scripts: bash prompt
-! inside scripts: ?
+! outside vim: bash prompt
+! inside vim: ?
 
 ! man page
 !URxvt.colorIT: #87af5f
