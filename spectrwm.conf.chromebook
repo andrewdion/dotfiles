@@ -78,7 +78,8 @@ name			= ws[2]:2
 #name			= ws[4]:4
 
 # Mod key, (Windows key is Mod4) (Apple key on OSX is Mod2)
-# Alt_L = Mod1
+# on chromebook keyb: "Alt + Alt_L" (Alt = Mod1)
+# on hptouchpad keyb: "Mod4 + Super_L"
 modkey = Mod1
 
 # This allows you to include pre-defined key bindings for your keyboard layout.

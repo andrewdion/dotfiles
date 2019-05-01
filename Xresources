@@ -6,7 +6,7 @@ Xft.hinting:   true
 Xft.hintstyle: hintslight
 Xcursor.size:  36
 
-URxvt*.font: xft:Inconsolata:size=12
+URxvt*.font: xft:Inconsolata:size=11
 
 ! scrollback buffer lines - 65535 is max on most machines (64 is default)
 URxvt*.saveLines: 2000

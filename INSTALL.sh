@@ -10,6 +10,8 @@ sudo pacman -S  xf86-video-intel \
                 openssh \
                 spectrwm \
                 rxvt-unicode \
+                bluez \
+                bluez-utils \
                 tmux \
                 feh \
                 i3lock \
@@ -62,13 +64,18 @@ ln -sf ${dotfiles}/bash_profile .bash_profile
 ln -sf ${dotfiles}/bashrc .bashrc
 ln -sf ${dotfiles}/fehbg .fehbg
 ln -sf ${dotfiles}/gitconfig .gitconfig
-ln -sf ${dotfiles}/spectrwm.conf .spectrwm.conf
+ln -sf ${dotfiles}/spectrwm.conf.chromebook .spectrwm.conf
 ln -sf ${dotfiles}/spectrwm_us.conf .spectrwm_us.conf
 ln -sf ${dotfiles}/tmux.conf .tmux.conf
 ln -sf ${dotfiles}/vimrc .vimrc
 ln -sf ${dotfiles}/xbindkeysrc .xbindkeysrc
 ln -sf ${dotfiles}/xinitrc .xinitrc
 ln -sf ${dotfiles}/Xresources .Xresources
+
+# doesn't like symlink here
+sudo cp ${dotfiles}/bluetooth /etc/bluetooth/main.conf
+sudo systemctl start bluetooth
+sudo systemctl enable bluetooth
 
 # lid switch actions
 sudo ln -sf ${dotfiles}/logind.conf /etc/systemd/

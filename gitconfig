@@ -14,6 +14,6 @@
     br = branch
     co = checkout
     di = diff
-    rh = reset HEAD
     ci = commit
     log = log --color
+    unstage = reset HEAD --
