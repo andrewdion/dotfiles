@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#xrandr --output eDP1 --auto --output DP2 --auto --right-of eDP1
+
+xrandr --fb 7168x4292 \
+    --output eDP1 --mode 2560x1700 \
+    --output DP2 --mode 2560x1440 --scale 1.8x1.8 --pos 2560x0 --panning 4608x2592+2560+0

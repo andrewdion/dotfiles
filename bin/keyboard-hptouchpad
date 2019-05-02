@@ -1,0 +1,1 @@
+ln -sf /home/adion/dotfiles/spectrwm.conf.hptouchpad /home/adion/.spectrwm.conf

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sudo chown adion:adion /sys/class/backlight/intel_backlight/brightness
+sudo chown adion:adion /sys/class/leds/chromeos::kbd_backlight/brightness

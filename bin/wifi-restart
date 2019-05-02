@@ -1,0 +1,1 @@
+sudo systemctl restart netctl-auto@wlp1s0
