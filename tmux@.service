@@ -1,0 +1,11 @@
+[Unit]
+Description=
+
+[Service]
+Type=forking
+User=%I
+ExecStart=/usr/bin/tmux new-session -s startup -d
+ExecStop=/usr/bin/tmux kill-session -t startup
+
+[Install]
+WantedBy=multi-user.target

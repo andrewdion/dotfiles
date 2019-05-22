@@ -8,7 +8,6 @@ alias ls='ls --color=auto'
 alias l='ls -l'
 alias la='ls -la'
 alias vol='alsamixer'
-alias activate='. .env/bin/activate'
 
 alias pacq='pacman -Qs'
 alias pacs='pacman -Ss'

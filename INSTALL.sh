@@ -57,6 +57,8 @@ for pkg in google-chrome \
     cd ..
 done
 
+git clone https://github.com/tmux-plugins/tmux-resurrect
+
 dotfiles=${home}/dotfiles
 cd $home
 

@@ -1,0 +1,9 @@
+[Unit]
+Description=
+After=tmux.service
+
+[Timer]
+OnCalendar=*:*:0,30
+
+[Install]
+WantedBy=multi-user.target
