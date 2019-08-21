@@ -6,27 +6,26 @@ sudo pacman -S  xf86-video-intel \
                 xorg-xinit \
                 xorg-xrdb \
                 xbindkeys \
-                iw \
                 openssh \
                 spectrwm \
                 rxvt-unicode \
-                bluez \
-                bluez-utils \
                 tmux \
                 feh \
                 i3lock \
                 scrot \
                 imagemagick \
-                alsa-lib \
-                alsa-utils \
                 screenfetch \
                 ttf-inconsolata \
-                ttf-chroscore \
+                ttf-croscore \
                 python \
                 zip \
                 unzip \
-                openconnect
+		openconnect \
+                alsa-lib \
+                alsa-utils
 
+#                bluez \
+#                bluez-utils \
 #                terminus-font \
 #                ttf-dejavu \
 #                sshfs \
@@ -40,8 +39,7 @@ cd $aur
 
 aur_www="https://aur.archlinux.org/cgit/aur.git/snapshot/"
 
-for pkg in linux-samus4 \
-           lemonbar-xft-git \
+for pkg in lemonbar-xft-git \
            ttf-font-awesome-4 \
            google-chrome \
            xvkbd; do
@@ -51,10 +49,8 @@ for pkg in linux-samus4 \
     makepkg -sri
     cd ..
 done
+#           linux-samus4 \
 #           i3lock-color-git \
-#           dmenu2 \
-#           i3-gaps-git \
-#           sublime-text \
 
 dotfiles=${home}/dotfiles
 cd $home
@@ -73,24 +69,20 @@ ln -sf ${dotfiles}/xinitrc .xinitrc
 ln -sf ${dotfiles}/Xresources .Xresources
 
 # doesn't like symlink here
-sudo cp ${dotfiles}/bluetooth /etc/bluetooth/main.conf
-sudo systemctl start bluetooth
-sudo systemctl enable bluetooth
+#sudo cp ${dotfiles}/bluetooth /etc/bluetooth/main.conf
+#sudo systemctl start bluetooth
+#sudo systemctl enable bluetooth
 
 # lid switch actions
 sudo ln -sf ${dotfiles}/logind.conf /etc/systemd/
 
 # touchpad
+sudo mkdir -p /etc/X11/xorg.conf.d
 sudo ln -sf ${dotfiles}/70-synaptics.conf /etc/X11/xorg.conf.d/
 
 # grub
-sudo ln -sf ${dotfiles}/grub /etc/default/
+#sudo ln -sf ${dotfiles}/grub /etc/default/
 
 # auto login
 sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
 sudo cp ${dotfiles}/override.conf /etc/systemd/system/getty@tty1.service.d/
-
-# i3
-#i3=${home}/.config/i3
-#mkdir -p $i3
-#ln -sf ${dotfiles}/i3 ${i3}/config

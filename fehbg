@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --bg-scale '/home/adion/dotfiles/wallpaper_chromeos.jpg' 
+feh --no-fehbg --bg-scale '/home/adion/dotfiles/wallpaper_chromeos.jpg' 
