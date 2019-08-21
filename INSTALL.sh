@@ -17,17 +17,17 @@ sudo pacman -S  xf86-video-intel \
                 screenfetch \
                 ttf-inconsolata \
                 ttf-croscore \
-                python \
+                ttf-dejavu \
                 zip \
                 unzip \
-		openconnect \
+                openconnect \
                 alsa-lib \
-                alsa-utils
+                alsa-utils \
+                python
 
 #                bluez \
 #                bluez-utils \
 #                terminus-font \
-#                ttf-dejavu \
 #                sshfs \
 #                libxkbcommon-x11 \
 

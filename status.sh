@@ -148,12 +148,12 @@ datetime() {
     icon_clk="\uf017"
     loc_time="$(date "+%R")"
 
-    echo "$icon_clk $loc_time   "
+    echo "$icon_clk  $loc_time   "
 }
 
 while true; do
 #    echo -e "%{l}    $(workspaces)        $(window)%{c}$(pcname)%{r}$(network)        $(backlight)        $(volume)        $(battery)        $(datetime)"
 #    echo -e "%{l}    $(workspaces)%{c}$(pcname)%{r}$(network)        $(backlight)        $(volume)        $(battery)        $(datetime)"
-    echo -e "%{l}    $(workspaces)%{c}$(pcname)%{r}$(network)        $(backlight)        $(battery)        $(datetime)"
+    echo -e "%{l}    $(workspaces)%{c}$(pcname)%{r}$(network)        $(battery)        $(datetime)"
     sleep 1
 done
