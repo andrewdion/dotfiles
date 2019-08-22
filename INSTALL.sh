@@ -5,6 +5,7 @@ sudo pacman -S  xf86-video-intel \
                 xorg-server \
                 xorg-xinit \
                 xorg-xrdb \
+                xorg-xrandr \
                 xbindkeys \
                 openssh \
                 spectrwm \
@@ -23,10 +24,10 @@ sudo pacman -S  xf86-video-intel \
                 openconnect \
                 alsa-lib \
                 alsa-utils \
+                bluez \
+                bluez-utils \
                 python
 
-#                bluez \
-#                bluez-utils \
 #                terminus-font \
 #                sshfs \
 #                libxkbcommon-x11 \
@@ -69,9 +70,9 @@ ln -sf ${dotfiles}/xinitrc .xinitrc
 ln -sf ${dotfiles}/Xresources .Xresources
 
 # doesn't like symlink here
-#sudo cp ${dotfiles}/bluetooth /etc/bluetooth/main.conf
-#sudo systemctl start bluetooth
-#sudo systemctl enable bluetooth
+sudo cp ${dotfiles}/bluetooth /etc/bluetooth/main.conf
+sudo systemctl start bluetooth
+sudo systemctl enable bluetooth
 
 # lid switch actions
 sudo ln -sf ${dotfiles}/logind.conf /etc/systemd/
