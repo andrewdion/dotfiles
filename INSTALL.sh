@@ -6,11 +6,12 @@ sudo pacman -S  xf86-video-intel \
                 xorg-xinit \
                 xorg-xrdb \
                 xorg-xrandr \
+                xorg-xev \
+                xorg-xmodmap \
                 xbindkeys \
                 openssh \
                 spectrwm \
                 rxvt-unicode \
-                tmux \
                 feh \
                 i3lock \
                 scrot \
