@@ -68,6 +68,7 @@ ln -sf ${dotfiles}/vimrc .vimrc
 ln -sf ${dotfiles}/xbindkeysrc .xbindkeysrc
 ln -sf ${dotfiles}/xinitrc .xinitrc
 ln -sf ${dotfiles}/Xresources .Xresources
+ln -sf ${dotfiles}/bin bin
 
 # doesn't like symlink here
 sudo cp ${dotfiles}/bluetooth /etc/bluetooth/main.conf
