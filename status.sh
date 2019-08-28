@@ -154,6 +154,6 @@ datetime() {
 while true; do
 #    echo -e "%{l}    $(workspaces)        $(window)%{c}$(pcname)%{r}$(network)        $(backlight)        $(volume)        $(battery)        $(datetime)"
 #    echo -e "%{l}    $(workspaces)%{c}$(pcname)%{r}$(network)        $(backlight)        $(volume)        $(battery)        $(datetime)"
-    echo -e "%{l}    $(workspaces)%{c}$(pcname)%{r}$(network)        $(battery)        $(datetime)"
+    echo -e "%{l}    $(workspaces)%{c}$(pcname)%{r}$(network)        $(backlight)        $(battery)        $(datetime)"
     sleep 1
 done
