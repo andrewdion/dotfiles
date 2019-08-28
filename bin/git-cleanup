@@ -1,0 +1,9 @@
+#!/bin/bash
+target_branch=$1
+remote_branches=$(mktemp /tmp/remote_branches.XXXX)
+git branch -r | cut -d/ -f2 | fgrep -v HEAD > $remote_branches
+git branch --merged $target_branch | fgrep -vf $remote_branches | xargs -r git branch -d
+rm -f $remote_branches
+git remote prune origin
+# or:
+#git fetch -p

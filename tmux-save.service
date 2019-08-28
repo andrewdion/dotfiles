@@ -1,9 +1,0 @@
-[Unit]
-Description=
-
-[Service]
-Type=simple
-ExecStart=/home/adion/bin/tmux-save
-
-[Install]
-WantedBy=multi-user.target

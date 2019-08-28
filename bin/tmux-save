@@ -1,0 +1,1 @@
+tmux run-shell /home/adion/aur/tmux-resurrect/scripts/save.sh

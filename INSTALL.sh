@@ -10,7 +10,6 @@ sudo pacman -S xf86-video-ati \
                rxvt-unicode \
                autocutsel \
                tmux \
-               wget \
                i3lock \
                scrot \
                imagemagick \
@@ -75,8 +74,8 @@ ln -sf ${dotfiles}/xinitrc .xinitrc
 ln -sf ${dotfiles}/asoundrc.E1 .asoundrc
 #ln -sf ${dotfiles}/fehbg .fehbg
 
-# doesn't like symlink here
-sudo cp ${dotfiles}/bluetooth /etc/bluetooth/main.conf
+# doesn't like symlinks
+sudo cp ${dotfiles}/bluetooth.conf /etc/bluetooth/main.conf
 sudo systemctl start bluetooth
 sudo systemctl enable bluetooth
 
@@ -87,17 +86,16 @@ sudo systemctl enable sshd.socket
 #sudo systemctl start dhcpcd@eno1
 sudo systemctl enable dhcpcd@eno1
 
-# auto login
+# auto login; doesn't like symlinks
 sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
-# no symlinks here either
-sudo cp ${dotfiles}/autologin /etc/systemd/system/getty@tty1.service.d/override.conf
+sudo cp ${dotfiles}/autologin.conf /etc/systemd/system/getty@tty1.service.d/override.conf
 
-sudo ln -sf ${dotfiles}/sudoers /etc/sudoers.d/adion
+sudo ln -sf ${dotfiles}/sudoers.conf /etc/sudoers.d/adion
 
-sudo ln -sf ${dotfiles}/mouse-sensitivity /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
+sudo ln -sf ${dotfiles}/mouse-sensitivity.conf /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
 
-# lid switch & power key actions
-sudo ln -sf ${dotfiles}/logind.conf /etc/systemd/logind.conf
+# lid switch & power key actions... unsure if I need this on desktop pc
+sudo ln -sf ${dotfiles}/disable-power-key.conf /etc/systemd/logind.conf
 
 # disable pc speaker
 sudo ln -sf ${dotfiles}/nobeep.conf /etc/modprobe.d/nobeep.conf

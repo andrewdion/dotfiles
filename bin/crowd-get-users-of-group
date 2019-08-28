@@ -3,14 +3,14 @@
 group=$1
 #group=techleads
 
-#cmd1="curl -su crowd:AFO1Menz -H 'Content-Type: application/json' -H 'Accept: application/json' http://localhost:8095/crowd/rest/usermanagement/latest/user/group/"
+#cmd1="curl -su crowd:[REDACTED] -H 'Content-Type: application/json' -H 'Accept: application/json' http://localhost:8095/crowd/rest/usermanagement/latest/user/group/"
 #cmd2=" | jq -r '.users[][\"name\"]'"
 
 echo
 echo DIRECT MEMBERS:
-curl -su crowd:AFO1Menz -H 'Content-Type: application/json' -H 'Accept: application/json' http://localhost:8095/crowd/rest/usermanagement/latest/group/user/direct?groupname=${group} | jq -r '.users[]["name"]'
+curl -su crowd:[REDACTED] -H 'Content-Type: application/json' -H 'Accept: application/json' http://localhost:8095/crowd/rest/usermanagement/latest/group/user/direct?groupname=${group} | jq -r '.users[]["name"]'
 
 echo
 echo NESTED MEMBERS:
-curl -su crowd:AFO1Menz -H 'Content-Type: application/json' -H 'Accept: application/json' http://localhost:8095/crowd/rest/usermanagement/latest/group/user/nested?groupname=${group} | jq -r '.users[]["name"]'
+curl -su crowd:[REDACTED] -H 'Content-Type: application/json' -H 'Accept: application/json' http://localhost:8095/crowd/rest/usermanagement/latest/group/user/nested?groupname=${group} | jq -r '.users[]["name"]'
 echo

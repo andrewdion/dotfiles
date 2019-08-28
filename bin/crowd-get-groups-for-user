@@ -3,15 +3,15 @@
 #user=$1
 user=adion
 
-#cmd1="curl -su crowd:AFO1Menz -H 'Content-Type: application/json' -H 'Accept: application/json' http://localhost:8095/crowd/rest/usermanagement/latest/user/group/"
+#cmd1="curl -su crowd:[REDACTED] -H 'Content-Type: application/json' -H 'Accept: application/json' http://localhost:8095/crowd/rest/usermanagement/latest/user/group/"
 #cmd2=" | jq -r '.users[][\"name\"]'"
 
 #cmd="${cmd1}direct?username=${user}${cmd2}"
 echo
 echo DIRECT MEMBER OF:
-curl -su crowd:AFO1Menz -H 'Content-Type: application/json' -H 'Accept: application/json' http://localhost:8095/crowd/rest/usermanagement/latest/user/group/direct?username=${user} | jq -r '.groups[]["name"]'
+curl -su crowd:[REDACTED] -H 'Content-Type: application/json' -H 'Accept: application/json' http://localhost:8095/crowd/rest/usermanagement/latest/user/group/direct?username=${user} | jq -r '.groups[]["name"]'
 
 echo
 echo NESTED MEMBER OF:
-curl -su crowd:AFO1Menz -H 'Content-Type: application/json' -H 'Accept: application/json' http://localhost:8095/crowd/rest/usermanagement/latest/user/group/nested?username=${user} | jq -r '.groups[]["name"]'
+curl -su crowd:[REDACTED] -H 'Content-Type: application/json' -H 'Accept: application/json' http://localhost:8095/crowd/rest/usermanagement/latest/user/group/nested?username=${user} | jq -r '.groups[]["name"]'
 echo
