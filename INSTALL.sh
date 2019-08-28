@@ -29,10 +29,6 @@ sudo pacman -S  xf86-video-intel \
                 bluez-utils \
                 python
 
-#                terminus-font \
-#                sshfs \
-#                libxkbcommon-x11 \
-
 home=/home/adion
 
 aur=${home}/aur
@@ -71,21 +67,21 @@ ln -sf ${dotfiles}/xinitrc .xinitrc
 ln -sf ${dotfiles}/Xresources .Xresources
 ln -sf ${dotfiles}/bin bin
 
-# doesn't like symlink here
-sudo cp ${dotfiles}/bluetooth /etc/bluetooth/main.conf
+# doesn't like symlinks
+sudo cp ${dotfiles}/bluetooth.conf /etc/bluetooth/main.conf
 sudo systemctl start bluetooth
 sudo systemctl enable bluetooth
 
-# lid switch actions
-sudo ln -sf ${dotfiles}/logind.conf /etc/systemd/
+# power key / lid switch actions
+sudo cp ${dotfiles}/logind.conf /etc/systemd/
 
 # touchpad
 sudo mkdir -p /etc/X11/xorg.conf.d
-sudo ln -sf ${dotfiles}/70-synaptics.conf /etc/X11/xorg.conf.d/
+sudo ln -sf ${dotfiles}/touchpad.conf /etc/X11/xorg.conf.d/70-synaptics.conf
 
 # grub
-#sudo ln -sf ${dotfiles}/grub /etc/default/
+#sudo ln -sf ${dotfiles}/grub.conf /etc/default/grub
 
 # auto login
 sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
-sudo cp ${dotfiles}/override.conf /etc/systemd/system/getty@tty1.service.d/
+sudo cp ${dotfiles}/autologin.conf /etc/systemd/system/getty@tty1.service.d/override.conf

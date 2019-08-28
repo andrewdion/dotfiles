@@ -1,7 +1,18 @@
 #!/bin/bash
 
-xrandr --output eDP1 --auto --output DP2 --auto --right-of eDP1
+SCALE=$1
+DEFAULT=1.76
 
-#xrandr --fb 7168x4292 \
-#    --output eDP1 --mode 2560x1700 \
-#    --output DP2 --mode 2560x1440 --scale 2x2 --pos 2560x0 --panning 4608x2592+2560+0
+if [ -z $SCALE ]; then
+  SCALE=$DEFAULT
+fi
+
+eDP1_x=2560
+eDP1_y=1700
+
+DP2_x=2560
+DP2_y=1440
+
+xrandr --fb $(echo "$eDP1_x + $DP2_x * $SCALE" | bc -l | xargs printf %0.f\\n)x$(echo "$eDP1_y + $DP2_y * $SCALE" | bc -l | xargs printf %.0f\\n) \
+    --output eDP1 --mode ${eDP1_x}x${eDP1_y} \
+    --output DP2 --mode ${DP2_x}x${DP2_y} --scale ${SCALE}x${SCALE} --pos ${eDP1_x}x0 --panning $(echo "$DP2_x * $SCALE" | bc -l | xargs printf %.0f\\n)x$(echo "$DP2_y * $SCALE" | bc -l | xargs printf %.0f\\n)+${eDP1_x}+0

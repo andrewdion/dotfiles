@@ -1,0 +1,1 @@
+ps aux | egrep 'openconnect --juniper -u ad350 -b https://secure\.med\.harvard\.edu$' | sed 's/ \+/ /' | cut -d' ' -f2 | xargs sudo kill
