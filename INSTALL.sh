@@ -94,8 +94,8 @@ sudo ln -sf ${dotfiles}/sudoers.conf /etc/sudoers.d/adion
 
 sudo ln -sf ${dotfiles}/mouse-sensitivity.conf /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
 
-# lid switch & power key actions... unsure if I need this on desktop pc
-sudo ln -sf ${dotfiles}/disable-power-key.conf /etc/systemd/logind.conf
+# lid switch & power key actions... doesn't like symlinks
+sudo cp ${dotfiles}/logind.conf /etc/systemd
 
 # disable pc speaker
 sudo ln -sf ${dotfiles}/nobeep.conf /etc/modprobe.d/nobeep.conf
