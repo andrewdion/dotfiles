@@ -26,7 +26,7 @@ sudo pacman -S xf86-video-ati \
                bluez \
                bluez-utils \
                ttf-inconsolata \
-               ttf-chroscore
+               ttf-croscore
 #               xorg-xrandr \
 #               python2-virtualenv \
 #               python2-setuptools \
@@ -40,7 +40,7 @@ sudo pacman -S xf86-video-ati \
 # ttf-liberation
 # ttf-roboto
 # ttf-dejavu
-# ttf-chroscore
+# ttf-croscore
 # noto-fonts
 
 home=/home/adion
@@ -63,7 +63,6 @@ done
 
 dotfiles=$home/dotfiles
 cd $dotfiles
-git config user.email "andrew.r.dion@gmail.com"
 
 cd $home
 
@@ -82,6 +81,8 @@ ln -sf $dotfiles/xinitrc .xinitrc
 ln -sf $dotfiles/xbindkeysrc .xbindkeysrc
 #ln -sf $dotfiles/fehbg .fehbg
 
+# make sure usb dongle is plugged in
+sudo modprobe btusb
 # doesn't like symlink here
 sudo cp $dotfiles/bluetooth /etc/bluetooth/main.conf
 sudo systemctl start bluetooth
@@ -107,5 +108,4 @@ sudo ln -s /etc/fonts/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d
 # uncomment 'export FREETYPE_PROPERTIES' line
 # there is more, but this seems to be sufficient
 
-git config user.name "Andrew Dion"
 git config user.email "andrew.r.dion@gmail.com"
