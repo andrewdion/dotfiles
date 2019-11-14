@@ -107,5 +107,3 @@ sudo ln -s /etc/fonts/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d
 # vim /etc/profile.d/freetype2.sh
 # uncomment 'export FREETYPE_PROPERTIES' line
 # there is more, but this seems to be sufficient
-
-git config user.email "andrew.r.dion@gmail.com"

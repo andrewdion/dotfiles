@@ -1,6 +1,6 @@
 [user]
 	name = Andrew Dion
-	email = andrew_dion@hms.harvard.edu
+	email = andrew.r.dion@gmail.com
 
 [push]
     default = simple
@@ -14,6 +14,7 @@
     br = branch
     co = checkout
     di = diff
-    rh = reset HEAD
     ci = commit
     log = log --color
+    unstage = reset HEAD --
+    cleanup = !git-cleanup $1
