@@ -6,7 +6,7 @@ alias less='less -S -#5 -X'
 alias ls='ls --color=auto'
 alias l='ls -l'
 alias la='ls -la'
-alias activate='. .env/bin/activate'
+alias vol='alsamixer'
 
 alias pacq='pacman -Qs'
 alias pacs='pacman -Ss'
