@@ -10,9 +10,12 @@ fi
 eDP1_x=2560
 eDP1_y=1700
 
-DP2_x=2560
-DP2_y=1440
+#MON2=DP1
+MON2=DP2
 
-xrandr --fb $(echo "$eDP1_x + $DP2_x * $SCALE" | bc -l | xargs printf %0.f\\n)x$(echo "$eDP1_y + $DP2_y * $SCALE" | bc -l | xargs printf %.0f\\n) \
+MON2_x=2560
+MON2_y=1440
+
+xrandr --fb $(echo "$eDP1_x + $MON2_x * $SCALE" | bc -l | xargs printf %0.f\\n)x$(echo "$eDP1_y + $MON2_y * $SCALE" | bc -l | xargs printf %.0f\\n) \
     --output eDP1 --mode ${eDP1_x}x${eDP1_y} \
-    --output DP2 --mode ${DP2_x}x${DP2_y} --scale ${SCALE}x${SCALE} --pos ${eDP1_x}x0 --panning $(echo "$DP2_x * $SCALE" | bc -l | xargs printf %.0f\\n)x$(echo "$DP2_y * $SCALE" | bc -l | xargs printf %.0f\\n)+${eDP1_x}+0
+    --output $MON2 --mode ${MON2_x}x${MON2_y} --scale ${SCALE}x${SCALE} --pos ${eDP1_x}x0 --panning $(echo "$MON2_x * $SCALE" | bc -l | xargs printf %.0f\\n)x$(echo "$MON2_y * $SCALE" | bc -l | xargs printf %.0f\\n)+${eDP1_x}+0

@@ -1,1 +1,5 @@
-xrandr --output eDP1 --auto --output DP2 --off
+#!/bin/bash
+
+MON2=DP2
+
+xrandr --output eDP1 --auto --output $MON2 --off
