@@ -15,6 +15,8 @@ fi
 setxkbmap -layout dvorak -option caps:escape
 xbindkeys
 
+xrandr --output HDMI-2 --auto --rotate left --output DP-1 --right-of HDMI-2
+
 autocutsel -fork &
 autocutsel -selection PRIMARY -fork &
 exec spectrwm
