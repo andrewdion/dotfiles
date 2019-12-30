@@ -1,1 +1,1 @@
-sudo openconnect --juniper -u ad350 -b https://secure.med.harvard.edu
+sudo openconnect --juniper --no-dtls -u ad350 -b https://secure.med.harvard.edu
