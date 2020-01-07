@@ -1,0 +1,12 @@
+Interface=wlp1s0
+Connection=wireless
+IP=dhcp
+Security=wpa-configsection
+WPAConfigSection=(
+    'ssid="HMS Private"'
+    'key_mgmt=WPA-EAP'
+    'eap=PEAP'
+    'identity="ad350"'
+    'password=""'
+    'phase2="MSCHAPV2"'
+)
