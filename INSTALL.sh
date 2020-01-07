@@ -25,9 +25,9 @@ sudo pacman -S  xf86-video-intel \
                 openconnect \
                 alsa-lib \
                 alsa-utils \
-                bluez \
-                bluez-utils \
-                python
+                python \
+#                bluez \
+#                bluez-utils \
 
 home=/home/adion
 
@@ -68,9 +68,9 @@ ln -sf ${dotfiles}/Xresources .Xresources
 ln -sf ${dotfiles}/bin bin
 
 # doesn't like symlinks
-sudo cp ${dotfiles}/bluetooth.conf /etc/bluetooth/main.conf
-sudo systemctl start bluetooth
-sudo systemctl enable bluetooth
+#sudo cp ${dotfiles}/bluetooth.conf /etc/bluetooth/main.conf
+#sudo systemctl start bluetooth
+#sudo systemctl enable bluetooth
 
 # power key / lid switch actions
 sudo cp ${dotfiles}/logind.conf /etc/systemd/
