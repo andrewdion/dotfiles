@@ -1,12 +1,12 @@
 #!/bin/bash
  
-usage="usage: crowd [open|close ei|om]"
+usage="usage: crowd [open|close eagle-i|openmed]"
 user=$(whoami)
 app=$2
-procs="ps -fu $(whoami) | fgrep ssh | egrep '[0-9]{4}:(jira\.eagle-i\.net|open\.med\.harvard\.edu)' | sed 's/[ \t]\+/ /g' | cut -d' ' -f2,13"
+procs="ps -fu $(whoami) | fgrep ssh | egrep '[0-9]{4}:(jira\.eagle-i\.net|prodopenmedcrowd\.catalyst)' | sed 's/[ \t]\+/ /g' | cut -d' ' -f2,13"
  
 eval_procs() {
-    eval $procs | awk -v FS=" " -v OFS="\t" '{if($2~/^8095/)app="om"; if($2~/^8096/)app="ei"; {print $1, app}}' | sort -k2r
+    eval $procs | awk -v FS=" " -v OFS="\t" '{if($2~/^8095/)app="openmed"; if($2~/^8096/)app="eagle-i"; {print $1, app}}' | sort -k2r
 }
  
 open() {
@@ -17,7 +17,7 @@ open() {
 close() {
     eval_procs | fgrep -v $app
     for pid in $(eval_procs | fgrep $app | cut -f1); do
-        echo -e "$pid\t$app\tkilled"
+        echo -e "${pid}\t${app}\tkilled"
         kill -9 $pid
     done
 }
@@ -28,13 +28,13 @@ if [ "$#" -eq 0 ]; then
 fi
  
 case $app in
-    ei )
+    eagle-i )
         port=8096
         host="jira.eagle-i.net"
         ;;
-    om )
+    openmed )
         port=8095
-        host="open.med.harvard.edu"
+        host="prodopenmedcrowd.catalyst"
         ;;
     * )
         echo -e "Unknown target.\n\n$usage"
