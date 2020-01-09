@@ -58,7 +58,7 @@ ln -sf ${dotfiles}/bash_profile .bash_profile
 ln -sf ${dotfiles}/bashrc .bashrc
 ln -sf ${dotfiles}/fehbg .fehbg
 ln -sf ${dotfiles}/gitconfig .gitconfig
-ln -sf ${dotfiles}/spectrwm.conf.chromebook .spectrwm.conf
+ln -sf ${dotfiles}/spectrwm.conf .spectrwm.conf
 ln -sf ${dotfiles}/spectrwm_us.conf .spectrwm_us.conf
 ln -sf ${dotfiles}/tmux.conf .tmux.conf
 ln -sf ${dotfiles}/vimrc .vimrc
