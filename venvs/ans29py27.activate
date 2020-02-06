@@ -52,7 +52,7 @@ export ANSIBLE_ROLES_PATH=/home/adion/bitbucket/iteam
 export ANSIBLE_STDOUT_CALLBACK=yaml
 # }
 
-VIRTUAL_ENV="/home/adion/bitbucket/iteam/sysconfig/ansible/.venv_ans28py27"
+VIRTUAL_ENV="/home/adion/bitbucket/iteam/sysconfig/ansible/.venv_ans29py27"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
