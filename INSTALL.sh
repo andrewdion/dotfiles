@@ -6,11 +6,12 @@ sudo pacman -S  xf86-video-intel \
                 xorg-xinit \
                 xorg-xrdb \
                 xorg-xrandr \
+                xorg-xev \
+                xorg-xmodmap \
                 xbindkeys \
                 openssh \
                 spectrwm \
                 rxvt-unicode \
-                tmux \
                 feh \
                 i3lock \
                 scrot \
@@ -23,8 +24,10 @@ sudo pacman -S  xf86-video-intel \
                 unzip \
                 openconnect \
                 alsa-lib \
-                alsa-utils \
-                python
+                alsa-utils
+#                python \
+#                bluez \
+#                bluez-utils \
 
 home=/home/adion
 
@@ -37,8 +40,7 @@ aur_www="https://aur.archlinux.org/cgit/aur.git/snapshot/"
 for pkg in lemonbar-xft-git \
            ttf-font-awesome-4 \
            google-chrome \
-           xvkbd \
-           samus-scripts; do
+           xvkbd; do
     wget ${aur_www}/${pkg}.tar.gz
     tar xf ${pkg}.tar.gz
     cd $pkg
@@ -63,18 +65,23 @@ ln -sf ${dotfiles}/vimrc .vimrc
 ln -sf ${dotfiles}/xbindkeysrc .xbindkeysrc
 ln -sf ${dotfiles}/xinitrc .xinitrc
 ln -sf ${dotfiles}/Xresources .Xresources
+ln -sf ${dotfiles}/bin bin
 
-# lid switch actions... doesn't like symlink
-sudo cp ${dotfiles}/disable-power-key.conf /etc/systemd/logind.conf
+# doesn't like symlinks
+#sudo cp ${dotfiles}/bluetooth.conf /etc/bluetooth/main.conf
+#sudo systemctl start bluetooth
+#sudo systemctl enable bluetooth
+
+# power key / lid switch actions
+sudo cp ${dotfiles}/logind.conf /etc/systemd/
 
 # touchpad
 sudo mkdir -p /etc/X11/xorg.conf.d
 sudo ln -sf ${dotfiles}/touchpad.conf /etc/X11/xorg.conf.d/70-synaptics.conf
 
-# auto login... doesn't like symlink
+# grub
+#sudo ln -sf ${dotfiles}/grub.conf /etc/default/grub
+
+# auto login
 sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
 sudo cp ${dotfiles}/autologin.conf /etc/systemd/system/getty@tty1.service.d/override.conf
-
-# grub
-# no longer need samus4 kernel, so this can remain the default
-#sudo ln -sf ${dotfiles}/grub.conf /etc/default/grub
