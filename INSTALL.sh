@@ -68,7 +68,7 @@ cd $home
 
 cp -r $dotfiles/bin bin
 
-ln -sf $dotfiles/asoundrc .asoundrc
+#ln -sf $dotfiles/asoundrc .asoundrc
 ln -sf $dotfiles/bash_profile .bash_profile
 ln -sf $dotfiles/bashrc .bashrc
 ln -sf $dotfiles/gitconfig .gitconfig
@@ -88,20 +88,20 @@ sudo systemctl enable bluetooth
 
 # auto login
 sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
-# for some reason this doesn't like symlinks
-sudo cp $dotfiles/autologin /etc/systemd/system/getty@tty1.service.d/override.conf
+# no love for symlinks
+sudo cp $dotfiles/override.conf /etc/systemd/system/getty@tty1.service.d/
 
 #sudo ln -sf $dotfiles/mouse-sensitivity /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
 
-# lid switch & power key actions
-sudo ln -sf $dotfiles/logind.conf /etc/systemd/logind.conf
+# lid switch & power key actions. no love for symlinks
+sudo cp $dotfiles/logind.conf /etc/systemd/
 
 # fonts
 # https://www.reddit.com/r/archlinux/comments/5r5ep8/make_your_arch_fonts_beautiful_easily
 # $ fc-list : file | sort
-sudo ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d
-sudo ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d
-sudo ln -s /etc/fonts/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d
+sudo ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
+sudo ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
+sudo ln -s /etc/fonts/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d/
 # vim /etc/profile.d/freetype2.sh
 # uncomment 'export FREETYPE_PROPERTIES' line
 # there is more, but this seems to be sufficient

@@ -1,0 +1,55 @@
+#!/bin/bash
+ 
+usage="usage: crowd [open|close eagle-i|openmed]"
+user=$(whoami)
+app=$2
+procs="ps -fu $(whoami) | fgrep ssh | egrep '[0-9]{4}:(jira\.eagle-i\.net|prodopenmedcrowd\.catalyst)' | sed 's/[ \t]\+/ /g' | cut -d' ' -f2,13"
+ 
+eval_procs() {
+    eval $procs | awk -v FS=" " -v OFS="\t" '{if($2~/^8095/)app="openmed"; if($2~/^8096/)app="eagle-i"; {print $1, app}}' | sort -k2r
+}
+ 
+open() {
+    ssh -f -N -q -L ${port}:${host}:8095 $host
+    eval_procs
+}
+ 
+close() {
+    eval_procs | fgrep -v $app
+    for pid in $(eval_procs | fgrep $app | cut -f1); do
+        echo -e "${pid}\t${app}\tkilled"
+        kill -9 $pid
+    done
+}
+ 
+if [ "$#" -eq 0 ]; then
+    eval_procs
+    exit 0
+fi
+ 
+case $app in
+    eagle-i )
+        port=8096
+        host="jira.eagle-i.net"
+        ;;
+    openmed )
+        port=8095
+        host="prodopenmedcrowd.catalyst"
+        ;;
+    * )
+        echo -e "Unknown target.\n\n$usage"
+        exit 1
+        ;;
+esac
+ 
+case $1 in
+    open )
+        open
+        ;;
+    close )
+        close
+        ;;
+    * )
+        echo -e "Unknown directive.\n\n$usage"
+        ;;
+esac

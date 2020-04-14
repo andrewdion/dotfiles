@@ -1,1 +1,3 @@
-ps aux | egrep 'openconnect --juniper -u ad350 -b https://secure\.med\.harvard\.edu$' | sed 's/ \+/ /g' | cut -d' ' -f2 | xargs sudo kill
+PID=$(ps aux | egrep 'openconnect --juniper --no-dtls -u ad350 -b https://secure\.med\.harvard\.edu$' | sed 's/ \+/ /g' | cut -d' ' -f2)
+echo "killing $PID"
+sudo kill -9 $PID
