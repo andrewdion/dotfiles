@@ -5,7 +5,6 @@ sudo pacman -S xf86-video-ati \
                xorg-xinit \
                xorg-xrandr \
                xorg-xrdb \
-               xbindkeys \
                openssh \
                spectrwm \
                rxvt-unicode \
@@ -53,6 +52,7 @@ aur_www="https://aur.archlinux.org/cgit/aur.git/snapshot/"
 for pkg in google-chrome \
            deezer \
            slack-desktop \
+           xbindkeys \
            xvkbd; do
     wget ${aur_www}/${pkg}.tar.gz
     tar xf ${pkg}.tar.gz
