@@ -3,6 +3,7 @@
 sudo pacman -S xf86-video-ati \
                xorg-server \
                xorg-xinit \
+               xorg-xrandr \
                xorg-xrdb \
                xbindkeys \
                openssh \
@@ -27,7 +28,6 @@ sudo pacman -S xf86-video-ati \
                bluez-utils \
                ttf-inconsolata \
                ttf-croscore
-#               xorg-xrandr \
 #               python2-virtualenv \
 #               python2-setuptools \
 #               feh \
@@ -40,7 +40,6 @@ sudo pacman -S xf86-video-ati \
 # ttf-liberation
 # ttf-roboto
 # ttf-dejavu
-# ttf-croscore
 # noto-fonts
 
 home=/home/adion
@@ -52,6 +51,8 @@ cd $aur
 aur_www="https://aur.archlinux.org/cgit/aur.git/snapshot/"
 
 for pkg in google-chrome \
+           deezer \
+           slack-desktop \
            xvkbd; do
     wget ${aur_www}/${pkg}.tar.gz
     tar xf ${pkg}.tar.gz
@@ -60,6 +61,7 @@ for pkg in google-chrome \
     cd ..
 done
 #          i3-gaps-git \
+#          woeusb-git \ # for making bootable Win10 drive
 
 dotfiles=$home/dotfiles
 cd $dotfiles

@@ -1,0 +1,2 @@
+#nohup /usr/bin/pulseaudio > /dev/null 2>&1 &
+nohup /usr/bin/steam > /dev/null 2>&1 &

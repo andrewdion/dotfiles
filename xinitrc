@@ -12,10 +12,13 @@ fi
 
 #/home/adion/dotfiles/feh-switch.sh
 
+export ALSA_CARD=ATR2xUSB
+
 setxkbmap -layout dvorak -option caps:escape
 xbindkeys
 
-xrandr --output HDMI-2 --auto --rotate left --output DP-1 --right-of HDMI-2
+xrandr --output HDMI-2 --auto --rotate left --output DP-1 --right-of HDMI-2 --output HDMI-1 --off
+#xrandr --output HDMI-2 --auto --rotate left --output DP-1 --off --output HDMI-1 --mode 1920x1080 --right-of HDMI-2
 
 autocutsel -fork &
 autocutsel -selection PRIMARY -fork &
