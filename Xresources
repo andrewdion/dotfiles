@@ -8,7 +8,9 @@ Xft.hinting:   true
 !Xft.hintstyle: hintslight
 Xft.hintstyle: hintfull
 
-URxvt*.font: xft:Inconsolata:size=12
+! fc-list -v | fgrep 'fullname:' | sort | uniq | less
+URxvt*.font: xft:Roboto Mono:size=11
+!URxvt*.font: xft:Roboto Mono Regular:size=11
 
 ! scrollback buffer lines - 65535 is max on most machines (64 is default)
 URxvt*.saveLines: 2000

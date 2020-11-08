@@ -1,9 +1,10 @@
 #!/bin/bash
 
-tmpbg=/tmp/screenshot.png
-scrot $tmpbg
-convert $tmpbg -scale 5% -scale 2000% $tmpbg
-i3lock -i $tmpbg
+TMPBG=/tmp/screenshot.png
+scrot $TMPBG
+convert $TMPBG -scale 5% -scale 2000% $TMPBG
+i3lock -i $TMPBG
+rm $TMPBG
 
 #img=$(ls /home/adion/dotfiles/wall_dual_*.png | sort -R | head -1)
 

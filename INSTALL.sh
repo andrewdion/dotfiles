@@ -25,8 +25,9 @@ sudo pacman -S xf86-video-ati \
                openconnect \
                bluez \
                bluez-utils \
-               ttf-inconsolata \
-               ttf-croscore
+               ttf-croscore \
+               ttf-roboto-mono \
+               chromium
 #               python2-virtualenv \
 #               python2-setuptools \
 #               feh \
@@ -49,17 +50,18 @@ cd $aur
 
 aur_www="https://aur.archlinux.org/cgit/aur.git/snapshot/"
 
-for pkg in google-chrome \
-           deezer \
+for pkg in xbindkeys \
+           xvkbd \
            slack-desktop \
-           xbindkeys \
-           xvkbd; do
+           zoom; do
     wget ${aur_www}/${pkg}.tar.gz
     tar xf ${pkg}.tar.gz
     cd $pkg
     makepkg -sri
     cd ..
 done
+#          google-chrome
+#          deezer
 #          i3-gaps-git \
 #          woeusb-git \ # for making bootable Win10 drive
 
@@ -100,7 +102,6 @@ sudo cp $dotfiles/logind.conf /etc/systemd/
 
 # fonts
 # https://www.reddit.com/r/archlinux/comments/5r5ep8/make_your_arch_fonts_beautiful_easily
-# $ fc-list : file | sort
 sudo ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
 sudo ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
 sudo ln -s /etc/fonts/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d/
