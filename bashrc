@@ -1,13 +1,13 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias tmux='tmux -2'
 alias less='less -S -#5 -X -i'
 alias cl='clear'
 alias ls='ls --color=auto'
 alias l='ls -l'
 alias la='ls -la'
 alias vol='alsamixer'
+alias tmux='tmux -2 a -dt'
 
 alias pacq='pacman -Qs'
 alias pacs='pacman -Ss'
@@ -64,6 +64,8 @@ aws-profile() {
         export AWS_PROFILE=harvard-catalyst-shrine;;
       shrinedev )
         export AWS_PROFILE=harvard-catalyst-shrine-dev;;
+      shrinedev-tbrady )
+        export AWS_PROFILE=harvard-catalyst-shrine-dev_tbrady;;
     esac
       
     echo "AWS_PROFILE=$AWS_PROFILE"

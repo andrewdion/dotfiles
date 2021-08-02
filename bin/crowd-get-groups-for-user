@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#user=$1
-user=adion
+user=$1
+#user=adion
 
 #cmd1="curl -su crowd:[REDACTED] -H 'Content-Type: application/json' -H 'Accept: application/json' http://localhost:8095/crowd/rest/usermanagement/latest/user/group/"
 #cmd2=" | jq -r '.users[][\"name\"]'"

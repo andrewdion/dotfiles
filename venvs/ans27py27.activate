@@ -50,9 +50,9 @@ fi
 export ANSIBLE_RETRY_FILES_ENABLED=False
 export ANSIBLE_ROLES_PATH=/home/adion/bitbucket/iteam
 export ANSIBLE_STDOUT_CALLBACK=yaml
-# }
 
 VIRTUAL_ENV="/home/adion/bitbucket/iteam/sysconfig/ansible/.venv_ans27py27"
+# }
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
