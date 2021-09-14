@@ -12,11 +12,9 @@ sudo pacman -S xf86-video-ati \
                tmux \
                wget \
                i3lock \
-               scrot \
                imagemagick \
-               alsa-lib \
-               alsa-utils \
                screenfetch \
+               scrot \
                zip \
                unzip \
                rsync \
@@ -26,8 +24,10 @@ sudo pacman -S xf86-video-ati \
                bluez \
                bluez-utils \
                ttf-croscore \
-               ttf-roboto-mono \
-               chromium
+               ttf-roboto-mono
+#               chromium
+#               alsa-lib \
+#               alsa-utils \
 #               python2-virtualenv \
 #               python2-setuptools \
 #               feh \
@@ -52,18 +52,19 @@ aur_www="https://aur.archlinux.org/cgit/aur.git/snapshot/"
 
 for pkg in xbindkeys \
            xvkbd \
-           slack-desktop \
-           zoom; do
+           zoom \
+	   google-chrome; do
     wget ${aur_www}/${pkg}.tar.gz
     tar xf ${pkg}.tar.gz
     cd $pkg
     makepkg -sri
     cd ..
 done
+#           slack-desktop; do
 #          google-chrome
 #          deezer
-#          i3-gaps-git \
-#          woeusb-git \ # for making bootable Win10 drive
+#          i3-gaps-git
+#          woeusb-git # for making bootable Win10 drive
 
 dotfiles=$home/dotfiles
 cd $dotfiles
