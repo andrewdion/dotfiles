@@ -15,10 +15,10 @@ setxkbmap -layout dvorak -option super:escape
 sudo chown adion:adion /sys/class/backlight/intel_backlight/brightness
 sudo chown adion:adion /sys/class/leds/chromeos::kbd_backlight/brightness
 
-ln -sf /home/adion/dotfiles/spectrwm.conf.chromebook /home/adion/.spectrwm.conf
+#ln -sf /home/adion/dotfiles/spectrwm.conf.chromebook /home/adion/.spectrwm.conf
 
-autocutsel -fork &
-autocutsel -selection PRIMARY -fork &
+#autocutsel -fork &
+#autocutsel -selection PRIMARY -fork &
 xbindkeys &
 sh /home/adion/.fehbg &
 /home/adion/dotfiles/status.sh | lemonbar -p -d -f "FontAwesome:size=12" -f "DejaVu Sans:size=10" -g 2560x38 -B#242424 &
