@@ -9,3 +9,9 @@
 
 "setxkbmap -layout dvorak -option caps:escape"
     m:0x0 + c:248
+
+"amixer set Speaker 3+"
+    XF86AudioRaiseVolume
+
+"amixer set Speaker 3-"
+    XF86AudioLowerVolume

@@ -25,9 +25,9 @@ sudo pacman -S xf86-video-ati \
                bluez-utils \
                ttf-croscore \
                ttf-roboto-mono
-#               chromium
 #               alsa-lib \
 #               alsa-utils \
+#               chromium \
 #               python2-virtualenv \
 #               python2-setuptools \
 #               feh \
@@ -50,18 +50,17 @@ cd $aur
 
 aur_www="https://aur.archlinux.org/cgit/aur.git/snapshot/"
 
-for pkg in xbindkeys \
+for pkg in google-chrome \
+           xbindkeys \
            xvkbd \
-           zoom \
-	   google-chrome; do
+           zoom; do
     wget ${aur_www}/${pkg}.tar.gz
     tar xf ${pkg}.tar.gz
     cd $pkg
     makepkg -sri
     cd ..
 done
-#           slack-desktop; do
-#          google-chrome
+#          slack-desktop
 #          deezer
 #          i3-gaps-git
 #          woeusb-git # for making bootable Win10 drive
