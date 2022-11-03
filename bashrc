@@ -1,7 +1,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias less='less -S -#5 -X -i'
+alias less='less -S -#5 -X -i -R'
 alias cl='clear'
 alias ls='ls --color=auto'
 alias l='ls -l'
@@ -26,11 +26,11 @@ export LANG=en_US.UTF-8
 export TERM=rxvt-unicode
 export VISUAL=vim
 export EDITOR="$VISUAL"
-export PAGER="less -X"
+export PAGER="less -S -#5 -X -i -R"
 #export BROWSER="google-chrome-stable"
 #export PATH="/home/adion/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/adion/java/jre1.8.0_144/bin:"
-#export PATH="/home/adion/bin:/usr/local/sbin:/usr/local/bin:/usr/bin"
-export PATH="/home/adion/.rbenv/bin:/home/adion/bin:/usr/local/sbin:/usr/local/bin:/usr/bin"
+export PATH="/home/adion/bin:/usr/local/sbin:/usr/local/bin:/usr/bin"
+#export PATH="/home/adion/.rbenv/bin:/home/adion/bin:/usr/local/sbin:/usr/local/bin:/usr/bin"
 export HISTTIMEFORMAT="[%y-%m-%d %T] "
 
 # decrypting secrets only seems to work when this variable is unset
@@ -39,10 +39,9 @@ export HISTTIMEFORMAT="[%y-%m-%d %T] "
 # {
 # ideally move these aliases to awscli virtual environment
 aws-profile() {
-    usage="usage: aws-profile ACCOUNT\n\nwhere ACCOUNT can be one of the following:\ncatalyst portal smartirb shrine eiaws eicloud fphs"
+    usage="usage: aws-profile ACCOUNT\n\nwhere ACCOUNT can be one of the following:\ncatalyst eiaws eicloud fphs portal shrine shrinedev"
     if [ "$#" -ne 1 ]; then
         echo -e "$usage\n"
-        #echo "AWS_DEFAULT_PROFILE=$AWS_DEFAULT_PROFILE"
         echo "AWS_PROFILE=$AWS_PROFILE"
         return 1
     fi
@@ -50,22 +49,18 @@ aws-profile() {
     case $1 in
       catalyst )
         export AWS_PROFILE=harvard-catalyst;;
-      smartirb )
-        export AWS_PROFILE=harvard-catalyst-smartirb;;
-      portal )
-        export AWS_PROFILE=harvard-catalyst-portal;;
       eiaws )
         export AWS_PROFILE=eagle-i-aws;;
       eicloud )
         export AWS_PROFILE=eagle-i-cloud;;
       fphs )
         export AWS_PROFILE=fphs;;
+      portal )
+        export AWS_PROFILE=harvard-catalyst-portal;;
       shrine )
         export AWS_PROFILE=harvard-catalyst-shrine;;
       shrinedev )
         export AWS_PROFILE=harvard-catalyst-shrine-dev;;
-      shrinedev-tbrady )
-        export AWS_PROFILE=harvard-catalyst-shrine-dev_tbrady;;
     esac
       
     echo "AWS_PROFILE=$AWS_PROFILE"

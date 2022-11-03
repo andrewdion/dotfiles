@@ -32,18 +32,11 @@
 #               ttf-inconsolata \
 #               ttf-croscore
 
-sudo yum install automake \       # tmux dependencies
-                 libevent \       #
-                 libevent-devel \ #
-                 ncurses \        #
-                 ncurses-devel \  #
-                 gcc \            #
-                 make \           #
-                 bison \          #
-                 pkg-config       #
+sudo yum install automake libevent libevent-devel ncurses ncurses-devel gcc make bison pkg-config
  
 HOME=/home/adion
 BUILD=$HOME/build
+mkdir -p $BUILD
  
 # TMUX
 ######
@@ -56,14 +49,14 @@ make && sudo make install
  
 #git clone https://github.com/tmux-plugins/tmux-resurrect
  
-dotfiles=${home}/dotfiles
-cd $home
+DOTFILES=$HOME/dotfiles
+cd $HOME
  
-ln -sf ${dotfiles}/bash_profile .bash_profile
-ln -sf ${dotfiles}/bashrc .bashrc
-ln -sf ${dotfiles}/gitconfig .gitconfig
-ln -sf ${dotfiles}/tmux.conf .tmux.conf
-ln -sf ${dotfiles}/vimrc .vimrc
+ln -sf $DOTFILES/bash_profile .bash_profile
+ln -sf $DOTFILES/bashrc .bashrc
+ln -sf $DOTFILES/gitconfig .gitconfig
+ln -sf $DOTFILES/tmux.conf .tmux.conf
+ln -sf $DOTFILES/vimrc .vimrc
  
 # # fonts
 # # https://www.reddit.com/r/archlinux/comments/5r5ep8/make_your_arch_fonts_beautiful_easily
