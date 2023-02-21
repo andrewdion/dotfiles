@@ -51,6 +51,8 @@ cd $aur
 aur_www="https://aur.archlinux.org/cgit/aur.git/snapshot/"
 
 for pkg in google-chrome \
+           nodejs-nativefier \ # dependency for google-voice
+           google-voice-nativefier \
            xbindkeys \
            xvkbd \
            zoom; do

@@ -12,7 +12,7 @@ fi
 
 #/home/adion/dotfiles/feh-switch.sh
 
-export ALSA_CARD=ATR2xUSB
+export ALSA_CARD=ODACrevB
 
 setxkbmap -layout dvorak -option caps:escape
 xbindkeys
