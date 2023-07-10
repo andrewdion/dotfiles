@@ -7,7 +7,7 @@
 "xvkbd -xsendevent -text '\[End]'"
     Control + Right
 
-"setxkbmap -layout dvorak -option caps:escape"
+"setxkbmap -v us -variant dvorak -option caps:escape"
     m:0x0 + c:248
 
 "amixer set Speaker 3+"

@@ -24,7 +24,8 @@ sudo pacman -S xf86-video-ati \
                bluez \
                bluez-utils \
                ttf-croscore \
-               ttf-roboto-mono
+               ttf-roboto-mono \
+               discord
 #               alsa-lib \
 #               alsa-utils \
 #               chromium \
@@ -51,8 +52,6 @@ cd $aur
 aur_www="https://aur.archlinux.org/cgit/aur.git/snapshot/"
 
 for pkg in google-chrome \
-           nodejs-nativefier \ # dependency for google-voice
-           google-voice-nativefier \
            xbindkeys \
            xvkbd \
            zoom; do
@@ -64,6 +63,7 @@ for pkg in google-chrome \
 done
 #          slack-desktop
 #          deezer
+#          google-messages
 #          i3-gaps-git
 #          woeusb-git # for making bootable Win10 drive
 

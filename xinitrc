@@ -14,10 +14,12 @@ fi
 
 export ALSA_CARD=ODACrevB
 
-setxkbmap -layout dvorak -option caps:escape
+#setxkbmap -layout dvorak -option caps:escape
+setxkbmap -v us -variant dvorak -option caps:escape
 xbindkeys
 
-xrandr --output HDMI-2 --auto --rotate left --output DP-1 --right-of HDMI-2 --output HDMI-1 --off
+xrandr --output HDMI-2 --auto --rotate left --output HDMI-1 --right-of HDMI-2
+#xrandr --output HDMI-2 --auto --rotate left --output DP-1 --right-of HDMI-2 --output HDMI-1 --off
 #xrandr --output HDMI-2 --auto --rotate left --output DP-1 --off --output HDMI-1 --mode 1920x1080 --right-of HDMI-2
 
 autocutsel -fork &
