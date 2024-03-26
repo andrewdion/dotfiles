@@ -1,1 +1,1 @@
-tmux run-shell /home/adion/aur/tmux-resurrect/scripts/save.sh
+tmux run-shell /home/adion/build/tmux-resurrect/scripts/save.sh

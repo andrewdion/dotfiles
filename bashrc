@@ -55,6 +55,8 @@ aws-profile() {
         export AWS_PROFILE=eagle-i-cloud;;
       fphs )
         export AWS_PROFILE=fphs;;
+      masscpr )
+        export AWS_PROFILE=harvard-catalyst-masscpr;;
       portal )
         export AWS_PROFILE=harvard-catalyst-portal;;
       shrine )
@@ -65,8 +67,8 @@ aws-profile() {
       
     echo "AWS_PROFILE=$AWS_PROFILE"
 
-    export AWS_DEFAULT_REGION=us-east-1
-    export AWS_DEFAULT_OUTPUT=json
+    #export AWS_DEFAULT_REGION=us-east-1
+    #export AWS_DEFAULT_OUTPUT=json
 }
 alias s3catalyst='s3cmd -c /home/adion/.aws/s3cfg-catalyst'
 alias s3eiaws='s3cmd -c /home/adion/.aws/s3cfg-eiaws'
